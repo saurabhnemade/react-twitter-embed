@@ -30,8 +30,9 @@ export default class TwitterTimelineEmbed extends Component {
         slug: isRequiredIf(PropTypes.string, props => propTypes.sourceType === 'list' && !props.hasOwnProperty('id')),
         /**
          * To show list, unique list id
+         * Also used with collections, in that case its valid collection id
          */
-        id: isRequiredIf(PropTypes.number, props => propTypes.sourceType === 'list' && !props.hasOwnProperty('ownerScreenName') && !props.hasOwnProperty('slug')),
+        id: isRequiredIf(PropTypes.number, props => (propTypes.sourceType === 'list' && !props.hasOwnProperty('ownerScreenName') && !props.hasOwnProperty('slug')) || propTypes.sourceType === 'collection'),
         /**
          * Additional options to pass to twitter widget plugin
          */
