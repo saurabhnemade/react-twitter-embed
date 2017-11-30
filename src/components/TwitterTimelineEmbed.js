@@ -7,8 +7,17 @@ script('https://platform.twitter.com/widgets.js', 'twitter-embed');
 
 export default class TwitterTimelineEmbed extends Component {
     static propTypes = {
+        /**
+         * This can be either of profile, likes, list, collection, URL, widget
+         */
         sourceType: PropTypes.oneOf(['profile', 'likes', 'list', 'collection', 'URL', 'widget']).isRequired,
+        /**
+         * username of twitter handle
+         */
         screenName: PropTypes.string.isRequired,
+        /**
+         * Additional options to pass to twitter widget plugin
+         */
         options: PropTypes.options,
     };
 
