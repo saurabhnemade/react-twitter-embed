@@ -81,12 +81,24 @@ storiesOf('Twitter Embed', module)
     </div>
   )))
   .add('Timeline List (With list id)', withInfo({
-    text: 'Timeline Likes example with given list id',
+    text: 'Timeline List example with given list id',
   })(() => (
     <div style={{ width: 250, height: 600 }}>
       <TwitterTimelineEmbed
         sourceType={'list'}
         id={8044403}
+        options={{ height: 400 }}
+      />
+    </div>
+  )))
+  .add('Timeline collection', withInfo({
+    text: 'Timeline collection example with given collection id',
+  })(() => (
+    <div style={{ width: 250, height: 600 }}>
+      This is under development
+      <TwitterTimelineEmbed
+        sourceType={'collection'}
+        id={588824628950269952}
         options={{ height: 400 }}
       />
     </div>
