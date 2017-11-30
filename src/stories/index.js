@@ -200,10 +200,10 @@ storiesOf('Twitter Hashtag button', module)
   })(() => (
     <div style={{ margin: 100 }}>
       <TwitterHashtagButton
-        tag={'saurabhnemade'}
+        tag={'cybersecurity'}
       />
       <TwitterHashtagButton
-        tag={'saurabhnemade'}
+        tag={'cybersecurity'}
         options={{ size: 'large' }}
       />
     </div>
