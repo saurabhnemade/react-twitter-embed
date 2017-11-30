@@ -146,4 +146,16 @@ storiesOf('Twitter Timeline Embed', module)
         options={{ height: 400 }}
       />
     </div>
+  )))
+  .add('Timeline widget', withInfo({
+    text: 'Timeline widget example with a valid given widget id',
+  })(() => (
+    <div style={{ width: 250, height: 600 }}>
+      This is under development
+      <TwitterTimelineEmbed
+        sourceType={'widget'}
+        widgetId={936304851348111360}
+        options={{ height: 400 }}
+      />
+    </div>
   )));
