@@ -15,11 +15,11 @@ export default class TwitterTimelineEmbed extends Component {
         /**
          * username of twitter handle as String
          */
-        screenName: isRequiredIf(PropTypes.string, props => !props.hasOwnProperty('userId') && (propTypes.sourceType === 'profile' || propTypes.sourceType === 'likes')),
+        screenName: isRequiredIf(PropTypes.string, props => !props.hasOwnProperty('userId') && (props.sourceType === 'profile' || props.sourceType === 'likes')),
         /**
          * UserId of twitter handle as number
          */
-        userId: isRequiredIf(PropTypes.number, props => !props.hasOwnProperty('screenName') && (propTypes.sourceType === 'profile' || propTypes.sourceType === 'likes')),
+        userId: isRequiredIf(PropTypes.number, props => !props.hasOwnProperty('screenName') && (props.sourceType === 'profile' || props.sourceType === 'likes')),
         /**
          * To show list, used along with slug
          */
@@ -44,7 +44,7 @@ export default class TwitterTimelineEmbed extends Component {
         /**
          * Additional options to pass to twitter widget plugin
          */
-        options: PropTypes.options,
+        options: PropTypes.object,
     };
 
     componentDidMount() {
