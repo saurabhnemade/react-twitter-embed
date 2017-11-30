@@ -23,7 +23,7 @@ storiesOf('Button', module)
   });
 
 
-storiesOf('Twitter Embed', module)
+storiesOf('Twitter Timeline Embed', module)
   .add('Timeline Profile (With Screen Name)', withInfo({
     text: 'Watch twitter user timeline with given username',
   })(() => (
@@ -121,6 +121,17 @@ storiesOf('Twitter Embed', module)
       <TwitterTimelineEmbed
         sourceType={'url'}
         url={'https://twitter.com/rahul581'}
+        options={{ height: 400 }}
+      />
+    </div>
+  )))
+  .add('Timeline url (with list url)', withInfo({
+    text: 'Timeline url example with given list url',
+  })(() => (
+    <div style={{ width: 250, height: 600 }}>
+      <TwitterTimelineEmbed
+        sourceType={'url'}
+        url={'https://twitter.com/mashable/lists/social-media'}
         options={{ height: 400 }}
       />
     </div>
