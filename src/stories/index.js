@@ -1,8 +1,9 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
+import { withInfo } from '@storybook/addon-info';
 import Button from '../index';
 import TwitterTimelineEmbed from '../components/TwitterTimelineEmbed';
-import { withInfo } from '@storybook/addon-info';
+import TwitterShareButton from '../components/TwitterShareButton';
 
 storiesOf('Button', module)
   .add('default view', () => (
@@ -153,6 +154,19 @@ storiesOf('Twitter Timeline Embed', module)
     <div style={{ width: 250, height: 600 }}>
       This is under development
       <TwitterTimelineEmbed
+        sourceType={'widget'}
+        widgetId={936304851348111360}
+        options={{ height: 400 }}
+      />
+    </div>
+  )));
+
+storiesOf('Twitter Share button', module)
+  .add('Timeline widget', withInfo({
+    text: 'Timeline widget example with a valid given widget id',
+  })(() => (
+    <div style={{ width: 250, height: 600 }}>
+      <TwitterShareButton
         sourceType={'widget'}
         widgetId={936304851348111360}
         options={{ height: 400 }}
