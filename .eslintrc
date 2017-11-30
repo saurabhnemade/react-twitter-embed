@@ -17,5 +17,7 @@
     "func-names": 0,
     # propTypes can be object
     "react/forbid-prop-types": 0,
+    # allow stateles function
+    "react/prefer-stateless-function": 0
   },
 }
