@@ -34,8 +34,7 @@ storiesOf('Twitter Embed', module)
         options={{ height: 400 }}
       />
     </div>
-  )
-    ))
+  )))
   .add('Timeline Profile (With userId)', withInfo({
     text: 'Timeline with given userId',
   })(() => (
@@ -46,6 +45,16 @@ storiesOf('Twitter Embed', module)
         options={{ height: 400 }}
       />
     </div>
-  )
-    ));
+  )))
+  .add('Timeline Likes (With screenName)', withInfo({
+    text: 'Timeline Likes example with given username',
+  })(() => (
+    <div style={{ width: 250, height: 600 }}>
+      <TwitterTimelineEmbed
+        sourceType={'likes'}
+        screenName={'saurabhnemade'}
+        options={{ height: 400 }}
+      />
+    </div>
+  )));
 
