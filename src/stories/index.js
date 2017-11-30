@@ -4,6 +4,7 @@ import { withInfo } from '@storybook/addon-info';
 import Button from '../index';
 import TwitterTimelineEmbed from '../components/TwitterTimelineEmbed';
 import TwitterShareButton from '../components/TwitterShareButton';
+import TwitterFollowButton from '../components/TwitterFollowButton';
 
 storiesOf('Button', module)
   .add('default view', () => (
@@ -163,7 +164,7 @@ storiesOf('Twitter Timeline Embed', module)
 
 storiesOf('Twitter Share button', module)
   .add('Share button', withInfo({
-    text: 'Timeline widget example with a valid given widget id',
+    text: 'Twitter share button example',
   })(() => (
     <div style={{ margin: 100 }}>
       <TwitterShareButton
@@ -173,6 +174,21 @@ storiesOf('Twitter Share button', module)
       <TwitterShareButton
         url={'https://facebook.com/saurabhnemade'}
         options={{ text: '#reactjs is awesome', via: 'saurabhnemade', size: 'large' }}
+      />
+    </div>
+  )));
+
+storiesOf('Twitter Follow button', module)
+  .add('Follow button', withInfo({
+    text: 'Twitter follow button example',
+  })(() => (
+    <div style={{ margin: 100 }}>
+      <TwitterFollowButton
+        screenName={'saurabhnemade'}
+      />
+      <TwitterFollowButton
+        screenName={'saurabhnemade'}
+        options={{ size: 'large' }}
       />
     </div>
   )));
