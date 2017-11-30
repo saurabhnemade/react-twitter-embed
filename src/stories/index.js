@@ -230,13 +230,9 @@ storiesOf('Twitter Tweet Embed', module)
   .add('Tweet embed', withInfo({
     text: 'Tweet embed',
   })(() => (
-    <div style={{ margin: 100 }}>
+    <div style={{ width: 400, height: 400 }}>
       <TwitterTweetEmbed
-        id={933354946111705097}
-      />
-      <TwitterTweetEmbed
-        id={933354946111705097}
-        options={{ size: 'large' }}
+        tweetId={'933354946111705097'}
       />
     </div>
   )));
