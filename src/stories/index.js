@@ -167,9 +167,8 @@ storiesOf('Twitter Share button', module)
   })(() => (
     <div style={{ width: 250, height: 600 }}>
       <TwitterShareButton
-        sourceType={'widget'}
-        widgetId={936304851348111360}
-        options={{ height: 400 }}
+        url={'https://facebook.com/saurabhnemade'}
+        options={{ text: 'Share me', via: 'twitterdev' }}
       />
     </div>
   )));
