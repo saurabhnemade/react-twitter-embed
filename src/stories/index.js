@@ -6,6 +6,7 @@ import TwitterTimelineEmbed from '../components/TwitterTimelineEmbed';
 import TwitterShareButton from '../components/TwitterShareButton';
 import TwitterFollowButton from '../components/TwitterFollowButton';
 import TwitterHashtagButton from '../components/TwitterHashtagButton';
+import TwitterMentionButton from '../components/TwitterMentionButton';
 
 storiesOf('Button', module)
   .add('default view', () => (
@@ -205,6 +206,21 @@ storiesOf('Twitter Hashtag button', module)
       <TwitterHashtagButton
         tag={'cybersecurity'}
         options={{ size: 'large' }}
+      />
+    </div>
+  )));
+
+storiesOf('Twitter Mention button', module)
+  .add('Mention button', withInfo({
+    text: 'Twitter Mention button example',
+  })(() => (
+    <div style={{ margin: 100 }}>
+      <TwitterMentionButton
+        screenName={'saurabhnemade'}
+      />
+      <TwitterMentionButton
+        tag={'saurabhnemade'}
+        screenName={{ size: 'large' }}
       />
     </div>
   )));
