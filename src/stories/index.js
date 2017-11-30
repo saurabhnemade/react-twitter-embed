@@ -41,7 +41,7 @@ storiesOf('Twitter Embed', module)
     <div style={{ width: 250, height: 600 }}>
       <TwitterTimelineEmbed
         sourceType={'profile'}
-        userId={1364031673}
+        userId={1934309676}
         options={{ height: 400 }}
       />
     </div>
@@ -56,5 +56,15 @@ storiesOf('Twitter Embed', module)
         options={{ height: 400 }}
       />
     </div>
+  )))
+  .add('Timeline Likes (With userId)', withInfo({
+    text: 'Timeline Likes example with given user id',
+  })(() => (
+    <div style={{ width: 250, height: 600 }}>
+      <TwitterTimelineEmbed
+        sourceType={'likes'}
+        userId={1934309676}
+        options={{ height: 400 }}
+      />
+    </div>
   )));
-
