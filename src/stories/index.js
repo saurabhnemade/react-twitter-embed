@@ -7,6 +7,7 @@ import TwitterShareButton from '../components/TwitterShareButton';
 import TwitterFollowButton from '../components/TwitterFollowButton';
 import TwitterHashtagButton from '../components/TwitterHashtagButton';
 import TwitterMentionButton from '../components/TwitterMentionButton';
+import TwitterTweetEmbed from '../components/TwitterTweetEmbed';
 
 storiesOf('Button', module)
   .add('default view', () => (
@@ -220,6 +221,21 @@ storiesOf('Twitter Mention button', module)
       />
       <TwitterMentionButton
         screenName={'saurabhnemade'}
+        options={{ size: 'large' }}
+      />
+    </div>
+  )));
+
+storiesOf('Twitter Tweet Embed', module)
+  .add('Tweet embed', withInfo({
+    text: 'Tweet embed',
+  })(() => (
+    <div style={{ margin: 100 }}>
+      <TwitterTweetEmbed
+        id={933354946111705097}
+      />
+      <TwitterTweetEmbed
+        id={933354946111705097}
         options={{ size: 'large' }}
       />
     </div>
