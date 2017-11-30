@@ -102,4 +102,15 @@ storiesOf('Twitter Embed', module)
         options={{ height: 400 }}
       />
     </div>
+  )))
+  .add('Timeline url', withInfo({
+    text: 'Timeline url example with given url',
+  })(() => (
+    <div style={{ width: 250, height: 600 }}>
+      <TwitterTimelineEmbed
+        sourceType={'url'}
+        url={'https://twitter.com/NYTNow/timelines/576828964162965504'}
+        options={{ height: 400 }}
+      />
+    </div>
   )));
