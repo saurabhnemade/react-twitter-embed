@@ -170,5 +170,9 @@ storiesOf('Twitter Share button', module)
         url={'https://facebook.com/saurabhnemade'}
         options={{ text: '#reactjs is awesome', via: 'saurabhnemade' }}
       />
+      <TwitterShareButton
+        url={'https://facebook.com/saurabhnemade'}
+        options={{ text: '#reactjs is awesome', via: 'saurabhnemade', size: 'large' }}
+      />
     </div>
   )));
