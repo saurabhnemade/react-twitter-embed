@@ -103,13 +103,24 @@ storiesOf('Twitter Embed', module)
       />
     </div>
   )))
-  .add('Timeline url', withInfo({
-    text: 'Timeline url example with given url',
+  .add('Timeline url (with collection url)', withInfo({
+    text: 'Timeline url example with given collection url',
   })(() => (
     <div style={{ width: 250, height: 600 }}>
       <TwitterTimelineEmbed
         sourceType={'url'}
         url={'https://twitter.com/NYTNow/timelines/576828964162965504'}
+        options={{ height: 400 }}
+      />
+    </div>
+  )))
+  .add('Timeline url (with profile url)', withInfo({
+    text: 'Timeline url example with given profile url',
+  })(() => (
+    <div style={{ width: 250, height: 600 }}>
+      <TwitterTimelineEmbed
+        sourceType={'url'}
+        url={'https://twitter.com/rahul581'}
         options={{ height: 400 }}
       />
     </div>
