@@ -50,21 +50,21 @@ export default class TwitterTimelineEmbed extends Component {
   componentDidMount() {
     script.ready('twitter-embed', () => {
       if (!window.twttr) {
-          console.error('Failure to load window.twttr, aborting load.');
-          return;
-        }
+        console.error('Failure to load window.twttr, aborting load.');
+        return;
+      }
 
       window.twttr.widgets.createTimeline(
-          {
-            sourceType: this.props.sourceType,
-            screenName: this.props.screenName,
-            userId: this.props.userId,
-            ownerScreenName: this.props.ownerScreenName,
-            slug: this.props.slug,
-            id: this.props.id,
-            url: this.props.url,
-            widgetId: this.props.widgetId,
-          },
+        {
+          sourceType: this.props.sourceType,
+          screenName: this.props.screenName,
+          userId: this.props.userId,
+          ownerScreenName: this.props.ownerScreenName,
+          slug: this.props.slug,
+          id: this.props.id,
+          url: this.props.url,
+          widgetId: this.props.widgetId,
+        },
                 this.refs.embedContainer,
                 this.props.options
             );
