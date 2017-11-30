@@ -1,32 +1,7 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import { withInfo } from '@storybook/addon-info';
-import Button from '../index';
-import TwitterTimelineEmbed from '../components/TwitterTimelineEmbed';
-import TwitterShareButton from '../components/TwitterShareButton';
-import TwitterFollowButton from '../components/TwitterFollowButton';
-import TwitterHashtagButton from '../components/TwitterHashtagButton';
-import TwitterMentionButton from '../components/TwitterMentionButton';
-import TwitterTweetEmbed from '../components/TwitterTweetEmbed';
-
-storiesOf('Button', module)
-  .add('default view', () => (
-    <Button onClick={action('button clicked')}>Hello</Button>
-  ))
-  .add('some emojies as the text', () => (
-    <Button>😀 😎 👍 💯</Button>
-  ))
-  .add('custom styles', () => {
-    const style = {
-      fontSize: 20,
-      textTransform: 'uppercase',
-      color: '#FF8833',
-    };
-    return (
-      <Button style={style}>Hello</Button>
-    );
-  });
-
+import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed } from '../index';
 
 storiesOf('Twitter Timeline Embed', module)
   .add('Timeline Profile (With Screen Name)', withInfo({
@@ -37,6 +12,7 @@ storiesOf('Twitter Timeline Embed', module)
         sourceType={'profile'}
         screenName={'saurabhnemade'}
         options={{ height: 400 }}
+        onComplete={action('sample action')}
       />
     </div>
   )))
