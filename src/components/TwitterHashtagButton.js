@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+const script = require('scriptjs');
+
+script('https://platform.twitter.com/widgets.js', 'twitter-embed');
+
 export default class TwitterHashtagButton extends Component {
   static propTypes = {
     /**
@@ -15,9 +19,7 @@ export default class TwitterHashtagButton extends Component {
 
   render() {
     return (
-      <div>
-        Sample html
-      </div>
+        <div ref="embedContainer"></div>
     );
   }
 }
