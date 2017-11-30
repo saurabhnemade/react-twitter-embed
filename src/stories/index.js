@@ -67,4 +67,27 @@ storiesOf('Twitter Embed', module)
         options={{ height: 400 }}
       />
     </div>
+  )))
+  .add('Timeline List (With screenName and slug)', withInfo({
+    text: 'Timeline Likes example with given screename and slug',
+  })(() => (
+    <div style={{ width: 250, height: 600 }}>
+      <TwitterTimelineEmbed
+        sourceType={'list'}
+        ownerScreenName={'palafo'}
+        slug={'breakingnews'}
+        options={{ height: 400 }}
+      />
+    </div>
+  )))
+  .add('Timeline List (With list id)', withInfo({
+    text: 'Timeline Likes example with given list id',
+  })(() => (
+    <div style={{ width: 250, height: 600 }}>
+      <TwitterTimelineEmbed
+        sourceType={'list'}
+        id={8044403}
+        options={{ height: 400 }}
+      />
+    </div>
   )));
