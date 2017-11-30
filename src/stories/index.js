@@ -135,4 +135,15 @@ storiesOf('Twitter Timeline Embed', module)
         options={{ height: 400 }}
       />
     </div>
+  )))
+  .add('Timeline url (with likes url)', withInfo({
+    text: 'Timeline url example with given likes url',
+  })(() => (
+    <div style={{ width: 250, height: 600 }}>
+      <TwitterTimelineEmbed
+        sourceType={'url'}
+        url={'https://twitter.com/ladygaga/likes'}
+        options={{ height: 400 }}
+      />
+    </div>
   )));
