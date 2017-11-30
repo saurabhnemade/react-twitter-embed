@@ -219,8 +219,8 @@ storiesOf('Twitter Mention button', module)
         screenName={'saurabhnemade'}
       />
       <TwitterMentionButton
-        tag={'saurabhnemade'}
-        screenName={{ size: 'large' }}
+        screenName={'saurabhnemade'}
+        options={{ size: 'large' }}
       />
     </div>
   )));
