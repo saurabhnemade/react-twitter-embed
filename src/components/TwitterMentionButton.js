@@ -7,7 +7,13 @@ script('https://platform.twitter.com/widgets.js', 'twitter-embed');
 
 export default class TwitterMentionButton extends Component {
   static propTypes = {
+    /**
+     * Username to which you will need to tweet
+     */
     screenName: PropTypes.string.isRequired,
+    /**
+     * Additional options for overriding config.
+     */
     options: PropTypes.object,
   };
 
