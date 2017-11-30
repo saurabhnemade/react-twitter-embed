@@ -24,13 +24,25 @@ storiesOf('Button', module)
 
 
 storiesOf('Twitter Embed', module)
-  .add('Timeline Profile', withInfo({
+  .add('Timeline Profile (With Screen Name)', withInfo({
     text: 'Watch twitter user timeline with given username',
   })(() => (
     <div style={{ width: 250, height: 600 }}>
       <TwitterTimelineEmbed
         sourceType={'profile'}
         screenName={'saurabhnemade'}
+        options={{ height: 400 }}
+      />
+    </div>
+  )
+    ))
+  .add('Timeline Profile (With userId)', withInfo({
+    text: 'Timeline with given userId',
+  })(() => (
+    <div style={{ width: 250, height: 600 }}>
+      <TwitterTimelineEmbed
+        sourceType={'profile'}
+        userId={1364031673}
         options={{ height: 400 }}
       />
     </div>
