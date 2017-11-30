@@ -162,13 +162,13 @@ storiesOf('Twitter Timeline Embed', module)
   )));
 
 storiesOf('Twitter Share button', module)
-  .add('Timeline widget', withInfo({
+  .add('Share button', withInfo({
     text: 'Timeline widget example with a valid given widget id',
   })(() => (
-    <div style={{ width: 250, height: 600 }}>
+    <div style={{ margin: 100 }}>
       <TwitterShareButton
         url={'https://facebook.com/saurabhnemade'}
-        options={{ text: 'Share me', via: 'twitterdev' }}
+        options={{ text: '#reactjs is awesome', via: 'saurabhnemade' }}
       />
     </div>
   )));
