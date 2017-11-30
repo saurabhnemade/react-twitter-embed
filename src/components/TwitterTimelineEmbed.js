@@ -32,7 +32,7 @@ export default class TwitterTimelineEmbed extends Component {
          * To show list, unique list id
          * Also used with collections, in that case its valid collection id
          */
-    id: isRequiredIf(PropTypes.number, props => (props.sourceType === 'list' && !props.hasOwnProperty('ownerScreenName') && !props.hasOwnProperty('slug')) || props.sourceType === 'collection'),
+    id: isRequiredIf(PropTypes.oneOf([PropTypes.number, PropTypes.string]), props => (props.sourceType === 'list' && !props.hasOwnProperty('ownerScreenName') && !props.hasOwnProperty('slug')) || props.sourceType === 'collection'),
         /**
          * To show twitter content with url. Supported content includes profiles, likes, lists, and collections.
          */
