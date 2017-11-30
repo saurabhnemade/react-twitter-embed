@@ -27,16 +27,20 @@ export default class TwitterTimelineEmbed extends Component {
         /**
          * To show list, used along with ownerScreenName
          */
-        slug: isRequiredIf(PropTypes.string, props => propTypes.sourceType === 'list' && !props.hasOwnProperty('id')),
+        slug: isRequiredIf(PropTypes.string, props => props.sourceType === 'list' && !props.hasOwnProperty('id')),
         /**
          * To show list, unique list id
          * Also used with collections, in that case its valid collection id
          */
-        id: isRequiredIf(PropTypes.number, props => (propTypes.sourceType === 'list' && !props.hasOwnProperty('ownerScreenName') && !props.hasOwnProperty('slug')) || propTypes.sourceType === 'collection'),
+        id: isRequiredIf(PropTypes.number, props => (props.sourceType === 'list' && !props.hasOwnProperty('ownerScreenName') && !props.hasOwnProperty('slug')) || props.sourceType === 'collection'),
         /**
          * To show twitter content with url. Supported content includes profiles, likes, lists, and collections.
          */
-        url: isRequiredIf(PropTypes.string, props => propTypes.sourceType === 'url'),
+        url: isRequiredIf(PropTypes.string, props => props.sourceType === 'url'),
+        /**
+         * To show custom widget
+         */
+        widgetId: isRequiredIf(PropTypes.number, props => props.sourceType === 'widget'),
         /**
          * Additional options to pass to twitter widget plugin
          */
@@ -58,7 +62,8 @@ export default class TwitterTimelineEmbed extends Component {
                     ownerScreenName: this.props.ownerScreenName,
                     slug: this.props.slug,
                     id: this.props.id,
-                    url: this.props.url
+                    url: this.props.url,
+                    widgetId: this.props.widgetId
                 },
                 this.refs.embedContainer,
                 this.props.options
