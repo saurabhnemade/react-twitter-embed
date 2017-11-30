@@ -100,10 +100,9 @@ storiesOf('Twitter Timeline Embed', module)
     text: 'Timeline collection example with given collection id',
   })(() => (
     <div style={{ width: 250, height: 600 }}>
-      This is under development
       <TwitterTimelineEmbed
         sourceType={'collection'}
-        id={588824628950269952}
+        id={'588824628950269952'}
         options={{ height: 400 }}
       />
     </div>
