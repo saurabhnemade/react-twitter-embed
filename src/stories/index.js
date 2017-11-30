@@ -5,6 +5,7 @@ import Button from '../index';
 import TwitterTimelineEmbed from '../components/TwitterTimelineEmbed';
 import TwitterShareButton from '../components/TwitterShareButton';
 import TwitterFollowButton from '../components/TwitterFollowButton';
+import TwitterHashtagButton from '../components/TwitterHashtagButton';
 
 storiesOf('Button', module)
   .add('default view', () => (
@@ -188,6 +189,21 @@ storiesOf('Twitter Follow button', module)
       />
       <TwitterFollowButton
         screenName={'saurabhnemade'}
+        options={{ size: 'large' }}
+      />
+    </div>
+  )));
+
+storiesOf('Twitter Hashtag button', module)
+  .add('Hashtag button', withInfo({
+    text: 'Twitter hashtag button example',
+  })(() => (
+    <div style={{ margin: 100 }}>
+      <TwitterHashtagButton
+        tag={'saurabhnemade'}
+      />
+      <TwitterHashtagButton
+        tag={'saurabhnemade'}
         options={{ size: 'large' }}
       />
     </div>
