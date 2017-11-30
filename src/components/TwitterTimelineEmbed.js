@@ -34,6 +34,10 @@ export default class TwitterTimelineEmbed extends Component {
          */
         id: isRequiredIf(PropTypes.number, props => (propTypes.sourceType === 'list' && !props.hasOwnProperty('ownerScreenName') && !props.hasOwnProperty('slug')) || propTypes.sourceType === 'collection'),
         /**
+         * To show twitter content with url. Supported content includes profiles, likes, lists, and collections.
+         */
+        url: isRequiredIf(PropTypes.string, props => propTypes.sourceType === 'url'),
+        /**
          * Additional options to pass to twitter widget plugin
          */
         options: PropTypes.options,
@@ -53,7 +57,8 @@ export default class TwitterTimelineEmbed extends Component {
                     userId: this.props.userId,
                     ownerScreenName: this.props.ownerScreenName,
                     slug: this.props.slug,
-                    id: this.props.id
+                    id: this.props.id,
+                    url: this.props.url
                 },
                 this.refs.embedContainer,
                 this.props.options
