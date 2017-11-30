@@ -15,11 +15,23 @@ export default class TwitterTimelineEmbed extends Component {
         /**
          * username of twitter handle as String
          */
-        screenName: isRequiredIf(PropTypes.string, props => !props.hasOwnProperty('userId')),
+        screenName: isRequiredIf(PropTypes.string, props => !props.hasOwnProperty('userId') && (propTypes.sourceType === 'profile' || propTypes.sourceType === 'likes')),
         /**
          * UserId of twitter handle as number
          */
-        userId: isRequiredIf(PropTypes.number, props => !props.hasOwnProperty('screenName')),
+        userId: isRequiredIf(PropTypes.number, props => !props.hasOwnProperty('screenName') && (propTypes.sourceType === 'profile' || propTypes.sourceType === 'likes')),
+        /**
+         * To show list, used along with slug
+         */
+        ownerScreenName: isRequiredIf(PropTypes.string, props => props.sourceType === 'list' && !props.hasOwnProperty('id')),
+        /**
+         * To show list, used along with ownerScreenName
+         */
+        slug: isRequiredIf(PropTypes.string, props => propTypes.sourceType === 'list' && !props.hasOwnProperty('id')),
+        /**
+         * To show list, unique list id
+         */
+        id: isRequiredIf(PropTypes.number, props => propTypes.sourceType === 'list' && !props.hasOwnProperty('ownerScreenName') && !props.hasOwnProperty('slug')),
         /**
          * Additional options to pass to twitter widget plugin
          */
@@ -37,7 +49,10 @@ export default class TwitterTimelineEmbed extends Component {
                 {
                     sourceType: this.props.sourceType,
                     screenName: this.props.screenName,
-                    userId: this.props.userId
+                    userId: this.props.userId,
+                    ownerScreenName: this.props.ownerScreenName,
+                    slug: this.props.slug,
+                    id: this.props.id
                 },
                 this.refs.embedContainer,
                 this.props.options
