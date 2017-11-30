@@ -40,7 +40,7 @@ export default class TwitterTimelineEmbed extends Component {
         /**
          * To show custom widget
          */
-    widgetId: isRequiredIf(PropTypes.number, props => props.sourceType === 'widget'),
+    widgetId: isRequiredIf(PropTypes.string, props => props.sourceType === 'widget'),
         /**
          * Additional options to pass to twitter widget plugin
          */
