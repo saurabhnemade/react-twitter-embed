@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import Button from '../index';
-
 import TwitterTimelineEmbed from '../components/TwitterTimelineEmbed';
+import { withInfo } from '@storybook/addon-info';
 
 storiesOf('Button', module)
   .add('default view', () => (
@@ -24,7 +24,16 @@ storiesOf('Button', module)
 
 
 storiesOf('Twitter Embed', module)
-  .add('TwitterTimelineEmbed', () => (
-    <TwitterTimelineEmbed />
-  ));
+  .add('Timeline Profile', withInfo({
+    text: 'Watch twitter user timeline with given username',
+  })(() => (
+    <div style={{ width: 250, height: 600 }}>
+      <TwitterTimelineEmbed
+        sourceType={'profile'}
+        screenName={'saurabhnemade'}
+        options={{ height: 400 }}
+      />
+    </div>
+  )
+    ));
 
