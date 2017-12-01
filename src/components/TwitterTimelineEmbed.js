@@ -45,6 +45,10 @@ export default class TwitterTimelineEmbed extends Component {
          * Additional options to pass to twitter widget plugin
          */
     options: PropTypes.object,
+        /**
+         * Automatically fit into parent container height
+         */
+    autoHeight: PropTypes.bool,
   };
 
   componentDidMount() {
@@ -52,6 +56,12 @@ export default class TwitterTimelineEmbed extends Component {
       if (!window.twttr) {
         console.error('Failure to load window.twttr, aborting load.');
         return;
+      }
+
+      const options = Object.assign({}, this.props.options);
+
+      if (this.props.autoHeight) {
+        options.height = this.refs.embedContainer.parentNode.offsetHeight;
       }
 
       window.twttr.widgets.createTimeline(
@@ -66,7 +76,7 @@ export default class TwitterTimelineEmbed extends Component {
           widgetId: this.props.widgetId,
         },
         this.refs.embedContainer,
-        this.props.options
+        options
       );
     });
   }
