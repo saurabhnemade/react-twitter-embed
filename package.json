@@ -1,8 +1,8 @@
 {
   "name": "react-twitter-embed",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "React Twitter Embed Components",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "author": "Saurabh Nemade",
   "files": [
     "src/"
@@ -14,6 +14,7 @@
   "license": "MIT",
   "scripts": {
     "prepublish": ". ./.scripts/prepublish.sh",
+    "build": "set NODE_ENV=production&& babel src --presets babel-preset-es2015 --plugins transform-class-properties --out-dir dist",
     "lint": "eslint src",
     "lintfix": "eslint src --fix",
     "testonly": "mocha --require .scripts/mocha_runner src/**/tests/**/*.js",
@@ -25,12 +26,15 @@
   "devDependencies": {
     "@kadira/storybook": "^2.18.1",
     "@storybook/addon-info": "^3.2.16",
-    "babel-cli": "^6.14.0",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.14.0",
     "babel-eslint": "^6.1.2",
     "babel-loader": "^6.2.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-runtime": "^6.15.0",
     "babel-polyfill": "^6.13.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
     "babel-preset-react-app": "^0.2.1",
     "chai": "^3.5.0",
     "enzyme": "^2.2.0",
@@ -55,7 +59,6 @@
     "react-proptype-conditional-require": "^1.0.4",
     "scriptjs": "^2.5.8"
   },
-  "main": "dist/index.js",
   "engines": {
     "npm": "^3.0.0"
   }
