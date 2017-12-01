@@ -4,6 +4,9 @@
   "description": "React Twitter Embed Components",
   "main": "src/index.js",
   "author": "Saurabh Nemade",
+  "files": [
+    "src/"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/saurabhnemade/react-twitter-embed.git"
