@@ -137,6 +137,33 @@ storiesOf('Twitter Timeline Embed', module)
         options={{ height: 400 }}
       />
     </div>
+  )))
+  .add('Timeline Autoheight', withInfo({
+    text: 'Timeline autoheight example',
+  })(() => (
+    <div style={{ display: 'flex' }}>
+      <div style={{ width: 250, height: 200, margin: 20 }}>
+        <TwitterTimelineEmbed
+          sourceType={'widget'}
+          widgetId={'936304851348111360'}
+          autoHeight
+        />
+      </div>
+      <div style={{ width: 250, height: 300, margin: 20 }}>
+        <TwitterTimelineEmbed
+          sourceType={'widget'}
+          widgetId={'936304851348111360'}
+          autoHeight
+        />
+      </div>
+      <div style={{ width: 250, height: 250, margin: 20 }}>
+        <TwitterTimelineEmbed
+          sourceType={'widget'}
+          widgetId={'936304851348111360'}
+          autoHeight
+        />
+      </div>
+    </div>
   )));
 
 storiesOf('Twitter Share button', module)
