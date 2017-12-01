@@ -1,7 +1,8 @@
 {
   "name": "react-twitter-embed",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React Twitter Embed Components",
+  "main": "src/index.js",
   "author": "Saurabh Nemade",
   "repository": {
     "type": "git",
