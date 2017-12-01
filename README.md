@@ -14,7 +14,7 @@ Simplest way to add Twitter Widgets to your react project.
      <TwitterTimelineEmbed
       sourceType="profile"
       screenName="saurabhnemade"
-      options={{height: {400}}
+      options={{height: 400}}
     />
 
 
