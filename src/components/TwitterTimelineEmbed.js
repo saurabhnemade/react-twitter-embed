@@ -65,9 +65,9 @@ export default class TwitterTimelineEmbed extends Component {
           url: this.props.url,
           widgetId: this.props.widgetId,
         },
-                this.refs.embedContainer,
-                this.props.options
-            );
+        this.refs.embedContainer,
+        this.props.options
+      );
     });
   }
 
