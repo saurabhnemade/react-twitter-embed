@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import { withInfo } from '@storybook/addon-info';
-import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed } from '../index';
+import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed ,TwitterMomentShare} from '../index';
 
 storiesOf('Twitter Timeline Embed', module)
   .add('Timeline Profile (With Screen Name)', withInfo({
@@ -235,5 +235,13 @@ storiesOf('Twitter Tweet Embed', module)
       <TwitterTweetEmbed
         tweetId={'933354946111705097'}
       />
+    </div>
+  )));
+storiesOf('Twitter Moment Share' , module)
+  .add('Moment Share' , withInfo({
+    text : 'Share Life Moment' 
+  })(() => (
+    <div stype= {{ width : 400 , height: 400}}>
+      <TwitterMomentShare momentId='650667182356082688' />
     </div>
   )));
