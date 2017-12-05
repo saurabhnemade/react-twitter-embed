@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 const script = require('scriptjs');
@@ -7,11 +7,11 @@ script('https://platform.twitter.com/widgets.js', 'twitter-embed');
 
 export default class TwitterMomentShare extends Component {
   static propTypes = {
-    momentId:PropTypes.string,
-	options:PropTypes.object,
+    momentId: PropTypes.string,
+    options: PropTypes.object,
   };
 
-	componentDidMount() {
+  componentDidMount() {
     script.ready('twitter-embed', () => {
       if (!window.twttr) {
         console.error('Failure to load window.twttr, aborting load.');
@@ -24,11 +24,11 @@ export default class TwitterMomentShare extends Component {
         this.props.options
       );
     });
-	}
+  }
 
-	render() {
-      return (
-	    <div ref="shareMoment" />
-	  );
-	}
+  render() {
+    return (
+      <div ref="shareMoment" />
+    );
+  }
 }
