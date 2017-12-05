@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import { withInfo } from '@storybook/addon-info';
-import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton } from '../index';
+import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed } from '../index';
 
 storiesOf('Twitter Timeline Embed', module)
   .add('Timeline Profile (With Screen Name)', withInfo({
@@ -261,5 +261,16 @@ storiesOf('Twitter DM Button', module)
         options={{ size: 'large' }}
       />
     </div>
+  </div>
+)));
+
+storiesOf('Twitter Video Embed', module)
+.add('Twitter video Embed', withInfo({
+  text: 'Add a message button with user id',
+})(() => (
+  <div style={{ height: 400, width: 400 }}>
+    <TwitterVideoEmbed
+      id={'560070183650213889'}
+    />
   </div>
 )));
