@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import { withInfo } from '@storybook/addon-info';
-import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare } from '../index';
+import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton } from '../index';
 
 storiesOf('Twitter Timeline Embed', module)
   .add('Timeline Profile (With Screen Name)', withInfo({
@@ -237,6 +237,7 @@ storiesOf('Twitter Tweet Embed', module)
       />
     </div>
   )));
+
 storiesOf('Twitter Moment Share', module)
   .add('Moment Share', withInfo({
     text: 'Share Life Moment',
@@ -245,3 +246,20 @@ storiesOf('Twitter Moment Share', module)
       <TwitterMomentShare momentId="650667182356082688" />
     </div>
   )));
+
+storiesOf('Twitter DM Button', module)
+.add('Direct Message Button', withInfo({
+  text: 'Add a message button with user id',
+})(() => (
+  <div style={{ margin: 100 }}>
+    <div style={{ margin: 20 }}>
+      <TwitterDMButton id={1364031673} />
+    </div>
+    <div style={{ margin: 20 }}>
+      <TwitterDMButton
+        id={1364031673}
+        options={{ size: 'large' }}
+      />
+    </div>
+  </div>
+)));
