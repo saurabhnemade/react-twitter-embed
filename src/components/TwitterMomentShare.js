@@ -7,7 +7,13 @@ script('https://platform.twitter.com/widgets.js', 'twitter-embed');
 
 export default class TwitterMomentShare extends Component {
   static propTypes = {
+    /**
+     * id of Twitter moment to show
+     */
     momentId: PropTypes.string,
+    /**
+     * Additional options for overriding config.
+     */
     options: PropTypes.object,
   };
 
