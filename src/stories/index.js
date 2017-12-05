@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import { withInfo } from '@storybook/addon-info';
-import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed } from '../index';
+import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from '../index';
 
 storiesOf('Twitter Timeline Embed', module)
   .add('Timeline Profile (With Screen Name)', withInfo({
@@ -272,5 +272,22 @@ storiesOf('Twitter Video Embed', module)
     <TwitterVideoEmbed
       id={'560070183650213889'}
     />
+  </div>
+)));
+
+storiesOf('Twitter Periscope Button', module)
+.add('On Air button', withInfo({
+  text: 'Add on Air button with username. If user is broadcasting you will see Live in button.',
+})(() => (
+  <div style={{ margin: 100 }}>
+    <div style={{ margin: 20 }}>
+      <TwitterOnAirButton username={'KatmaiNPS'} />
+    </div>
+    <div style={{ margin: 20 }}>
+      <TwitterOnAirButton
+        username={'KatmaiNPS'}
+        options={{ size: 'large' }}
+      />
+    </div>
   </div>
 )));
