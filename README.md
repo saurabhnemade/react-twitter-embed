@@ -14,7 +14,7 @@ Simplest way to add Twitter Widgets to your react project.
 
 *Import in your view:*
 
-    import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton } from 'react-twitter-embed';
+    import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed } from 'react-twitter-embed';
 
 
 **Adding Timeline:**
@@ -67,6 +67,13 @@ Simplest way to add Twitter Widgets to your react project.
       <TwitterMomentShare
         id={1364031673}
       />
+
+ **Adding Twitter Video:**
+
+      <TwitterVideoEmbed
+        id={'560070183650213889'}
+      />
+      
 
 **LICENSE**: 
 
