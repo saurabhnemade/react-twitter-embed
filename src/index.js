@@ -4,6 +4,7 @@ import TwitterFollowButton from './components/TwitterFollowButton';
 import TwitterHashtagButton from './components/TwitterHashtagButton';
 import TwitterMentionButton from './components/TwitterMentionButton';
 import TwitterTweetEmbed from './components/TwitterTweetEmbed';
+import TwitterMomentShare from './components/TwitterMomentShare';
 
 export {
   TwitterTimelineEmbed,
@@ -12,4 +13,5 @@ export {
   TwitterHashtagButton,
   TwitterMentionButton,
   TwitterTweetEmbed,
+  TwitterMomentShare
 };
