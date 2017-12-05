@@ -10,7 +10,7 @@ export default class TwitterMomentShare extends Component {
     /**
      * id of Twitter moment to show
      */
-    momentId: PropTypes.string,
+    momentId: PropTypes.string.isRequired,
     /**
      * Additional options for overriding config.
      */
