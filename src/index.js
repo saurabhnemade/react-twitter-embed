@@ -6,6 +6,7 @@ import TwitterMentionButton from './components/TwitterMentionButton';
 import TwitterTweetEmbed from './components/TwitterTweetEmbed';
 import TwitterMomentShare from './components/TwitterMomentShare';
 import TwitterDMButton from './components/TwitterDMButton';
+import TwitterVideoEmbed from './components/TwitterVideoEmbed';
 
 export {
   TwitterTimelineEmbed,
@@ -16,4 +17,5 @@ export {
   TwitterTweetEmbed,
   TwitterMomentShare,
   TwitterDMButton,
+  TwitterVideoEmbed,
 };
