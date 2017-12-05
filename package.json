@@ -1,6 +1,6 @@
 {
   "name": "react-twitter-embed",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "React Twitter Embed Components",
   "main": "dist/index.js",
   "author": "Saurabh Nemade",
