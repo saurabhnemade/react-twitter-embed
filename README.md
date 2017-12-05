@@ -62,6 +62,12 @@ Simplest way to add Twitter Widgets to your react project.
         momentId={'650667182356082688'}
       />
 
+ **Adding Direct Messaging Button:**
+
+      <TwitterMomentShare
+        id={1364031673}
+      />
+
 **LICENSE**: 
 
 MIT License
