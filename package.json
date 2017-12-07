@@ -1,6 +1,6 @@
 {
   "name": "react-twitter-embed",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "React Twitter Embed Components",
   "main": "dist/index.js",
   "author": "Saurabh Nemade",
@@ -15,7 +15,7 @@
   "license": "MIT",
   "scripts": {
     "prepublish": ". ./.scripts/prepublish.sh",
-    "build": "set NODE_ENV=production&& babel src --presets babel-preset-es2015 --plugins transform-class-properties --out-dir dist",
+    "build": "export NODE_ENV=production&& babel src --presets babel-preset-es2015 --plugins transform-class-properties --out-dir dist",
     "lint": "eslint src",
     "lintfix": "eslint src --fix",
     "testonly": "mocha --require .scripts/mocha_runner src/**/tests/**/*.js",
