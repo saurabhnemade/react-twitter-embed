@@ -81,7 +81,11 @@ export default class TwitterTimelineEmbed extends Component {
         /**
          * Enable Transparancy
          */
-    transparent: PropTypes.bool
+    transparent: PropTypes.bool,
+        /**
+         * Custom language code. Supported codes here: https://developer.twitter.com/en/docs/twitter-for-websites/twitter-for-websites-supported-languages/overview.html
+         */
+    lang: PropTypes.string    
   };
 
   componentDidMount() {
@@ -107,6 +111,10 @@ export default class TwitterTimelineEmbed extends Component {
 
       if (this.props.borderColor) {
         options.borderColor=this.props.borderColor;
+      }
+
+      if (this.props.lang) {
+        options.lang = this.props.lang;
       }
 
       /** Append chrome options */
