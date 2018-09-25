@@ -59,6 +59,10 @@ export default class TwitterTimelineEmbed extends Component {
          */
     linkColor: PropTypes.string,
         /**
+         * With custom border colors. Note: Only Hex colors are supported.
+         */
+    borderColor: PropTypes.string,
+        /**
          * Hide the header from timeline
          */
     noHeader: PropTypes.bool,
@@ -92,6 +96,10 @@ export default class TwitterTimelineEmbed extends Component {
 
       if (this.props.linkColor) {
         options.linkColor=this.props.linkColor;
+      }
+
+      if (this.props.borderColor) {
+        options.borderColor=this.props.borderColor;
       }
 
       /** Append chrome options */
