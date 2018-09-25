@@ -284,6 +284,29 @@ storiesOf('Twitter Timeline Embed', module)
         />
       </div>     
     </div>
+  )))
+  .add('Timeline with noborder', withInfo({
+    text: 'Timeline with noborder',
+  })(() => (
+    <div style= {{ display: 'flex', maxHeight: 300}}>
+      <div style={{ width: 250, height: 200, margin: 20 }}>
+        <TwitterTimelineEmbed
+          sourceType={'timeline'}
+          id={'539487832448843776'}
+          options={{height: 400}}
+          theme={'dark'}
+        />
+      </div>
+      <div style={{ width: 250, height: 200, margin: 20 }}>
+        <TwitterTimelineEmbed
+          sourceType={'timeline'}
+          id={'539487832448843776'}
+          theme={'dark'}
+          options={{height: 400}}
+          noBorders
+        />
+      </div>     
+    </div>
   )));
 
 storiesOf('Twitter Share button', module)
