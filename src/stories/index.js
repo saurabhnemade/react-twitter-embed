@@ -362,7 +362,7 @@ storiesOf('Twitter Timeline Embed', module)
     </div>
   )))
   .add('Timeline with transparent background', withInfo({
-    text: 'Timeline with transparent background',
+    text: 'Timeline with transparent background example',
   })(() => (
     <div style= {{ display: 'flex', maxHeight: 300}}>
       <div style={{ width: 250, height: 200, margin: 20 }}>
@@ -382,6 +382,39 @@ storiesOf('Twitter Timeline Embed', module)
           transparent
         />
       </div>     
+    </div>
+  )))
+  .add('Timeline with custom language', withInfo({
+    text: 'Timeline with custom language example',
+  })(() => (
+    <div style= {{ display: 'flex', maxHeight: 300}}>
+      <div style={{ width: 250, height: 200, margin: 20 }}>
+        <TwitterTimelineEmbed
+          sourceType={'timeline'}
+          id={'539487832448843776'}
+          options={{height: 400}}
+          theme={'dark'}
+          lang={'hi'}
+        />
+      </div>
+      <div style={{ width: 250, height: 200, margin: 20 }}>
+        <TwitterTimelineEmbed
+          sourceType={'timeline'}
+          id={'539487832448843776'}
+          theme={'dark'}
+          options={{height: 400}}
+          lang={'es'}
+        />
+      </div>
+      <div style={{ width: 250, height: 200, margin: 20 }}>
+        <TwitterTimelineEmbed
+          sourceType={'timeline'}
+          id={'539487832448843776'}
+          theme={'dark'}
+          options={{height: 400}}
+          lang={'fr'}
+        />
+      </div>           
     </div>
   )));
 
