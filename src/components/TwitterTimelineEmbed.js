@@ -66,7 +66,11 @@ export default class TwitterTimelineEmbed extends Component {
         /**
          * Hide the footer from timeline
          */
-    noFooter: PropTypes.bool
+    noFooter: PropTypes.bool,
+        /**
+         * Hide the border from timeline
+         */
+    noBorders: PropTypes.bool
   };
 
   componentDidMount() {
@@ -99,6 +103,10 @@ export default class TwitterTimelineEmbed extends Component {
 
       if (this.props.noFooter) {
         options.chrome = options.chrome + ' nofooter';
+      }
+
+      if (this.props.noBorders) {
+        options.chrome = options.chrome + ' noborders';
       }
 
       window.twttr.widgets.createTimeline(
