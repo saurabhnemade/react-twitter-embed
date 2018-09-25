@@ -133,7 +133,7 @@ storiesOf('Twitter Timeline Embed', module)
     <div style={{ width: 250, height: 600 }}>
       <TwitterTimelineEmbed
         sourceType={'widget'}
-        widgetId={'936304851348111360'}
+        widgetId={'539487832448843776'}
         options={{ height: 400 }}
       />
     </div>
@@ -145,21 +145,21 @@ storiesOf('Twitter Timeline Embed', module)
       <div style={{ width: 250, height: 200, margin: 20 }}>
         <TwitterTimelineEmbed
           sourceType={'widget'}
-          widgetId={'936304851348111360'}
+          widgetId={'539487832448843776'}
           autoHeight
         />
       </div>
       <div style={{ width: 250, height: 300, margin: 20 }}>
         <TwitterTimelineEmbed
           sourceType={'widget'}
-          widgetId={'936304851348111360'}
+          widgetId={'539487832448843776'}
           autoHeight
         />
       </div>
       <div style={{ width: 250, height: 250, margin: 20 }}>
         <TwitterTimelineEmbed
           sourceType={'widget'}
-          widgetId={'936304851348111360'}
+          widgetId={'539487832448843776'}
           autoHeight
         />
       </div>

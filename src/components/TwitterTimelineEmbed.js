@@ -72,9 +72,8 @@ export default class TwitterTimelineEmbed extends Component {
           userId: this.props.userId,
           ownerScreenName: this.props.ownerScreenName,
           slug: this.props.slug,
-          id: this.props.id,
-          url: this.props.url,
-          widgetId: this.props.widgetId,
+          id: this.props.id || this.props.widgetId,
+          url: this.props.url
         },
         this.refs.embedContainer,
         options
