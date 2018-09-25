@@ -50,6 +50,10 @@ export default class TwitterTimelineEmbed extends Component {
          * Automatically fit into parent container height
          */
     autoHeight: PropTypes.bool,
+        /**
+         * With dark or light theme
+         */
+    theme: isRequiredIf(PropTypes.oneOf(['dark','light']))
   };
 
   componentDidMount() {
@@ -63,6 +67,10 @@ export default class TwitterTimelineEmbed extends Component {
 
       if (this.props.autoHeight) {
         options.height = this.refs.embedContainer.parentNode.offsetHeight;
+      }
+
+      if (this.props.theme) {
+        options.theme = this.props.theme;
       }
 
       window.twttr.widgets.createTimeline(
@@ -83,7 +91,7 @@ export default class TwitterTimelineEmbed extends Component {
 
   render() {
     return (
-      <div ref="embedContainer" />
+      <div ref="embedContainer"/>
     );
   }
 }
