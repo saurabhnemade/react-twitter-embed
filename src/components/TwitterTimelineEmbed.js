@@ -66,7 +66,6 @@ export default class TwitterTimelineEmbed extends Component {
          * Hide the header from timeline
          */
     noHeader: PropTypes.bool,
-
         /**
          * Hide the footer from timeline
          */
@@ -79,6 +78,10 @@ export default class TwitterTimelineEmbed extends Component {
          * Hide the scrollbars
          */
     noScrollbar: PropTypes.bool,
+        /**
+         * Enable Transparancy
+         */
+    transparent: PropTypes.bool
   };
 
   componentDidMount() {
@@ -123,6 +126,10 @@ export default class TwitterTimelineEmbed extends Component {
 
       if (this.props.noScrollbar) {
         options.chrome = options.chrome + ' noscrollbar';
+      }
+      
+      if (this.props.transparent) {
+        options.chrome = options.chrome + ' transparent';
       }
 
       window.twttr.widgets.createTimeline(
