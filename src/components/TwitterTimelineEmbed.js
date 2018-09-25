@@ -53,7 +53,11 @@ export default class TwitterTimelineEmbed extends Component {
         /**
          * With dark or light theme
          */
-    theme: isRequiredIf(PropTypes.oneOf(['dark','light']))
+    theme: PropTypes.oneOf(['dark','light']),
+        /**
+         * With custom link colors. Note: Only Hex colors are supported.
+         */
+    linkColor: PropTypes.string
   };
 
   componentDidMount() {
@@ -71,6 +75,10 @@ export default class TwitterTimelineEmbed extends Component {
 
       if (this.props.theme) {
         options.theme = this.props.theme;
+      }
+
+      if (this.props.linkColor) {
+        options.linkColor=this.props.linkColor;
       }
 
       window.twttr.widgets.createTimeline(
