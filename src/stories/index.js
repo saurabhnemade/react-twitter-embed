@@ -190,6 +190,36 @@ storiesOf('Twitter Timeline Embed', module)
         />
       </div>
     </div>
+  )))
+  .add('Timeline custom link color', withInfo({
+    text: 'Timeline custom link color example',
+  })(() => (
+    <div style={{ display: 'flex' }}>
+      <div style={{ width: 250, height: 200, margin: 20 }}>
+        <TwitterTimelineEmbed
+          sourceType={'timeline'}
+          id={'539487832448843776'}
+          linkColor={'#F44336'}
+          theme={'dark'}
+        />
+      </div>
+      <div style={{ width: 250, height: 200, margin: 20 }}>
+        <TwitterTimelineEmbed
+          sourceType={'timeline'}
+          id={'539487832448843776'}
+          linkColor={'#CDDC39'}
+          theme={'dark'}
+        />
+      </div>  
+      <div style={{ width: 250, height: 200, margin: 20 }}>
+        <TwitterTimelineEmbed
+          sourceType={'timeline'}
+          id={'539487832448843776'}
+          linkColor={'#4CAF50'}
+          theme={'dark'}
+        />        
+      </div>      
+    </div>
   )));
 
 storiesOf('Twitter Share button', module)
