@@ -164,6 +164,19 @@ storiesOf('Twitter Timeline Embed', module)
         />
       </div>
     </div>
+  )))
+  .add('Timeline dark Theme', withInfo({
+    text: 'Timeline dark Theme example',
+  })(() => (
+    <div style={{ display: 'flex' }}>
+      <div style={{ width: 250, height: 200, margin: 20 }}>
+        <TwitterTimelineEmbed
+          sourceType={'timeline'}
+          id={'539487832448843776'}
+          theme={'dark'}
+        />
+      </div>
+    </div>
   )));
 
 storiesOf('Twitter Share button', module)
