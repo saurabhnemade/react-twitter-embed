@@ -57,7 +57,11 @@ export default class TwitterTimelineEmbed extends Component {
         /**
          * With custom link colors. Note: Only Hex colors are supported.
          */
-    linkColor: PropTypes.string
+    linkColor: PropTypes.string,
+        /**
+         * Hide the header from timeline
+         */
+    noHeader: PropTypes.bool
   };
 
   componentDidMount() {
@@ -79,6 +83,13 @@ export default class TwitterTimelineEmbed extends Component {
 
       if (this.props.linkColor) {
         options.linkColor=this.props.linkColor;
+      }
+
+      /** Append chrome options */
+      options.chrome = '';
+
+      if (this.props.noHeader) {
+        options.chrome = options.chrome + ' noheader';
       }
 
       window.twttr.widgets.createTimeline(
