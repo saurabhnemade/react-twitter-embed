@@ -241,6 +241,49 @@ storiesOf('Twitter Timeline Embed', module)
         />
       </div>     
     </div>
+  )))
+  .add('Timeline noFooter options', withInfo({
+    text: 'Timeline noFooter options example',
+  })(() => (
+    <div style={{ display: 'flex' }}>
+      <div style={{ width: 250, height: 200, margin: 20 }}>
+        <TwitterTimelineEmbed
+          sourceType={'timeline'}
+          id={'539487832448843776'}
+          theme={'dark'}
+        />
+      </div>
+      <div style={{ width: 250, height: 200, margin: 20 }}>
+        <TwitterTimelineEmbed
+          sourceType={'timeline'}
+          id={'539487832448843776'}
+          theme={'dark'}
+          noFooter
+        />
+      </div>
+    </div>
+  )))
+  .add('Timeline noHeader & noFooter options', withInfo({
+    text: 'Timeline noHeader & noFooter options example',
+  })(() => (
+    <div style={{ display: 'flex' }}>
+      <div style={{ width: 250, height: 200, margin: 20 }}>
+        <TwitterTimelineEmbed
+          sourceType={'timeline'}
+          id={'539487832448843776'}
+          theme={'dark'}
+        />
+      </div>
+      <div style={{ width: 250, height: 200, margin: 20 }}>
+        <TwitterTimelineEmbed
+          sourceType={'timeline'}
+          id={'539487832448843776'}
+          theme={'dark'}
+          noHeader
+          noFooter
+        />
+      </div>     
+    </div>
   )));
 
 storiesOf('Twitter Share button', module)
