@@ -80,6 +80,10 @@ Simplest way to add Twitter Widgets to your react project.
         id={'560070183650213889'}
       />
 
+ **Explore All Options by Twitter Widgets API:**
+ 
+      https://developer.twitter.com/en/docs/twitter-for-websites/javascript-api/overview
+
 **LICENSE**: 
 
 MIT License
