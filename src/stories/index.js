@@ -78,7 +78,7 @@ storiesOf('Twitter Timeline Embed', module)
     <div style={{ width: 250, height: 600 }}>
       <TwitterTimelineEmbed
         sourceType={'collection'}
-        id={'588824628950269952'}
+        id={'576828964162965504'}
         options={{ height: 400 }}
       />
     </div>
