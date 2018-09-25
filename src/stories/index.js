@@ -221,6 +221,36 @@ storiesOf('Twitter Timeline Embed', module)
       </div>      
     </div>
   )))
+  .add('Timeline custom border color', withInfo({
+    text: 'Timeline custom border color example',
+  })(() => (
+    <div style={{ display: 'flex' }}>
+      <div style={{ width: 250, height: 200, margin: 20 }}>
+        <TwitterTimelineEmbed
+          sourceType={'timeline'}
+          id={'539487832448843776'}
+          borderColor={'#F44336'}
+          theme={'dark'}
+        />
+      </div>
+      <div style={{ width: 250, height: 200, margin: 20 }}>
+        <TwitterTimelineEmbed
+          sourceType={'timeline'}
+          id={'539487832448843776'}
+          borderColor={'#CDDC39'}
+          theme={'dark'}
+        />
+      </div>  
+      <div style={{ width: 250, height: 200, margin: 20 }}>
+        <TwitterTimelineEmbed
+          sourceType={'timeline'}
+          id={'539487832448843776'}
+          borderColor={'#4CAF50'}
+          theme={'dark'}
+        />        
+      </div>      
+    </div>
+  )))
   .add('Timeline noHeader options', withInfo({
     text: 'Timeline noHeader options example',
   })(() => (
