@@ -24,12 +24,18 @@ export default class TwitterMomentShare extends Component {
         return;
       }
 
-      window.twttr.widgets.createMoment(
-        this.props.momentId,
-        this.refs.shareMoment,
-        this.props.options
-      );
+      if (!this.isMountCanceled) {
+        window.twttr.widgets.createMoment(
+          this.props.momentId,
+          this.refs.shareMoment,
+          this.props.options
+        );
+      }
     });
+  }
+
+  componentWillUnmount() {
+    this.isMountCanceled = true;
   }
 
   render() {
