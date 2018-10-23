@@ -24,12 +24,18 @@ export default class TwitterMentionButton extends Component {
         return;
       }
 
-      window.twttr.widgets.createMentionButton(
-        this.props.screenName,
-        this.refs.embedContainer,
-        this.props.options
-      );
+      if (!this.isMountCanceled) {
+        window.twttr.widgets.createMentionButton(
+          this.props.screenName,
+          this.refs.embedContainer,
+          this.props.options
+        );
+      }
     });
+  }
+
+  componentWillUnmount() {
+    this.isMountCanceled = true;
   }
 
   render() {
