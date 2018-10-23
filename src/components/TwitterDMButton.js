@@ -24,13 +24,19 @@ export default class TwitterDMButton extends Component {
         return;
       }
 
-      window.twttr.widgets.createDMButton(
-        this.props.id,
-        this.refs.embedContainer,
-        this.props.options
-      );
+      if (!this.isMountCanceled) {
+        window.twttr.widgets.createDMButton(
+          this.props.id,
+          this.refs.embedContainer,
+          this.props.options
+        );
+      }
     });
   }
+
+  componentWillUnmount() {
+    this.isMountCanceled = true;
+  }  
 
   render() {
     return (
