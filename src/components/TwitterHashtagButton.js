@@ -24,12 +24,18 @@ export default class TwitterHashtagButton extends Component {
         return;
       }
 
-      window.twttr.widgets.createHashtagButton(
-                this.props.tag,
-                this.refs.embedContainer,
-                this.props.options
-            );
+      if (!this.isMountCanceled) {
+        window.twttr.widgets.createHashtagButton(
+                  this.props.tag,
+                  this.refs.embedContainer,
+                  this.props.options
+              );
+      }
     });
+  }
+
+  componentWillUnmount() {
+    this.isMountCanceled = true;
   }
 
   render() {
