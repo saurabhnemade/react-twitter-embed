@@ -1,7 +1,7 @@
 
 # React Twitter Embed Component
 
-[![NPM](https://img.shields.io/npm/v/react-twitter-embed.svg)](https://www.npmjs.com/package/react-twitter-embed) [![Storybook](https://github.com/storybooks/press/blob/master/badges/storybook.svg)](https://saurabhnemade.github.io/react-twitter-embed/) [![Build Status](https://travis-ci.org/saurabhnemade/react-twitter-embed.svg?branch=storybook-migration)](https://travis-ci.org/saurabhnemade/react-twitter-embed) [![Known Vulnerabilities](https://snyk.io/test/github/saurabhnemade/react-twitter-embed/badge.svg)](https://snyk.io/test/github/saurabhnemade/react-twitter-embed) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/react-twitter-embed.svg)](https://www.npmjs.com/package/react-twitter-embed) [![Storybook](https://github.com/storybooks/press/blob/master/badges/storybook.svg)](https://saurabhnemade.github.io/react-twitter-embed/) [![Build Status](https://travis-ci.org/saurabhnemade/react-twitter-embed.svg?branch=storybook-migration)](https://travis-ci.org/saurabhnemade/react-twitter-embed) [![Known Vulnerabilities](https://snyk.io/test/github/saurabhnemade/react-twitter-embed/badge.svg)](https://snyk.io/test/github/saurabhnemade/react-twitter-embed) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://raw.githubusercontent.com/saurabhnemade/react-twitter-embed/master/LICENSE)
 
 
 React Twitter Embed Component
