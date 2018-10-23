@@ -20,11 +20,17 @@ export default class TwitterVideoEmbed extends Component {
         return;
       }
 
-      window.twttr.widgets.createVideo(
-        this.props.id,
-        this.refs.embedContainer
-      );
+      if (!this.isMountCanceled) {
+        window.twttr.widgets.createVideo(
+          this.props.id,
+          this.refs.embedContainer
+        );
+      }
     });
+  }
+
+  componentWillUnmount() {
+    this.isMountCanceled = true;
   }
 
   render() {

@@ -23,15 +23,21 @@ export default class TwitterFollowButton extends Component {
         console.error('Failure to load window.twttr, aborting load.');
         return;
       }
-
-      window.twttr.widgets.createFollowButton(
-                this.props.screenName,
-                this.refs.embedContainer,
-                this.props.options
-            );
+      
+      if (!this.isMountCanceled) {
+        window.twttr.widgets.createFollowButton(
+                  this.props.screenName,
+                  this.refs.embedContainer,
+                  this.props.options
+              );
+      }
     });
   }
 
+  componentWillUnmount() {
+    this.isMountCanceled = true;
+  }
+  
   render() {
     return (
       <div ref="embedContainer" />

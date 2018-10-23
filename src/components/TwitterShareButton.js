@@ -24,12 +24,18 @@ export default class TwitterShareButton extends Component {
         return;
       }
 
-      window.twttr.widgets.createShareButton(
-                this.props.url,
-                this.refs.embedContainer,
-                this.props.options
-            );
+      if (!this.isMountCanceled) {
+        window.twttr.widgets.createShareButton(
+                  this.props.url,
+                  this.refs.embedContainer,
+                  this.props.options
+              );
+      }
     });
+  }
+
+  componentWillUnmount() {
+    this.isMountCanceled = true;
   }
 
   render() {
