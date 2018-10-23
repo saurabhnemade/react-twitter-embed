@@ -36,7 +36,7 @@ export default class TwitterShareButton extends Component {
 
   componentWillUnmount() {
     this.isMountCanceled = true;
-  }  
+  }
 
   render() {
     return (

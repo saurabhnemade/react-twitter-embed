@@ -140,20 +140,26 @@ export default class TwitterTimelineEmbed extends Component {
         options.chrome = options.chrome + ' transparent';
       }
 
-      window.twttr.widgets.createTimeline(
-        {
-          sourceType: this.props.sourceType,
-          screenName: this.props.screenName,
-          userId: this.props.userId,
-          ownerScreenName: this.props.ownerScreenName,
-          slug: this.props.slug,
-          id: this.props.id || this.props.widgetId,
-          url: this.props.url
-        },
-        this.refs.embedContainer,
-        options
-      );
+      if (!this.isMountCanceled) {
+        window.twttr.widgets.createTimeline(
+          {
+            sourceType: this.props.sourceType,
+            screenName: this.props.screenName,
+            userId: this.props.userId,
+            ownerScreenName: this.props.ownerScreenName,
+            slug: this.props.slug,
+            id: this.props.id || this.props.widgetId,
+            url: this.props.url
+          },
+          this.refs.embedContainer,
+          options
+        );
+      }
     });
+  }
+
+  componentWillUnmount() {
+    this.isMountCanceled = true;
   }
 
   render() {
