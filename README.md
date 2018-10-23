@@ -1,21 +1,28 @@
+
 # React Twitter Embed Component
+
+[![NPM](https://img.shields.io/npm/v/react-twitter-embed.svg)](https://www.npmjs.com/package/react-twitter-embed) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![Storybook](https://github.com/storybooks/press/blob/master/badges/storybook.svg)](https://saurabhnemade.github.io/react-twitter-embed/)
+
 
 React Twitter Embed Component
 
 Simplest way to add Twitter Widgets to your react project.
 
-**Demo and Examples :** https://saurabhnemade.github.io/react-twitter-embed/
+## Demo and Examples 
+https://saurabhnemade.github.io/react-twitter-embed/
 
-**Installation:** 
 
-    npm install --save react-twitter-embed
+## Install
 
-**Sample Example:**
+```bash
+npm install --save react-twitter-embed
+```
 
-*Import in your view:*
+## Usage
 
-    import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
-
+```jsx
+import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
+```
 
 **Adding Timeline:**
    
@@ -84,9 +91,10 @@ Simplest way to add Twitter Widgets to your react project.
  
       https://developer.twitter.com/en/docs/twitter-for-websites/javascript-api/overview
 
-**LICENSE**: 
 
-MIT License
+## License
+
+MIT © [saurabhnemade](https://github.com/saurabhnemade)
 
 Copyright (c) 2018 
 
@@ -107,3 +115,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+

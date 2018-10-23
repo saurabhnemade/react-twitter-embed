@@ -1,19 +1,15 @@
-// IMPORTANT
-// ---------
-// This is an auto generated file with React CDK.
-// Do not modify this file.
+import { addDecorator, configure } from '@storybook/react';
+import { setOptions } from '@storybook/addon-options';
 
-import { configure } from '@kadira/storybook';
-import { setDefaults } from '@storybook/addon-info';
-
-setDefaults({
+setOptions({
+  name: 'React Twitter Embed',  
+  url: '#',
+  showStoriesPanel: true,
+  showAddonPanel: true,
   header: false, // Toggles display of header with component name and description
   inline: false, // Displays info inline vs click button to view
   source: true,
 });
 
-function loadStories() {
-  require('../src/stories');
-}
+configure(() => require('../src/stories'), module);
 
-configure(loadStories, module);

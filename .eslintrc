@@ -1,30 +1,23 @@
 {
-  "extends": "airbnb",
   "parser": "babel-eslint",
-  "globals": {
-    "window": true
+  "extends": [
+    "standard",
+    "standard-react"
+  ],
+  "env": {
+    "es6": true
+  },
+  "plugins": [
+    "react"
+  ],
+  "parserOptions": {
+    "sourceType": "module"
   },
   "rules": {
-    # We use _ to define private variables and methods in clases
-    "no-underscore-dangle": 0,
-    # This seems to be buggy we don't want eslint to check this
-    "import/no-extraneous-dependencies": 0,
-    # This is a depricated rule. So we turned off it.
-    "react/require-extension": 0,
-    # We can write JSX in anyfile we want.
-    "react/jsx-filename-extension": 0,
-    # We don't like this rule.
-    "arrow-body-style": 0,
-    # We don't like this rule. We write arrow functions only when we needed.
-    "prefer-arrow-callback": 0,
-    # We don't need to write function names always.
-    "func-names": 0,
-    # propTypes can be object
-    "react/forbid-prop-types": 0,
-    # allow stateles function
-    "react/prefer-stateless-function": 0,
-    "react/no-string-refs": 0,
-    "no-prototype-builtins": 0,
-    "no-console": 0
-  },
+    // don't force es6 functions to include space before paren
+    "space-before-function-paren": 0,
+
+    // allow specifying true explicitly for boolean props
+    "react/jsx-boolean-value": 0
+  }
 }
