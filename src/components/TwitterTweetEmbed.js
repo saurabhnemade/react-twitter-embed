@@ -24,12 +24,18 @@ export default class TwitterTweetEmbed extends Component {
         return;
       }
 
-      window.twttr.widgets.createTweet(
-        this.props.tweetId,
-        this.refs.embedContainer,
-        this.props.options
-      );
+      if (!this.isMountCanceled) {
+        window.twttr.widgets.createTweet(
+          this.props.tweetId,
+          this.refs.embedContainer,
+          this.props.options
+        );
+      }
     });
+  }
+
+  componentWillUnmount() {
+    this.isMountCanceled = true;
   }
 
   render() {
