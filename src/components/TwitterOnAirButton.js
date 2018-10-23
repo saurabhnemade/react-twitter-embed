@@ -24,12 +24,18 @@ export default class TwitterOnAirButton extends Component {
         return;
       }
 
-      window.twttr.widgets.createPeriscopeOnAirButton(
-        this.props.username,
-        this.refs.embedContainer,
-        this.props.options
-      );
+      if (!this.isMountCanceled) {
+        window.twttr.widgets.createPeriscopeOnAirButton(
+          this.props.username,
+          this.refs.embedContainer,
+          this.props.options
+        );
+      }
     });
+  }
+
+  componentWillUnmount() {
+    this.isMountCanceled = true;
   }
 
   render() {
