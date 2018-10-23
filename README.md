@@ -1,7 +1,7 @@
 
 # React Twitter Embed Component
 
-[![NPM](https://img.shields.io/npm/v/react-twitter-embed.svg)](https://www.npmjs.com/package/react-twitter-embed) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![Storybook](https://github.com/storybooks/press/blob/master/badges/storybook.svg)](https://saurabhnemade.github.io/react-twitter-embed/)
+[![NPM](https://img.shields.io/npm/v/react-twitter-embed.svg)](https://www.npmjs.com/package/react-twitter-embed) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![Storybook](https://github.com/storybooks/press/blob/master/badges/storybook.svg)](https://saurabhnemade.github.io/react-twitter-embed/) [![Known Vulnerabilities](https://snyk.io/test/github/saurabhnemade/react-twitter-embed/badge.svg)](https://snyk.io/test/github/saurabhnemade/react-twitter-embed)
 
 
 React Twitter Embed Component
