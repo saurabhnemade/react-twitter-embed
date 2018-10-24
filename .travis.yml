@@ -3,6 +3,11 @@ node_js:
   - 8
 
 after_success:
+  - npm adduser --registry=https://registry.npmjs.org/ <<!
+$NPM_USER
+$NPM_TOKEN
+$NPM_EMAIL
+!
   - npm install
   - npm run build-storybook
   - test $TRAVIS_BRANCH = "storybook-migration" &&
