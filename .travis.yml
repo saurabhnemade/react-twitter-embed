@@ -6,13 +6,12 @@ after_success:
   - npm install -g rollup
   - npm install
   - npm run build-storybook
-  - test $TRAVIS_BRANCH = "storybook-migration" &&
-    npm publish
 
 deploy:
 - provider: npm
   email: $NPM_EMAIL
   api_key: $NPM_TOKEN
+  skip_cleanup: true
   on:
     branch: storybook-migration
 - provider: pages
