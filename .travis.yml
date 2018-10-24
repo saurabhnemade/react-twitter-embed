@@ -13,10 +13,22 @@ deploy:
   api_key: $NPM_TOKEN
   skip_cleanup: true
   on:
-    branch: storybook-migration
+    branch: master
 - provider: pages
   skip_cleanup: true
   github_token: $GH_TOKEN
   local_dir: storybook-static
   on:
-    branch: storybook-migration
+    branch: master
+
+after_success:
+  - npm version patch
+  - npm version patch -m "Bumping to %s"
+  - git push --all
+
+notifications:
+  email:
+    recipients:
+    - saurabhnemade@yandex.com
+    on_success: always
+    on_failure: always
