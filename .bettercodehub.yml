@@ -1,0 +1,5 @@
+component_depth: 1
+languages:
+- javascript
+exclude:
+- /rollup.config.js
