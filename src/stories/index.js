@@ -1,11 +1,15 @@
-import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
-import { withInfo } from '@storybook/addon-info';
-import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from '../index';
+import React from 'react'
+
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
+import { action } from '@storybook/addon-actions'
+// import { linkTo } from '@storybook/addon-links'
+
+import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from '../index'
 
 storiesOf('Twitter Timeline Embed', module)
   .add('Timeline Profile (With Screen Name)', withInfo({
-    text: 'Watch twitter user timeline with given username',
+    text: 'Watch twitter user timeline with given username'
   })(() => (
     <div style={{ width: 250, height: 600 }}>
       <TwitterTimelineEmbed
@@ -17,7 +21,7 @@ storiesOf('Twitter Timeline Embed', module)
     </div>
   )))
   .add('Timeline Profile (With userId)', withInfo({
-    text: 'Timeline with given userId',
+    text: 'Timeline with given userId'
   })(() => (
     <div style={{ width: 250, height: 600 }}>
       <TwitterTimelineEmbed
@@ -28,7 +32,7 @@ storiesOf('Twitter Timeline Embed', module)
     </div>
   )))
   .add('Timeline Likes (With screenName)', withInfo({
-    text: 'Timeline Likes example with given username',
+    text: 'Timeline Likes example with given username'
   })(() => (
     <div style={{ width: 250, height: 600 }}>
       <TwitterTimelineEmbed
@@ -39,7 +43,7 @@ storiesOf('Twitter Timeline Embed', module)
     </div>
   )))
   .add('Timeline Likes (With userId)', withInfo({
-    text: 'Timeline Likes example with given user id',
+    text: 'Timeline Likes example with given user id'
   })(() => (
     <div style={{ width: 250, height: 600 }}>
       <TwitterTimelineEmbed
@@ -50,7 +54,7 @@ storiesOf('Twitter Timeline Embed', module)
     </div>
   )))
   .add('Timeline List (With screenName and slug)', withInfo({
-    text: 'Timeline Likes example with given screename and slug',
+    text: 'Timeline Likes example with given screename and slug'
   })(() => (
     <div style={{ width: 250, height: 600 }}>
       <TwitterTimelineEmbed
@@ -62,7 +66,7 @@ storiesOf('Twitter Timeline Embed', module)
     </div>
   )))
   .add('Timeline List (With list id)', withInfo({
-    text: 'Timeline List example with given list id',
+    text: 'Timeline List example with given list id'
   })(() => (
     <div style={{ width: 250, height: 600 }}>
       <TwitterTimelineEmbed
@@ -73,7 +77,7 @@ storiesOf('Twitter Timeline Embed', module)
     </div>
   )))
   .add('Timeline collection', withInfo({
-    text: 'Timeline collection example with given collection id',
+    text: 'Timeline collection example with given collection id'
   })(() => (
     <div style={{ width: 250, height: 600 }}>
       <TwitterTimelineEmbed
@@ -84,7 +88,7 @@ storiesOf('Twitter Timeline Embed', module)
     </div>
   )))
   .add('Timeline url (with collection url)', withInfo({
-    text: 'Timeline url example with given collection url',
+    text: 'Timeline url example with given collection url'
   })(() => (
     <div style={{ width: 250, height: 600 }}>
       <TwitterTimelineEmbed
@@ -95,7 +99,7 @@ storiesOf('Twitter Timeline Embed', module)
     </div>
   )))
   .add('Timeline url (with profile url)', withInfo({
-    text: 'Timeline url example with given profile url',
+    text: 'Timeline url example with given profile url'
   })(() => (
     <div style={{ width: 250, height: 600 }}>
       <TwitterTimelineEmbed
@@ -106,7 +110,7 @@ storiesOf('Twitter Timeline Embed', module)
     </div>
   )))
   .add('Timeline url (with list url)', withInfo({
-    text: 'Timeline url example with given list url',
+    text: 'Timeline url example with given list url'
   })(() => (
     <div style={{ width: 250, height: 600 }}>
       <TwitterTimelineEmbed
@@ -117,7 +121,7 @@ storiesOf('Twitter Timeline Embed', module)
     </div>
   )))
   .add('Timeline url (with likes url)', withInfo({
-    text: 'Timeline url example with given likes url',
+    text: 'Timeline url example with given likes url'
   })(() => (
     <div style={{ width: 250, height: 600 }}>
       <TwitterTimelineEmbed
@@ -128,7 +132,7 @@ storiesOf('Twitter Timeline Embed', module)
     </div>
   )))
   .add('Timeline widget', withInfo({
-    text: 'Timeline widget example with a valid given widget id',
+    text: 'Timeline widget example with a valid given widget id'
   })(() => (
     <div style={{ width: 250, height: 600 }}>
       <TwitterTimelineEmbed
@@ -139,7 +143,7 @@ storiesOf('Twitter Timeline Embed', module)
     </div>
   )))
   .add('Timeline Autoheight', withInfo({
-    text: 'Timeline autoheight example',
+    text: 'Timeline autoheight example'
   })(() => (
     <div style={{ display: 'flex' }}>
       <div style={{ width: 250, height: 200, margin: 20 }}>
@@ -166,7 +170,7 @@ storiesOf('Twitter Timeline Embed', module)
     </div>
   )))
   .add('Timeline dark Theme', withInfo({
-    text: 'Timeline dark Theme example',
+    text: 'Timeline dark Theme example'
   })(() => (
     <div style={{ display: 'flex' }}>
       <div style={{ width: 250, height: 200, margin: 20 }}>
@@ -179,7 +183,7 @@ storiesOf('Twitter Timeline Embed', module)
     </div>
   )))
   .add('Timeline light Theme', withInfo({
-    text: 'Timeline light Theme example',
+    text: 'Timeline light Theme example'
   })(() => (
     <div style={{ display: 'flex' }}>
       <div style={{ width: 250, height: 200, margin: 20 }}>
@@ -192,7 +196,7 @@ storiesOf('Twitter Timeline Embed', module)
     </div>
   )))
   .add('Timeline custom link color', withInfo({
-    text: 'Timeline custom link color example',
+    text: 'Timeline custom link color example'
   })(() => (
     <div style={{ display: 'flex' }}>
       <div style={{ width: 250, height: 200, margin: 20 }}>
@@ -210,19 +214,19 @@ storiesOf('Twitter Timeline Embed', module)
           linkColor={'#CDDC39'}
           theme={'dark'}
         />
-      </div>  
+      </div>
       <div style={{ width: 250, height: 200, margin: 20 }}>
         <TwitterTimelineEmbed
           sourceType={'timeline'}
           id={'539487832448843776'}
           linkColor={'#4CAF50'}
           theme={'dark'}
-        />        
-      </div>      
+        />
+      </div>
     </div>
   )))
   .add('Timeline custom border color', withInfo({
-    text: 'Timeline custom border color example',
+    text: 'Timeline custom border color example'
   })(() => (
     <div style={{ display: 'flex' }}>
       <div style={{ width: 250, height: 200, margin: 20 }}>
@@ -240,19 +244,19 @@ storiesOf('Twitter Timeline Embed', module)
           borderColor={'#CDDC39'}
           theme={'dark'}
         />
-      </div>  
+      </div>
       <div style={{ width: 250, height: 200, margin: 20 }}>
         <TwitterTimelineEmbed
           sourceType={'timeline'}
           id={'539487832448843776'}
           borderColor={'#4CAF50'}
           theme={'dark'}
-        />        
-      </div>      
+        />
+      </div>
     </div>
   )))
   .add('Timeline noHeader options', withInfo({
-    text: 'Timeline noHeader options example',
+    text: 'Timeline noHeader options example'
   })(() => (
     <div style={{ display: 'flex' }}>
       <div style={{ width: 250, height: 200, margin: 20 }}>
@@ -269,11 +273,11 @@ storiesOf('Twitter Timeline Embed', module)
           theme={'dark'}
           noHeader
         />
-      </div>     
+      </div>
     </div>
   )))
   .add('Timeline noFooter options', withInfo({
-    text: 'Timeline noFooter options example',
+    text: 'Timeline noFooter options example'
   })(() => (
     <div style={{ display: 'flex' }}>
       <div style={{ width: 250, height: 200, margin: 20 }}>
@@ -294,7 +298,7 @@ storiesOf('Twitter Timeline Embed', module)
     </div>
   )))
   .add('Timeline noHeader & noFooter options', withInfo({
-    text: 'Timeline noHeader & noFooter options example',
+    text: 'Timeline noHeader & noFooter options example'
   })(() => (
     <div style={{ display: 'flex' }}>
       <div style={{ width: 250, height: 200, margin: 20 }}>
@@ -312,13 +316,13 @@ storiesOf('Twitter Timeline Embed', module)
           noHeader
           noFooter
         />
-      </div>     
+      </div>
     </div>
   )))
   .add('Timeline with noborder', withInfo({
-    text: 'Timeline with noborder',
+    text: 'Timeline with noborder'
   })(() => (
-    <div style= {{ display: 'flex', maxHeight: 300}}>
+    <div style={{ display: 'flex', maxHeight: 300 }}>
       <div style={{ width: 250, height: 200, margin: 20 }}>
         <TwitterTimelineEmbed
           sourceType={'timeline'}
@@ -335,13 +339,13 @@ storiesOf('Twitter Timeline Embed', module)
           options={{height: 400}}
           noBorders
         />
-      </div>     
+      </div>
     </div>
   )))
   .add('Timeline with noScrollbar', withInfo({
-    text: 'Timeline with noScrollbar',
+    text: 'Timeline with noScrollbar'
   })(() => (
-    <div style= {{ display: 'flex', maxHeight: 300}}>
+    <div style={{ display: 'flex', maxHeight: 300 }}>
       <div style={{ width: 250, height: 200, margin: 20 }}>
         <TwitterTimelineEmbed
           sourceType={'timeline'}
@@ -358,13 +362,13 @@ storiesOf('Twitter Timeline Embed', module)
           options={{height: 400}}
           noScrollbar
         />
-      </div>     
+      </div>
     </div>
   )))
   .add('Timeline with transparent background', withInfo({
-    text: 'Timeline with transparent background example',
+    text: 'Timeline with transparent background example'
   })(() => (
-    <div style= {{ display: 'flex', maxHeight: 300}}>
+    <div style={{ display: 'flex', maxHeight: 300 }}>
       <div style={{ width: 250, height: 200, margin: 20 }}>
         <TwitterTimelineEmbed
           sourceType={'timeline'}
@@ -381,13 +385,13 @@ storiesOf('Twitter Timeline Embed', module)
           options={{height: 400}}
           transparent
         />
-      </div>     
+      </div>
     </div>
   )))
   .add('Timeline with custom language', withInfo({
-    text: 'Timeline with custom language example',
+    text: 'Timeline with custom language example'
   })(() => (
-    <div style= {{ display: 'flex', maxHeight: 300}}>
+    <div style={{ display: 'flex', maxHeight: 300 }}>
       <div style={{ width: 250, height: 200, margin: 20 }}>
         <TwitterTimelineEmbed
           sourceType={'timeline'}
@@ -414,13 +418,13 @@ storiesOf('Twitter Timeline Embed', module)
           options={{height: 400}}
           lang={'fr'}
         />
-      </div>           
+      </div>
     </div>
-  )));
+  )))
 
 storiesOf('Twitter Share button', module)
   .add('Share button', withInfo({
-    text: 'Twitter share button example',
+    text: 'Twitter share button example'
   })(() => (
     <div style={{ margin: 100 }}>
       <TwitterShareButton
@@ -432,11 +436,11 @@ storiesOf('Twitter Share button', module)
         options={{ text: '#reactjs is awesome', via: 'saurabhnemade', size: 'large' }}
       />
     </div>
-  )));
+  )))
 
 storiesOf('Twitter Follow button', module)
   .add('Follow button', withInfo({
-    text: 'Twitter follow button example',
+    text: 'Twitter follow button example'
   })(() => (
     <div style={{ margin: 100 }}>
       <TwitterFollowButton
@@ -447,11 +451,11 @@ storiesOf('Twitter Follow button', module)
         options={{ size: 'large' }}
       />
     </div>
-  )));
+  )))
 
 storiesOf('Twitter Hashtag button', module)
   .add('Hashtag button', withInfo({
-    text: 'Twitter hashtag button example',
+    text: 'Twitter hashtag button example'
   })(() => (
     <div style={{ margin: 100 }}>
       <TwitterHashtagButton
@@ -462,11 +466,11 @@ storiesOf('Twitter Hashtag button', module)
         options={{ size: 'large' }}
       />
     </div>
-  )));
+  )))
 
 storiesOf('Twitter Mention button', module)
   .add('Mention button', withInfo({
-    text: 'Twitter Mention button example',
+    text: 'Twitter Mention button example'
   })(() => (
     <div style={{ margin: 100 }}>
       <TwitterMentionButton
@@ -477,69 +481,69 @@ storiesOf('Twitter Mention button', module)
         options={{ size: 'large' }}
       />
     </div>
-  )));
+  )))
 
 storiesOf('Twitter Tweet Embed', module)
   .add('Tweet embed', withInfo({
-    text: 'Tweet embed',
+    text: 'Tweet embed'
   })(() => (
     <div style={{ width: 400, height: 400 }}>
       <TwitterTweetEmbed
         tweetId={'933354946111705097'}
       />
     </div>
-  )));
+  )))
 
 storiesOf('Twitter Moment Share', module)
   .add('Moment Share', withInfo({
-    text: 'Share Life Moment',
+    text: 'Share Life Moment'
   })(() => (
     <div style={{ width: 400, height: 400 }}>
-      <TwitterMomentShare momentId="650667182356082688" />
+      <TwitterMomentShare momentId='650667182356082688' />
     </div>
-  )));
+  )))
 
 storiesOf('Twitter DM Button', module)
-.add('Direct Message Button', withInfo({
-  text: 'Add a message button with user id',
-})(() => (
-  <div style={{ margin: 100 }}>
-    <div style={{ margin: 20 }}>
-      <TwitterDMButton id={1364031673} />
+  .add('Direct Message Button', withInfo({
+    text: 'Add a message button with user id'
+  })(() => (
+    <div style={{ margin: 100 }}>
+      <div style={{ margin: 20 }}>
+        <TwitterDMButton id={1364031673} />
+      </div>
+      <div style={{ margin: 20 }}>
+        <TwitterDMButton
+          id={1364031673}
+          options={{ size: 'large' }}
+        />
+      </div>
     </div>
-    <div style={{ margin: 20 }}>
-      <TwitterDMButton
-        id={1364031673}
-        options={{ size: 'large' }}
-      />
-    </div>
-  </div>
-)));
+  )))
 
 storiesOf('Twitter Video Embed', module)
-.add('Twitter video Embed', withInfo({
-  text: 'Add a message button with user id',
-})(() => (
-  <div style={{ height: 400, width: 400 }}>
-    <TwitterVideoEmbed
-      id={'560070183650213889'}
-    />
-  </div>
-)));
-
-storiesOf('Twitter Periscope Button', module)
-.add('On Air button', withInfo({
-  text: 'Add on Air button with username. If user is broadcasting you will see Live in button.',
-})(() => (
-  <div style={{ margin: 100 }}>
-    <div style={{ margin: 20 }}>
-      <TwitterOnAirButton username={'KatmaiNPS'} />
-    </div>
-    <div style={{ margin: 20 }}>
-      <TwitterOnAirButton
-        username={'KatmaiNPS'}
-        options={{ size: 'large' }}
+  .add('Twitter video Embed', withInfo({
+    text: 'Add a message button with user id'
+  })(() => (
+    <div style={{ height: 400, width: 400 }}>
+      <TwitterVideoEmbed
+        id={'560070183650213889'}
       />
     </div>
-  </div>
-)));
+  )))
+
+storiesOf('Twitter Periscope Button', module)
+  .add('On Air button', withInfo({
+    text: 'Add on Air button with username. If user is broadcasting you will see Live in button.'
+  })(() => (
+    <div style={{ margin: 100 }}>
+      <div style={{ margin: 20 }}>
+        <TwitterOnAirButton username={'KatmaiNPS'} />
+      </div>
+      <div style={{ margin: 20 }}>
+        <TwitterOnAirButton
+          username={'KatmaiNPS'}
+          options={{ size: 'large' }}
+        />
+      </div>
+    </div>
+  )))

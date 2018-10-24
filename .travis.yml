@@ -1,0 +1,29 @@
+language: node_js
+node_js:
+  - 8
+
+after_success:
+  - npm install -g rollup
+  - npm install
+  - npm run build-storybook
+
+deploy:
+- provider: npm
+  email: $NPM_EMAIL
+  api_key: $NPM_TOKEN
+  skip_cleanup: true
+  on:
+    branch: master
+- provider: pages
+  skip_cleanup: true
+  github_token: $GH_TOKEN
+  local_dir: storybook-static
+  on:
+    branch: master
+
+notifications:
+  email:
+    recipients:
+    - saurabhnemade@yandex.com
+    on_success: always
+    on_failure: always

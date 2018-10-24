@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
-const script = require('scriptjs');
+const script = require('scriptjs')
 
-script('https://platform.twitter.com/widgets.js', 'twitter-embed');
+script('https://platform.twitter.com/widgets.js', 'twitter-embed')
 
 export default class TwitterShareButton extends Component {
   static propTypes = {
@@ -14,33 +14,33 @@ export default class TwitterShareButton extends Component {
     /**
     * Additional options for overriding config. Details at : https://dev.twitter.com/web/tweet-button/parameters
     */
-    options: PropTypes.object,
+    options: PropTypes.object
   };
 
   componentDidMount() {
     script.ready('twitter-embed', () => {
       if (!window.twttr) {
-        console.error('Failure to load window.twttr, aborting load.');
-        return;
+        console.error('Failure to load window.twttr, aborting load.')
+        return
       }
 
       if (!this.isMountCanceled) {
         window.twttr.widgets.createShareButton(
-                  this.props.url,
-                  this.refs.embedContainer,
-                  this.props.options
-              );
+          this.props.url,
+          this.refs.embedContainer,
+          this.props.options
+        )
       }
-    });
+    })
   }
 
   componentWillUnmount() {
-    this.isMountCanceled = true;
+    this.isMountCanceled = true
   }
 
   render() {
     return (
-      <div ref="embedContainer" />
-    );
+      <div ref='embedContainer' />
+    )
   }
 }
