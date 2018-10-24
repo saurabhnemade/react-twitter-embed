@@ -6,6 +6,8 @@ setOptions({
   url: '#',
   showStoriesPanel: true,
   showAddonPanel: true,
+  addonPanelInRight: true,
+  selectedAddonPanel: "Backgrounds",
   header: false, // Toggles display of header with component name and description
   inline: false, // Displays info inline vs click button to view
   source: true,
