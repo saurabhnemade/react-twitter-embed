@@ -4,13 +4,13 @@ node_js:
   - 9
   - 10
 
-jobs:
-  include:
-    - stage: npm release
-      node_js: "8"
-      script: echo "Deploying to npm ..."
-      deploy:
-        provider: npm
-        email: $NPM_EMAIL
-        api_key: $NPM_TOKEN
-        on: storybook-migration
+after_success:
+  - npm run build-storybook  
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GH_TOKEN
+  local_dir: storybook-static
+  on:
+    branch: storybook-migration
