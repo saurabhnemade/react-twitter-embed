@@ -20,7 +20,7 @@ export default class TwitterHashtagButton extends Component {
   componentDidMount() {
     script.ready('twitter-embed', () => {
       if (!window.twttr) {
-        console.error('Failure to load window.twttr, aborting load.')
+        console.error('Failure to load window.twttr in TwitterHashtagButton, aborting load.')
         return
       }
 
