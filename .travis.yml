@@ -4,15 +4,11 @@ node_js:
 
 after_success:
   - npm install
-  - npm run build-storybook  
+  - npm run build-storybook
+  - test $TRAVIS_BRANCH = "storybook-migration" &&
+    npm publish
 
 deploy:
-- provider: script
-  email: $NPM_EMAIL
-  api_key: $NPM_TOKEN
-  script: npm publish
-  on:
-    branch: storybook-migration
 - provider: pages
   skip_cleanup: true
   github_token: $GH_TOKEN
