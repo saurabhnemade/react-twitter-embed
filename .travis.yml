@@ -7,9 +7,10 @@ after_success:
   - npm run build-storybook  
 
 deploy:
-- provider: npm
+- provider: script
   email: $NPM_EMAIL
   api_key: $NPM_TOKEN
+  script: npm publish
   on:
     branch: storybook-migration
 - provider: pages
