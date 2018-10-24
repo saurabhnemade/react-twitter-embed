@@ -3,17 +3,18 @@ node_js:
   - 8
 
 after_success:
-  - npm adduser --registry=https://registry.npmjs.org/ <<!
-    $NPM_USER
-    $NPM_TOKEN
-    $NPM_EMAIL
-    !
+  - npm install -g rollup
   - npm install
   - npm run build-storybook
   - test $TRAVIS_BRANCH = "storybook-migration" &&
     npm publish
 
 deploy:
+- provider: npm
+  email: $NPM_EMAIL
+  api_key: $NPM_TOKEN
+  on:
+    branch: storybook-migration
 - provider: pages
   skip_cleanup: true
   github_token: $GH_TOKEN
