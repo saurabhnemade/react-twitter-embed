@@ -20,7 +20,7 @@ export default class TwitterOnAirButton extends Component {
   componentDidMount() {
     script.ready('twitter-embed', () => {
       if (!window.twttr) {
-        console.error('Failure to load window.twttr, aborting load.')
+        console.error('Failure to load window.twttr in TwitterOnAirButton, aborting load.')
         return
       }
 
