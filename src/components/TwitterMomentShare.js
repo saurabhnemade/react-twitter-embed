@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-
-const script = require('scriptjs')
-
-script('https://platform.twitter.com/widgets.js', 'twitter-embed')
+import script from 'scriptjs'
 
 export default class TwitterMomentShare extends Component {
   static propTypes = {
@@ -18,7 +15,7 @@ export default class TwitterMomentShare extends Component {
   };
 
   componentDidMount() {
-    script.ready('twitter-embed', () => {
+    script('https://platform.twitter.com/widgets.js', 'twitter-embed', () => {
       if (!window.twttr) {
         console.error('Failure to load window.twttr in TwitterMomentShare, aborting load.')
         return
