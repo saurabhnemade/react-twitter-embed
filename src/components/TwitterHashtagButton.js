@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-
-const script = require('scriptjs')
+import script from 'scriptjs'
 
 script('https://platform.twitter.com/widgets.js', 'twitter-embed')
 
@@ -18,7 +17,7 @@ export default class TwitterHashtagButton extends Component {
   };
 
   componentDidMount() {
-    script.ready('twitter-embed', () => {
+    script('https://platform.twitter.com/widgets.js', 'twitter-embed', () => {
       if (!window.twttr) {
         console.error('Failure to load window.twttr in TwitterHashtagButton, aborting load.')
         return
