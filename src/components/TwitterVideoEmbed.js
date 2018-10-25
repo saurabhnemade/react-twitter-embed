@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { canUseDOM } from 'exenv'
+import ExecutionEnvironment from 'exenv'
 import twitter_widget_js from './twitter-widget-url'
 
 export default class TwitterVideoEmbed extends Component {
@@ -12,7 +12,7 @@ export default class TwitterVideoEmbed extends Component {
   };
 
   componentDidMount() {
-    if (canUseDOM) {
+    if (ExecutionEnvironment.canUseDOM) {
       let script = require('scriptjs')
       script(twitter_widget_js, 'twitter-embed', () => {
         if (!window.twttr) {
