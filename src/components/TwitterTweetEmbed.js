@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import script from 'scriptjs'
+import twitter_widget_js from './twitter-widget-url'
 
 export default class TwitterTweetEmbed extends Component {
   static propTypes = {
@@ -15,7 +16,7 @@ export default class TwitterTweetEmbed extends Component {
   };
 
   componentDidMount() {
-    script('https://platform.twitter.com/widgets.js', 'twitter-embed', () => {
+    script(twitter_widget_js, 'twitter-embed', () => {
       if (!window.twttr) {
         console.error('Failure to load window.twttr in TwitterTweetEmbed, aborting load.')
         return
