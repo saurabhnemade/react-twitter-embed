@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import script from 'scriptjs'
+import { canUseDOM } from 'exenv'
 import twitter_widget_js from './twitter-widget-url'
 
 export default class TwitterMomentShare extends Component {
@@ -16,20 +16,23 @@ export default class TwitterMomentShare extends Component {
   };
 
   componentDidMount() {
-    script(twitter_widget_js, 'twitter-embed', () => {
-      if (!window.twttr) {
-        console.error('Failure to load window.twttr in TwitterMomentShare, aborting load.')
-        return
-      }
+    if (canUseDOM) {
+      let script = require('scriptjs')
+      script(twitter_widget_js, 'twitter-embed', () => {
+        if (!window.twttr) {
+          console.error('Failure to load window.twttr in TwitterMomentShare, aborting load.')
+          return
+        }
 
-      if (!this.isMountCanceled) {
-        window.twttr.widgets.createMoment(
-          this.props.momentId,
-          this.refs.shareMoment,
-          this.props.options
-        )
-      }
-    })
+        if (!this.isMountCanceled) {
+          window.twttr.widgets.createMoment(
+            this.props.momentId,
+            this.refs.shareMoment,
+            this.props.options
+          )
+        }
+      })
+    }
   }
 
   componentWillUnmount() {

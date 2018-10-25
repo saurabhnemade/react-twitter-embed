@@ -74,6 +74,7 @@
   ],
   "dependencies": {
     "enzyme-adapter-react-16": "^1.6.0",
+    "exenv": "^1.2.2",
     "react-proptype-conditional-require": "^1.0.4",
     "scriptjs": "^2.5.9"
   }

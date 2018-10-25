@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import script from 'scriptjs'
+import { canUseDOM } from 'exenv'
 import twitter_widget_js from './twitter-widget-url'
 
 export default class TwitterShareButton extends Component {
@@ -16,20 +16,23 @@ export default class TwitterShareButton extends Component {
   };
 
   componentDidMount() {
-    script(twitter_widget_js, 'twitter-embed', () => {
-      if (!window.twttr) {
-        console.error('Failure to load window.twttr in TwitterShareButton, aborting load.')
-        return
-      }
+    if (canUseDOM) {
+      let script = require('scriptjs')
+      script(twitter_widget_js, 'twitter-embed', () => {
+        if (!window.twttr) {
+          console.error('Failure to load window.twttr in TwitterShareButton, aborting load.')
+          return
+        }
 
-      if (!this.isMountCanceled) {
-        window.twttr.widgets.createShareButton(
-          this.props.url,
-          this.refs.embedContainer,
-          this.props.options
-        )
-      }
-    })
+        if (!this.isMountCanceled) {
+          window.twttr.widgets.createShareButton(
+            this.props.url,
+            this.refs.embedContainer,
+            this.props.options
+          )
+        }
+      })
+    }
   }
 
   componentWillUnmount() {

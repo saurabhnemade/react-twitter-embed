@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import script from 'scriptjs'
+import { canUseDOM } from 'exenv'
 import twitter_widget_js from './twitter-widget-url'
 
 export default class TwitterTweetEmbed extends Component {
@@ -15,21 +15,27 @@ export default class TwitterTweetEmbed extends Component {
     options: PropTypes.object
   };
 
-  componentDidMount() {
-    script(twitter_widget_js, 'twitter-embed', () => {
-      if (!window.twttr) {
-        console.error('Failure to load window.twttr in TwitterTweetEmbed, aborting load.')
-        return
-      }
+  renderWidget() {
+    if (!window.twttr) {
+      console.error('Failure to load window.twttr in TwitterTweetEmbed, aborting load.')
+      return
+    }
+    if (!this.isMountCanceled) {
+      window.twttr.widgets.createTweet(
+        this.props.tweetId,
+        this.refs.embedContainer,
+        this.props.options
+      )
+    }
+  }
 
-      if (!this.isMountCanceled) {
-        window.twttr.widgets.createTweet(
-          this.props.tweetId,
-          this.refs.embedContainer,
-          this.props.options
-        )
-      }
-    })
+  componentDidMount() {
+    if (canUseDOM) {
+      let script = require('scriptjs')
+      script(twitter_widget_js, 'twitter-embed', () => {
+        this.renderWidget()
+      })
+    }
   }
 
   componentWillUnmount() {
