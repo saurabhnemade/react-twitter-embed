@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import script from 'scriptjs'
+import ExecutionEnvironment from 'exenv'
 import twitter_widget_js from './twitter-widget-url'
 
 export default class TwitterFollowButton extends Component {
@@ -16,20 +16,23 @@ export default class TwitterFollowButton extends Component {
   };
 
   componentDidMount() {
-    script(twitter_widget_js, 'twitter-embed', () => {
-      if (!window.twttr) {
-        console.error('Failure to load window.twttr in TwitterFollowButton, aborting load.')
-        return
-      }
+    if (ExecutionEnvironment.canUseDOM) {
+      let script = require('scriptjs')
+      script(twitter_widget_js, 'twitter-embed', () => {
+        if (!window.twttr) {
+          console.error('Failure to load window.twttr in TwitterFollowButton, aborting load.')
+          return
+        }
 
-      if (!this.isMountCanceled) {
-        window.twttr.widgets.createFollowButton(
-          this.props.screenName,
-          this.refs.embedContainer,
-          this.props.options
-        )
-      }
-    })
+        if (!this.isMountCanceled) {
+          window.twttr.widgets.createFollowButton(
+            this.props.screenName,
+            this.refs.embedContainer,
+            this.props.options
+          )
+        }
+      })
+    }
   }
 
   componentWillUnmount() {

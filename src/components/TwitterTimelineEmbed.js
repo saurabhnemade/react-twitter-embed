@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import isRequiredIf from 'react-proptype-conditional-require'
-import script from 'scriptjs'
+import ExecutionEnvironment from 'exenv'
 import twitter_widget_js from './twitter-widget-url'
 
 export default class TwitterTimelineEmbed extends Component {
@@ -115,33 +115,39 @@ export default class TwitterTimelineEmbed extends Component {
     return options
   }
 
+  renderWidget(options) {
+    if (!this.isMountCanceled) {
+      window.twttr.widgets.createTimeline(
+        {
+          sourceType: this.props.sourceType,
+          screenName: this.props.screenName,
+          userId: this.props.userId,
+          ownerScreenName: this.props.ownerScreenName,
+          slug: this.props.slug,
+          id: this.props.id || this.props.widgetId,
+          url: this.props.url
+        },
+        this.refs.embedContainer,
+        options
+      )
+    }
+  }
+
   componentDidMount() {
-    script(twitter_widget_js, 'twitter-embed', () => {
-      if (!window.twttr) {
-        console.error('Failure to load window.twttr in TwitterTimelineEmbed, aborting load.')
-        return
-      }
+    if (ExecutionEnvironment.canUseDOM) {
+      let script = require('scriptjs')
+      script(twitter_widget_js, 'twitter-embed', () => {
+        if (!window.twttr) {
+          console.error('Failure to load window.twttr in TwitterTimelineEmbed, aborting load.')
+          return
+        }
 
-      let options = this.buildOptions()
-      /** Append chrome options */
-      options = this.buildChromeOptions(options)
-
-      if (!this.isMountCanceled) {
-        window.twttr.widgets.createTimeline(
-          {
-            sourceType: this.props.sourceType,
-            screenName: this.props.screenName,
-            userId: this.props.userId,
-            ownerScreenName: this.props.ownerScreenName,
-            slug: this.props.slug,
-            id: this.props.id || this.props.widgetId,
-            url: this.props.url
-          },
-          this.refs.embedContainer,
-          options
-        )
-      }
-    })
+        let options = this.buildOptions()
+        /** Append chrome options */
+        options = this.buildChromeOptions(options)
+        this.renderWidget(options)
+      })
+    }
   }
 
   componentWillUnmount() {
