@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 import { action } from '@storybook/addon-actions'
 // import { linkTo } from '@storybook/addon-links'
-import { backgrounds } from "./backgrounds";
+import { backgrounds } from './backgrounds'
 
 import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from '../index'
 
@@ -458,6 +458,7 @@ storiesOf('Twitter Follow button', module)
   )))
 
 storiesOf('Twitter Hashtag button', module)
+  .addDecorator(backgrounds)
   .add('Hashtag button', withInfo({
     text: 'Twitter hashtag button example'
   })(() => (

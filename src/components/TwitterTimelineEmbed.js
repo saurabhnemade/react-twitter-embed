@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import isRequiredIf from 'react-proptype-conditional-require'
-
-const script = require('scriptjs')
-
-script('https://platform.twitter.com/widgets.js', 'twitter-embed')
+import script from 'scriptjs'
+import twitter_widget_js from './twitter-widget-url'
 
 export default class TwitterTimelineEmbed extends Component {
   static propTypes = {
@@ -88,57 +86,45 @@ export default class TwitterTimelineEmbed extends Component {
     lang: PropTypes.string
   };
 
+  buildChromeOptions(options) {
+    options.chrome = ''
+    if (this.props.noHeader) { options.chrome = options.chrome + ' noheader' }
+
+    if (this.props.noFooter) { options.chrome = options.chrome + ' nofooter' }
+
+    if (this.props.noBorders) { options.chrome = options.chrome + ' noborders' }
+
+    if (this.props.noScrollbar) { options.chrome = options.chrome + ' noscrollbar' }
+
+    if (this.props.transparent) { options.chrome = options.chrome + ' transparent' }
+
+    return options
+  }
+
+  buildOptions() {
+    let options = Object.assign({}, this.props.options)
+    if (this.props.autoHeight) { options.height = this.refs.embedContainer.parentNode.offsetHeight }
+
+    options = Object.assign({}, options, {
+      theme: this.props.theme,
+      linkColor: this.props.linkColor,
+      borderColor: this.props.borderColor,
+      lang: this.props.lang
+    })
+
+    return options
+  }
+
   componentDidMount() {
-    script.ready('twitter-embed', () => {
+    script(twitter_widget_js, 'twitter-embed', () => {
       if (!window.twttr) {
         console.error('Failure to load window.twttr in TwitterTimelineEmbed, aborting load.')
         return
       }
 
-      const options = Object.assign({}, this.props.options)
-
-      if (this.props.autoHeight) {
-        options.height = this.refs.embedContainer.parentNode.offsetHeight
-      }
-
-      if (this.props.theme) {
-        options.theme = this.props.theme
-      }
-
-      if (this.props.linkColor) {
-        options.linkColor = this.props.linkColor
-      }
-
-      if (this.props.borderColor) {
-        options.borderColor = this.props.borderColor
-      }
-
-      if (this.props.lang) {
-        options.lang = this.props.lang
-      }
-
+      let options = this.buildOptions()
       /** Append chrome options */
-      options.chrome = ''
-
-      if (this.props.noHeader) {
-        options.chrome = options.chrome + ' noheader'
-      }
-
-      if (this.props.noFooter) {
-        options.chrome = options.chrome + ' nofooter'
-      }
-
-      if (this.props.noBorders) {
-        options.chrome = options.chrome + ' noborders'
-      }
-
-      if (this.props.noScrollbar) {
-        options.chrome = options.chrome + ' noscrollbar'
-      }
-
-      if (this.props.transparent) {
-        options.chrome = options.chrome + ' transparent'
-      }
+      options = this.buildChromeOptions(options)
 
       if (!this.isMountCanceled) {
         window.twttr.widgets.createTimeline(
