@@ -1,0 +1,14 @@
+.centerContent {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: stretch;
+}
+
+.selfCenter {
+    align-self: center;
+}
+
+.standardWidth {
+    width: 250px;
+}

@@ -5,6 +5,7 @@ import { withInfo } from '@storybook/addon-info'
 import { action } from '@storybook/addon-actions'
 // import { linkTo } from '@storybook/addon-links'
 import { backgrounds } from './backgrounds'
+import './story.css';
 
 import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from '../index'
 
@@ -13,13 +14,15 @@ storiesOf('Twitter Timeline Embed', module)
   .add('Timeline Profile (With Screen Name)', withInfo({
     text: 'Watch twitter user timeline with given username'
   })(() => (
-    <div style={{ width: 250, height: 600 }}>
-      <TwitterTimelineEmbed
-        sourceType={'profile'}
-        screenName={'saurabhnemade'}
-        options={{ height: 400 }}
-        onComplete={action('sample action')}
-      />
+    <div className="centerContent">
+      <div className="selfCenter standardWidth">
+        <TwitterTimelineEmbed
+          sourceType={'profile'}
+          screenName={'saurabhnemade'}
+          options={{ height: 400 }}
+          onComplete={action('sample action')}
+        />
+      </div>
     </div>
   )))
   .add('Timeline Profile (With userId)', withInfo({
