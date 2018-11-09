@@ -7,20 +7,13 @@ import url from 'rollup-plugin-url'
 
 import pkg from './package.json'
 
-export default {
+export default [{
   input: 'src/index.js',
-  output: [
-    {
-      file: pkg.main,
-      format: 'cjs',
-      sourcemap: true
-    },
-    {
-      file: pkg.module,
-      format: 'es',
-      sourcemap: true
-    }
-  ],
+  output: {
+    file: pkg.main,
+    format: 'cjs',
+    sourcemap: true
+  },
   plugins: [
     external(),
     postcss({
@@ -34,4 +27,25 @@ export default {
     resolve(),
     commonjs()
   ]
-}
+},
+  {
+    input: 'src/index.js',
+    output: {
+      file: pkg.module,
+      format: 'es',
+      sourcemap: true
+    },
+    plugins: [
+      external(),
+      postcss({
+        modules: true
+      }),
+      babel({
+        exclude: 'node_modules/**',
+        runtimeHelpers: true,
+        plugins: [["transform-runtime", { useESModules: true }]]
+      })
+    ]
+  }
+
+]
