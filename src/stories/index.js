@@ -41,12 +41,14 @@ storiesOf('Twitter Timeline Embed', module)
   .add('Timeline Likes (With screenName)', withInfo({
     text: 'Timeline Likes example with given username'
   })(() => (
-    <div style={{ width: 250, height: 600 }}>
-      <TwitterTimelineEmbed
-        sourceType={'likes'}
-        screenName={'saurabhnemade'}
-        options={{ height: 400 }}
-      />
+    <div className="centerContent">
+      <div className="selfCenter standardWidth">
+        <TwitterTimelineEmbed
+          sourceType={'likes'}
+          screenName={'saurabhnemade'}
+          options={{ height: 400 }}
+        />
+      </div>
     </div>
   )))
   .add('Timeline Likes (With userId)', withInfo({
