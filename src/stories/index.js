@@ -468,15 +468,17 @@ storiesOf('Twitter Share button', module)
   .add('Share button', withInfo({
     text: 'Twitter share button example'
   })(() => (
-    <div style={{ margin: 100 }}>
-      <TwitterShareButton
-        url={'https://facebook.com/saurabhnemade'}
-        options={{ text: '#reactjs is awesome', via: 'saurabhnemade' }}
-      />
-      <TwitterShareButton
-        url={'https://facebook.com/saurabhnemade'}
-        options={{ text: '#reactjs is awesome', via: 'saurabhnemade', size: 'large' }}
-      />
+    <div className="centerContent">
+      <div className="selfCenter">
+        <TwitterShareButton
+          url={'https://facebook.com/saurabhnemade'}
+          options={{ text: '#reactjs is awesome', via: 'saurabhnemade' }}
+        />
+        <TwitterShareButton
+          url={'https://facebook.com/saurabhnemade'}
+          options={{ text: '#reactjs is awesome', via: 'saurabhnemade', size: 'large' }}
+        />
+      </div>
     </div>
   )))
 
@@ -485,14 +487,16 @@ storiesOf('Twitter Follow button', module)
   .add('Follow button', withInfo({
     text: 'Twitter follow button example'
   })(() => (
-    <div style={{ margin: 100 }}>
-      <TwitterFollowButton
-        screenName={'saurabhnemade'}
-      />
-      <TwitterFollowButton
-        screenName={'saurabhnemade'}
-        options={{ size: 'large' }}
-      />
+    <div className="centerContent">
+      <div className="selfCenter">
+        <TwitterFollowButton
+          screenName={'saurabhnemade'}
+        />
+        <TwitterFollowButton
+          screenName={'saurabhnemade'}
+          options={{ size: 'large' }}
+        />
+      </div>
     </div>
   )))
 
@@ -501,14 +505,16 @@ storiesOf('Twitter Hashtag button', module)
   .add('Hashtag button', withInfo({
     text: 'Twitter hashtag button example'
   })(() => (
-    <div style={{ margin: 100 }}>
-      <TwitterHashtagButton
-        tag={'cybersecurity'}
-      />
-      <TwitterHashtagButton
-        tag={'cybersecurity'}
-        options={{ size: 'large' }}
-      />
+    <div className="centerContent">
+      <div className="selfCenter">
+        <TwitterHashtagButton
+          tag={'cybersecurity'}
+        />
+        <TwitterHashtagButton
+          tag={'cybersecurity'}
+          options={{ size: 'large' }}
+        />
+      </div>
     </div>
   )))
 
@@ -517,14 +523,16 @@ storiesOf('Twitter Mention button', module)
   .add('Mention button', withInfo({
     text: 'Twitter Mention button example'
   })(() => (
-    <div style={{ margin: 100 }}>
-      <TwitterMentionButton
-        screenName={'saurabhnemade'}
-      />
-      <TwitterMentionButton
-        screenName={'saurabhnemade'}
-        options={{ size: 'large' }}
-      />
+    <div className="centerContent">
+      <div className="selfCenter">
+        <TwitterMentionButton
+          screenName={'saurabhnemade'}
+        />
+        <TwitterMentionButton
+          screenName={'saurabhnemade'}
+          options={{ size: 'large' }}
+        />
+      </div>
     </div>
   )))
 
@@ -533,10 +541,12 @@ storiesOf('Twitter Tweet Embed', module)
   .add('Tweet embed', withInfo({
     text: 'Tweet embed'
   })(() => (
-    <div style={{ width: 400, height: 400 }}>
-      <TwitterTweetEmbed
-        tweetId={'933354946111705097'}
-      />
+    <div className="centerContent">
+      <div className="selfCenter">
+        <TwitterTweetEmbed
+          tweetId={'933354946111705097'}
+        />
+      </div>
     </div>
   )))
 
@@ -545,8 +555,10 @@ storiesOf('Twitter Moment Share', module)
   .add('Moment Share', withInfo({
     text: 'Share Life Moment'
   })(() => (
-    <div style={{ width: 400, height: 400 }}>
-      <TwitterMomentShare momentId='650667182356082688' />
+    <div className="centerContent">
+      <div className="selfCenter" style={{height: 400, overflow: 'auto'}}>
+        <TwitterMomentShare momentId='650667182356082688' />
+      </div>
     </div>
   )))
 
@@ -555,15 +567,14 @@ storiesOf('Twitter DM Button', module)
   .add('Direct Message Button', withInfo({
     text: 'Add a message button with user id'
   })(() => (
-    <div style={{ margin: 100 }}>
-      <div style={{ margin: 20 }}>
+    <div className="centerContent">
+      <div className="selfCenter spaceBetween">
         <TwitterDMButton id={1364031673} />
       </div>
-      <div style={{ margin: 20 }}>
+      <div className="selfCenter spaceBetween">
         <TwitterDMButton
           id={1364031673}
-          options={{ size: 'large' }}
-        />
+          options={{ size: 'large' }} />      
       </div>
     </div>
   )))
@@ -573,10 +584,12 @@ storiesOf('Twitter Video Embed', module)
   .add('Twitter video Embed', withInfo({
     text: 'Add a message button with user id'
   })(() => (
-    <div style={{ height: 400, width: 400 }}>
-      <TwitterVideoEmbed
-        id={'560070183650213889'}
-      />
+    <div className="centerContent">
+      <div className="selfCenter spaceBetween">
+        <TwitterVideoEmbed
+          id={'560070183650213889'}
+        />
+      </div>
     </div>
   )))
 
@@ -585,11 +598,11 @@ storiesOf('Twitter Periscope Button', module)
   .add('On Air button', withInfo({
     text: 'Add on Air button with username. If user is broadcasting you will see Live in button.'
   })(() => (
-    <div style={{ margin: 100 }}>
-      <div style={{ margin: 20 }}>
+    <div className="centerContent">
+      <div className="selfCenter spaceBetween">
         <TwitterOnAirButton username={'KatmaiNPS'} />
       </div>
-      <div style={{ margin: 20 }}>
+      <div className="selfCenter spaceBetween">
         <TwitterOnAirButton
           username={'KatmaiNPS'}
           options={{ size: 'large' }}

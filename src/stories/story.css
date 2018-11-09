@@ -9,6 +9,10 @@
     align-self: center;
 }
 
+.selfCenter::-webkit-scrollbar { 
+    display: none;
+}
+
 .standardWidth {
     width: 250px;
 }
