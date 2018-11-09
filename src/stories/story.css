@@ -12,3 +12,7 @@
 .standardWidth {
     width: 250px;
 }
+
+.spaceBetween {
+    padding: 10px;
+}

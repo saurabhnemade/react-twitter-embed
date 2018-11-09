@@ -54,122 +54,140 @@ storiesOf('Twitter Timeline Embed', module)
   .add('Timeline Likes (With userId)', withInfo({
     text: 'Timeline Likes example with given user id'
   })(() => (
-    <div style={{ width: 250, height: 600 }}>
-      <TwitterTimelineEmbed
-        sourceType={'likes'}
-        userId={1934309676}
-        options={{ height: 400 }}
-      />
+    <div className="centerContent">
+      <div className="selfCenter standardWidth">
+        <TwitterTimelineEmbed
+          sourceType={'likes'}
+          userId={1934309676}
+          options={{ height: 400 }}
+        />
+      </div>
     </div>
   )))
   .add('Timeline List (With screenName and slug)', withInfo({
     text: 'Timeline Likes example with given screename and slug'
   })(() => (
-    <div style={{ width: 250, height: 600 }}>
-      <TwitterTimelineEmbed
-        sourceType={'list'}
-        ownerScreenName={'palafo'}
-        slug={'breakingnews'}
-        options={{ height: 400 }}
-      />
+    <div className="centerContent">
+      <div className="selfCenter standardWidth">
+        <TwitterTimelineEmbed
+          sourceType={'list'}
+          ownerScreenName={'palafo'}
+          slug={'breakingnews'}
+          options={{ height: 400 }}
+        />
+      </div>
     </div>
   )))
   .add('Timeline List (With list id)', withInfo({
     text: 'Timeline List example with given list id'
   })(() => (
-    <div style={{ width: 250, height: 600 }}>
-      <TwitterTimelineEmbed
-        sourceType={'list'}
-        id={8044403}
-        options={{ height: 400 }}
-      />
+    <div className="centerContent">
+      <div className="selfCenter standardWidth">
+        <TwitterTimelineEmbed
+          sourceType={'list'}
+          id={8044403}
+          options={{ height: 400 }}
+        />
+      </div>
     </div>
   )))
   .add('Timeline collection', withInfo({
     text: 'Timeline collection example with given collection id'
   })(() => (
-    <div style={{ width: 250, height: 600 }}>
-      <TwitterTimelineEmbed
-        sourceType={'collection'}
-        id={'576828964162965504'}
-        options={{ height: 400 }}
-      />
+    <div className="centerContent">
+      <div className="selfCenter standardWidth">
+        <TwitterTimelineEmbed
+          sourceType={'collection'}
+          id={'576828964162965504'}
+          options={{ height: 400 }}
+        />
+      </div>
     </div>
   )))
   .add('Timeline url (with collection url)', withInfo({
     text: 'Timeline url example with given collection url'
   })(() => (
-    <div style={{ width: 250, height: 600 }}>
-      <TwitterTimelineEmbed
-        sourceType={'url'}
-        url={'https://twitter.com/NYTNow/timelines/576828964162965504'}
-        options={{ height: 400 }}
-      />
+    <div className="centerContent">
+      <div className="selfCenter standardWidth">
+        <TwitterTimelineEmbed
+          sourceType={'url'}
+          url={'https://twitter.com/NYTNow/timelines/576828964162965504'}
+          options={{ height: 400 }}
+        />
+      </div>
     </div>
   )))
   .add('Timeline url (with profile url)', withInfo({
     text: 'Timeline url example with given profile url'
   })(() => (
-    <div style={{ width: 250, height: 600 }}>
-      <TwitterTimelineEmbed
-        sourceType={'url'}
-        url={'https://twitter.com/rahul581'}
-        options={{ height: 400 }}
-      />
+    <div className="centerContent">
+      <div className="selfCenter standardWidth">
+        <TwitterTimelineEmbed
+          sourceType={'url'}
+          url={'https://twitter.com/rahul581'}
+          options={{ height: 400 }}
+        />
+      </div>
     </div>
   )))
   .add('Timeline url (with list url)', withInfo({
     text: 'Timeline url example with given list url'
   })(() => (
-    <div style={{ width: 250, height: 600 }}>
-      <TwitterTimelineEmbed
-        sourceType={'url'}
-        url={'https://twitter.com/mashable/lists/social-media'}
-        options={{ height: 400 }}
-      />
+    <div className="centerContent">
+      <div className="selfCenter standardWidth">
+        <TwitterTimelineEmbed
+          sourceType={'url'}
+          url={'https://twitter.com/mashable/lists/social-media'}
+          options={{ height: 400 }}
+        />
+      </div>
     </div>
   )))
   .add('Timeline url (with likes url)', withInfo({
     text: 'Timeline url example with given likes url'
   })(() => (
-    <div style={{ width: 250, height: 600 }}>
-      <TwitterTimelineEmbed
-        sourceType={'url'}
-        url={'https://twitter.com/ladygaga/likes'}
-        options={{ height: 400 }}
-      />
+    <div className="centerContent">
+      <div className="selfCenter standardWidth">
+        <TwitterTimelineEmbed
+          sourceType={'url'}
+          url={'https://twitter.com/ladygaga/likes'}
+          options={{ height: 400 }}
+        />
+      </div>
     </div>
   )))
   .add('Timeline widget', withInfo({
     text: 'Timeline widget example with a valid given widget id'
   })(() => (
-    <div style={{ width: 250, height: 600 }}>
-      <TwitterTimelineEmbed
-        sourceType={'widget'}
-        widgetId={'539487832448843776'}
-        options={{ height: 400 }}
-      />
+    <div className="centerContent">
+      <div className="selfCenter standardWidth">
+        <TwitterTimelineEmbed
+          sourceType={'widget'}
+          widgetId={'539487832448843776'}
+          options={{ height: 400 }}
+        />
+      </div>
     </div>
   )))
   .add('Timeline Autoheight', withInfo({
     text: 'Timeline autoheight example'
   })(() => (
-    <div style={{ display: 'flex' }}>
-      <div style={{ width: 250, height: 200, margin: 20 }}>
+    <div className="centerContent">
+      <div className="selfCenter" style={{ width: 250, height: 200, margin: 20 }}>
         <TwitterTimelineEmbed
           sourceType={'widget'}
           widgetId={'539487832448843776'}
           autoHeight
         />
       </div>
-      <div style={{ width: 250, height: 300, margin: 20 }}>
+      <div className="selfCenter" style={{ width: 250, height: 300, margin: 20 }}>
         <TwitterTimelineEmbed
           sourceType={'widget'}
           widgetId={'539487832448843776'}
           autoHeight
         />
       </div>
-      <div style={{ width: 250, height: 250, margin: 20 }}>
+      <div className="selfCenter" style={{ width: 250, height: 250, margin: 20 }}>
         <TwitterTimelineEmbed
           sourceType={'widget'}
           widgetId={'539487832448843776'}
@@ -181,12 +199,13 @@ storiesOf('Twitter Timeline Embed', module)
   .add('Timeline dark Theme', withInfo({
     text: 'Timeline dark Theme example'
   })(() => (
-    <div style={{ display: 'flex' }}>
-      <div style={{ width: 250, height: 200, margin: 20 }}>
+    <div className="centerContent">
+      <div className="selfCenter standardWidth">
         <TwitterTimelineEmbed
           sourceType={'timeline'}
           id={'539487832448843776'}
           theme={'dark'}
+          options={{ height: 400 }}
         />
       </div>
     </div>
@@ -194,12 +213,13 @@ storiesOf('Twitter Timeline Embed', module)
   .add('Timeline light Theme', withInfo({
     text: 'Timeline light Theme example'
   })(() => (
-    <div style={{ display: 'flex' }}>
-      <div style={{ width: 250, height: 200, margin: 20 }}>
+    <div className="centerContent">
+      <div className="selfCenter standardWidth">
         <TwitterTimelineEmbed
           sourceType={'timeline'}
           id={'539487832448843776'}
           theme={'light'}
+          options={{ height: 400 }}          
         />
       </div>
     </div>
@@ -207,29 +227,32 @@ storiesOf('Twitter Timeline Embed', module)
   .add('Timeline custom link color', withInfo({
     text: 'Timeline custom link color example'
   })(() => (
-    <div style={{ display: 'flex' }}>
-      <div style={{ width: 250, height: 200, margin: 20 }}>
+    <div className="centerContent">
+      <div className="selfCenter spaceBetween standardWidth">
         <TwitterTimelineEmbed
           sourceType={'timeline'}
           id={'539487832448843776'}
           linkColor={'#F44336'}
           theme={'dark'}
+          options={{ height: 400 }}      
         />
       </div>
-      <div style={{ width: 250, height: 200, margin: 20 }}>
+      <div className="selfCenter spaceBetween standardWidth">
         <TwitterTimelineEmbed
           sourceType={'timeline'}
           id={'539487832448843776'}
           linkColor={'#CDDC39'}
           theme={'dark'}
+          options={{ height: 400 }}     
         />
       </div>
-      <div style={{ width: 250, height: 200, margin: 20 }}>
+      <div className="selfCenter spaceBetween standardWidth">
         <TwitterTimelineEmbed
           sourceType={'timeline'}
           id={'539487832448843776'}
           linkColor={'#4CAF50'}
           theme={'dark'}
+          options={{ height: 400 }}
         />
       </div>
     </div>
@@ -237,29 +260,32 @@ storiesOf('Twitter Timeline Embed', module)
   .add('Timeline custom border color', withInfo({
     text: 'Timeline custom border color example'
   })(() => (
-    <div style={{ display: 'flex' }}>
-      <div style={{ width: 250, height: 200, margin: 20 }}>
+    <div className="centerContent">
+      <div className="selfCenter spaceBetween standardWidth">
         <TwitterTimelineEmbed
           sourceType={'timeline'}
           id={'539487832448843776'}
           borderColor={'#F44336'}
           theme={'dark'}
+          options={{ height: 400 }}
         />
       </div>
-      <div style={{ width: 250, height: 200, margin: 20 }}>
+      <div className="selfCenter spaceBetween standardWidth">
         <TwitterTimelineEmbed
           sourceType={'timeline'}
           id={'539487832448843776'}
           borderColor={'#CDDC39'}
           theme={'dark'}
+          options={{ height: 400 }}
         />
       </div>
-      <div style={{ width: 250, height: 200, margin: 20 }}>
+      <div className="selfCenter spaceBetween standardWidth">
         <TwitterTimelineEmbed
           sourceType={'timeline'}
           id={'539487832448843776'}
           borderColor={'#4CAF50'}
           theme={'dark'}
+          options={{ height: 400 }}
         />
       </div>
     </div>
@@ -267,20 +293,22 @@ storiesOf('Twitter Timeline Embed', module)
   .add('Timeline noHeader options', withInfo({
     text: 'Timeline noHeader options example'
   })(() => (
-    <div style={{ display: 'flex' }}>
-      <div style={{ width: 250, height: 200, margin: 20 }}>
+    <div className="centerContent">
+      <div className="selfCenter spaceBetween standardWidth">
         <TwitterTimelineEmbed
           sourceType={'timeline'}
           id={'539487832448843776'}
           theme={'dark'}
+          options={{ height: 400 }}
         />
       </div>
-      <div style={{ width: 250, height: 200, margin: 20 }}>
+      <div className="selfCenter spaceBetween standardWidth">
         <TwitterTimelineEmbed
           sourceType={'timeline'}
           id={'539487832448843776'}
           theme={'dark'}
           noHeader
+          options={{ height: 400 }}
         />
       </div>
     </div>
@@ -288,20 +316,22 @@ storiesOf('Twitter Timeline Embed', module)
   .add('Timeline noFooter options', withInfo({
     text: 'Timeline noFooter options example'
   })(() => (
-    <div style={{ display: 'flex' }}>
-      <div style={{ width: 250, height: 200, margin: 20 }}>
+    <div className="centerContent">
+      <div className="selfCenter spaceBetween standardWidth">
         <TwitterTimelineEmbed
           sourceType={'timeline'}
           id={'539487832448843776'}
           theme={'dark'}
+          options={{ height: 400 }}
         />
       </div>
-      <div style={{ width: 250, height: 200, margin: 20 }}>
+      <div className="selfCenter spaceBetween standardWidth">
         <TwitterTimelineEmbed
           sourceType={'timeline'}
           id={'539487832448843776'}
           theme={'dark'}
           noFooter
+          options={{ height: 400 }}
         />
       </div>
     </div>
@@ -309,21 +339,23 @@ storiesOf('Twitter Timeline Embed', module)
   .add('Timeline noHeader & noFooter options', withInfo({
     text: 'Timeline noHeader & noFooter options example'
   })(() => (
-    <div style={{ display: 'flex' }}>
-      <div style={{ width: 250, height: 200, margin: 20 }}>
+    <div className="centerContent">
+      <div className="selfCenter spaceBetween standardWidth">
         <TwitterTimelineEmbed
           sourceType={'timeline'}
           id={'539487832448843776'}
           theme={'dark'}
+          options={{ height: 400 }}
         />
       </div>
-      <div style={{ width: 250, height: 200, margin: 20 }}>
+      <div className="selfCenter spaceBetween standardWidth">
         <TwitterTimelineEmbed
           sourceType={'timeline'}
           id={'539487832448843776'}
           theme={'dark'}
           noHeader
           noFooter
+          options={{ height: 400 }}
         />
       </div>
     </div>
@@ -331,8 +363,8 @@ storiesOf('Twitter Timeline Embed', module)
   .add('Timeline with noborder', withInfo({
     text: 'Timeline with noborder'
   })(() => (
-    <div style={{ display: 'flex', maxHeight: 300 }}>
-      <div style={{ width: 250, height: 200, margin: 20 }}>
+    <div className="centerContent">
+      <div className="selfCenter spaceBetween standardWidth">
         <TwitterTimelineEmbed
           sourceType={'timeline'}
           id={'539487832448843776'}
@@ -340,7 +372,7 @@ storiesOf('Twitter Timeline Embed', module)
           theme={'dark'}
         />
       </div>
-      <div style={{ width: 250, height: 200, margin: 20 }}>
+      <div className="selfCenter spaceBetween standardWidth">
         <TwitterTimelineEmbed
           sourceType={'timeline'}
           id={'539487832448843776'}
@@ -354,8 +386,8 @@ storiesOf('Twitter Timeline Embed', module)
   .add('Timeline with noScrollbar', withInfo({
     text: 'Timeline with noScrollbar'
   })(() => (
-    <div style={{ display: 'flex', maxHeight: 300 }}>
-      <div style={{ width: 250, height: 200, margin: 20 }}>
+    <div className="centerContent">
+      <div className="selfCenter spaceBetween standardWidth">
         <TwitterTimelineEmbed
           sourceType={'timeline'}
           id={'539487832448843776'}
@@ -363,7 +395,7 @@ storiesOf('Twitter Timeline Embed', module)
           theme={'dark'}
         />
       </div>
-      <div style={{ width: 250, height: 200, margin: 20 }}>
+      <div className="selfCenter spaceBetween standardWidth">
         <TwitterTimelineEmbed
           sourceType={'timeline'}
           id={'539487832448843776'}
@@ -377,8 +409,8 @@ storiesOf('Twitter Timeline Embed', module)
   .add('Timeline with transparent background', withInfo({
     text: 'Timeline with transparent background example'
   })(() => (
-    <div style={{ display: 'flex', maxHeight: 300 }}>
-      <div style={{ width: 250, height: 200, margin: 20 }}>
+    <div className="centerContent">
+      <div className="selfCenter spaceBetween standardWidth">
         <TwitterTimelineEmbed
           sourceType={'timeline'}
           id={'539487832448843776'}
@@ -386,7 +418,7 @@ storiesOf('Twitter Timeline Embed', module)
           theme={'dark'}
         />
       </div>
-      <div style={{ width: 250, height: 200, margin: 20 }}>
+      <div className="selfCenter spaceBetween standardWidth">
         <TwitterTimelineEmbed
           sourceType={'timeline'}
           id={'539487832448843776'}
@@ -400,8 +432,8 @@ storiesOf('Twitter Timeline Embed', module)
   .add('Timeline with custom language', withInfo({
     text: 'Timeline with custom language example'
   })(() => (
-    <div style={{ display: 'flex', maxHeight: 300 }}>
-      <div style={{ width: 250, height: 200, margin: 20 }}>
+    <div className="centerContent">
+      <div className="selfCenter spaceBetween standardWidth">
         <TwitterTimelineEmbed
           sourceType={'timeline'}
           id={'539487832448843776'}
@@ -410,7 +442,7 @@ storiesOf('Twitter Timeline Embed', module)
           lang={'hi'}
         />
       </div>
-      <div style={{ width: 250, height: 200, margin: 20 }}>
+      <div className="selfCenter spaceBetween standardWidth">
         <TwitterTimelineEmbed
           sourceType={'timeline'}
           id={'539487832448843776'}
@@ -419,7 +451,7 @@ storiesOf('Twitter Timeline Embed', module)
           lang={'es'}
         />
       </div>
-      <div style={{ width: 250, height: 200, margin: 20 }}>
+      <div className="selfCenter spaceBetween standardWidth">
         <TwitterTimelineEmbed
           sourceType={'timeline'}
           id={'539487832448843776'}
