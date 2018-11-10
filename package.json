@@ -4,6 +4,14 @@
   "description": "React Twitter Embed Components",
   "author": "Saurabh Nemade",
   "license": "MIT",
+  "keywords": [
+    "front-end",
+    "react",
+    "react-component",
+    "twitter",
+    "timeline",
+    "twitter-embed"    
+  ],
   "repository": "saurabhnemade/react-twitter-embed",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
