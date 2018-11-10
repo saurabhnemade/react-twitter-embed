@@ -1,0 +1,22 @@
+.centerContent {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: stretch;
+}
+
+.selfCenter {
+    align-self: center;
+}
+
+.selfCenter::-webkit-scrollbar { 
+    display: none;
+}
+
+.standardWidth {
+    width: 250px;
+}
+
+.spaceBetween {
+    padding: 10px;
+}
