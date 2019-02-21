@@ -8,7 +8,7 @@ React Twitter Embed Component
 
 Simplest way to add Twitter Widgets to your react project.
 
-## Demo and Examples 
+## Demo and Examples
 https://saurabhnemade.github.io/react-twitter-embed/
 
 
@@ -25,7 +25,7 @@ import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterH
 ```
 
 **Adding Timeline:**
-   
+
      <TwitterTimelineEmbed
       sourceType="profile"
       screenName="saurabhnemade"
@@ -38,14 +38,14 @@ import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterH
       tweetId={'933354946111705097'}
     />
 
-**Adding Share Button:** 
+**Adding Share Button:**
 
       <TwitterShareButton
         url={'https://facebook.com/saurabhnemade'}
         options={{ text: '#reactjs is awesome', via: 'saurabhnemade' }}
       />
 
-**Adding Mention Button:** 
+**Adding Mention Button:**
 
       <TwitterMentionButton
         screenName={'saurabhnemade'}
@@ -56,7 +56,7 @@ import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterH
       <TwitterHashtagButton
         tag={'cybersecurity'}
       />
-    
+
  **Adding follow button:**
 
       <TwitterFollowButton
@@ -71,7 +71,7 @@ import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterH
 
  **Adding Direct Messaging Button:**
 
-      <TwitterMomentShare
+      <TwitterDMButton
         id={1364031673}
       />
 
@@ -80,7 +80,7 @@ import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterH
       <TwitterVideoEmbed
         id={'560070183650213889'}
       />
-      
+
  **Adding Twitter On Air Button:**
 
       <TwitterOnAirButton
@@ -88,7 +88,7 @@ import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterH
       />
 
  **Explore All Options by Twitter Widgets API:**
- 
+
       https://developer.twitter.com/en/docs/twitter-for-websites/javascript-api/overview
 
 
@@ -96,7 +96,7 @@ import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterH
 
 MIT © [saurabhnemade](https://github.com/saurabhnemade)
 
-Copyright (c) 2018 
+Copyright (c) 2018
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

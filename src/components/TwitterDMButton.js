@@ -6,12 +6,12 @@ import twitter_widget_js from './twitter-widget-url'
 export default class TwitterDMButton extends Component {
   static propTypes = {
     /**
-         * Twitter user id for DM button
-         */
+    * Twitter user id for DM button
+    */
     id: PropTypes.number.isRequired,
     /**
-         * Additional options to be added to the button
-         */
+    * Additional options to be added to the button
+    */
     options: PropTypes.object
   };
 
