@@ -1,6 +1,6 @@
-import addonBackgrounds from '@storybook/addon-backgrounds'
+// import addonBackgrounds from '@storybook/addon-backgrounds'
 
-export const backgrounds = addonBackgrounds([
+export const backgrounds = [
   { name: 'White', value: '#FFFFFF' },
   { name: 'Whitesmoke', value: 'whitesmoke' },
   { name: 'Black', value: 'black' },
@@ -15,4 +15,4 @@ export const backgrounds = addonBackgrounds([
   { name: 'Green', value: '#A5D6A7' },
   { name: 'Deep Orange', value: '#FFAB91' },
   { name: 'Blue Grey', value: '#B0BEC5' }
-])
+];

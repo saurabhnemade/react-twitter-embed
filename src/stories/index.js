@@ -5,12 +5,12 @@ import { withInfo } from '@storybook/addon-info'
 import { action } from '@storybook/addon-actions'
 // import { linkTo } from '@storybook/addon-links'
 import { backgrounds } from './backgrounds'
-import './story.css';
+import './story.css'
 
 import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from '../index'
 
 storiesOf('Twitter Timeline Embed', module)
-  .addDecorator(backgrounds)
+  .addParameters({ backgrounds: backgrounds })
   .add('Timeline Profile (With Screen Name)', withInfo({
     text: 'Watch twitter user timeline with given username'
   })(() => (
@@ -219,7 +219,7 @@ storiesOf('Twitter Timeline Embed', module)
           sourceType={'timeline'}
           id={'539487832448843776'}
           theme={'light'}
-          options={{ height: 400 }}          
+          options={{ height: 400 }}
         />
       </div>
     </div>
@@ -234,7 +234,7 @@ storiesOf('Twitter Timeline Embed', module)
           id={'539487832448843776'}
           linkColor={'#F44336'}
           theme={'dark'}
-          options={{ height: 400 }}      
+          options={{ height: 400 }}
         />
       </div>
       <div className="selfCenter spaceBetween standardWidth">
@@ -243,7 +243,7 @@ storiesOf('Twitter Timeline Embed', module)
           id={'539487832448843776'}
           linkColor={'#CDDC39'}
           theme={'dark'}
-          options={{ height: 400 }}     
+          options={{ height: 400 }}
         />
       </div>
       <div className="selfCenter spaceBetween standardWidth">
@@ -464,7 +464,7 @@ storiesOf('Twitter Timeline Embed', module)
   )))
 
 storiesOf('Twitter Share button', module)
-  .addDecorator(backgrounds)
+  .addParameters({ backgrounds: backgrounds })
   .add('Share button', withInfo({
     text: 'Twitter share button example'
   })(() => (
@@ -483,7 +483,7 @@ storiesOf('Twitter Share button', module)
   )))
 
 storiesOf('Twitter Follow button', module)
-  .addDecorator(backgrounds)
+  .addParameters({ backgrounds: backgrounds })
   .add('Follow button', withInfo({
     text: 'Twitter follow button example'
   })(() => (
@@ -501,7 +501,7 @@ storiesOf('Twitter Follow button', module)
   )))
 
 storiesOf('Twitter Hashtag button', module)
-  .addDecorator(backgrounds)
+  .addParameters({ backgrounds: backgrounds })
   .add('Hashtag button', withInfo({
     text: 'Twitter hashtag button example'
   })(() => (
@@ -519,7 +519,7 @@ storiesOf('Twitter Hashtag button', module)
   )))
 
 storiesOf('Twitter Mention button', module)
-  .addDecorator(backgrounds)
+  .addParameters({ backgrounds: backgrounds })
   .add('Mention button', withInfo({
     text: 'Twitter Mention button example'
   })(() => (
@@ -537,7 +537,7 @@ storiesOf('Twitter Mention button', module)
   )))
 
 storiesOf('Twitter Tweet Embed', module)
-  .addDecorator(backgrounds)
+  .addParameters({ backgrounds: backgrounds })
   .add('Tweet embed', withInfo({
     text: 'Tweet embed'
   })(() => (
@@ -551,7 +551,7 @@ storiesOf('Twitter Tweet Embed', module)
   )))
 
 storiesOf('Twitter Moment Share', module)
-  .addDecorator(backgrounds)
+  .addParameters({ backgrounds: backgrounds })
   .add('Moment Share', withInfo({
     text: 'Share Life Moment'
   })(() => (
@@ -563,7 +563,7 @@ storiesOf('Twitter Moment Share', module)
   )))
 
 storiesOf('Twitter DM Button', module)
-  .addDecorator(backgrounds)
+  .addParameters({ backgrounds: backgrounds })
   .add('Direct Message Button', withInfo({
     text: 'Add a message button with user id'
   })(() => (
@@ -574,13 +574,13 @@ storiesOf('Twitter DM Button', module)
       <div className="selfCenter spaceBetween">
         <TwitterDMButton
           id={1364031673}
-          options={{ size: 'large' }} />      
+          options={{ size: 'large' }} />
       </div>
     </div>
   )))
 
 storiesOf('Twitter Video Embed', module)
-  .addDecorator(backgrounds)
+  .addParameters({ backgrounds: backgrounds })
   .add('Twitter video Embed', withInfo({
     text: 'Add a message button with user id'
   })(() => (
@@ -594,7 +594,7 @@ storiesOf('Twitter Video Embed', module)
   )))
 
 storiesOf('Twitter Periscope Button', module)
-  .addDecorator(backgrounds)
+  .addParameters({ backgrounds: backgrounds })
   .add('On Air button', withInfo({
     text: 'Add on Air button with username. If user is broadcasting you will see Live in button.'
   })(() => (
