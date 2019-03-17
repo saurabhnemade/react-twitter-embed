@@ -22,7 +22,7 @@ export default [{
     url(),
     babel({
       exclude: 'node_modules/**',
-      plugins: [ 'external-helpers' ]
+      plugins: [ '@babel/plugin-external-helpers' ]
     }),
     resolve(),
     commonjs()
@@ -43,7 +43,7 @@ export default [{
       babel({
         exclude: 'node_modules/**',
         runtimeHelpers: true,
-        plugins: [["transform-runtime", { useESModules: true }]]
+        plugins: [['@babel/plugin-transform-runtime', { useESModules: true }]]
       })
     ]
   }

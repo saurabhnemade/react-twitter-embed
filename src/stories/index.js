@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { storiesOf } from '@storybook/react'
+import { storiesOf, addParameters } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 import { action } from '@storybook/addon-actions'
 // import { linkTo } from '@storybook/addon-links'
@@ -20,8 +20,11 @@ import {
   TwitterOnAirButton
 } from '../index'
 
+addParameters({
+  backgrounds
+});
+
 storiesOf('Twitter Timeline Embed', module)
-  .addDecorator(backgrounds)
   .add(
     'Timeline Profile (With Screen Name)',
     withInfo({
@@ -556,7 +559,6 @@ storiesOf('Twitter Timeline Embed', module)
   )
 
 storiesOf('Twitter Share button', module)
-  .addDecorator(backgrounds)
   .add(
     'Share button',
     withInfo({
@@ -582,7 +584,6 @@ storiesOf('Twitter Share button', module)
   )
 
 storiesOf('Twitter Follow button', module)
-  .addDecorator(backgrounds)
   .add(
     'Follow button',
     withInfo({
@@ -601,7 +602,6 @@ storiesOf('Twitter Follow button', module)
   )
 
 storiesOf('Twitter Hashtag button', module)
-  .addDecorator(backgrounds)
   .add(
     'Hashtag button',
     withInfo({
@@ -620,7 +620,6 @@ storiesOf('Twitter Hashtag button', module)
   )
 
 storiesOf('Twitter Mention button', module)
-  .addDecorator(backgrounds)
   .add(
     'Mention button',
     withInfo({
@@ -639,7 +638,6 @@ storiesOf('Twitter Mention button', module)
   )
 
 storiesOf('Twitter Tweet Embed', module)
-  .addDecorator(backgrounds)
   .add(
     'Tweet embed',
     withInfo({
@@ -681,7 +679,6 @@ storiesOf('Twitter Tweet Embed', module)
   )
 
 storiesOf('Twitter Moment Share', module)
-  .addDecorator(backgrounds)
   .add(
     'Moment Share',
     withInfo({
@@ -696,7 +693,6 @@ storiesOf('Twitter Moment Share', module)
   )
 
 storiesOf('Twitter DM Button', module)
-  .addDecorator(backgrounds)
   .add(
     'Direct Message Button',
     withInfo({
@@ -714,7 +710,6 @@ storiesOf('Twitter DM Button', module)
   )
 
 storiesOf('Twitter Video Embed', module)
-  .addDecorator(backgrounds)
   .add(
     'Twitter video Embed',
     withInfo({
@@ -729,7 +724,6 @@ storiesOf('Twitter Video Embed', module)
   )
 
 storiesOf('Twitter Periscope Button', module)
-  .addDecorator(backgrounds)
   .add(
     'On Air button',
     withInfo({
