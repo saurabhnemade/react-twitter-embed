@@ -12,7 +12,11 @@ export default class TwitterTweetEmbed extends Component {
     /**
          * Additional options to pass to twitter widget plugin
          */
-    options: PropTypes.object
+    options: PropTypes.object,
+    /**
+         * Callback to call when the widget is loaded
+         */
+    onLoaded: PropTypes.func
   };
 
   renderWidget() {
@@ -25,7 +29,11 @@ export default class TwitterTweetEmbed extends Component {
         this.props.tweetId,
         this.refs.embedContainer,
         this.props.options
-      )
+      ).then(el => {
+        if (this.props.onLoaded) {
+          this.props.onLoaded(el)
+        }
+      })
     }
   }
 
