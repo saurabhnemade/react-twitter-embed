@@ -677,6 +677,24 @@ storiesOf('Twitter Tweet Embed', module)
       </div>
     ))
   )
+  .add(
+    'Tweet with custom CSS',
+    withInfo({
+      text: 'Tweet with custom CSS'
+    })(() => (
+      <div className='centerContent'>
+        <div className='selfCenter'>
+          <TwitterTweetEmbed
+            tweetId={'1083592734038929408'}
+            onLoaded={tweetWidgetEl => {
+              const tweetEl = tweetWidgetEl.shadowRoot.querySelector('.EmbeddedTweet')
+              tweetEl.style.border = '5px solid red'
+            }}
+          />
+        </div>
+      </div>
+    ))
+  )
 
 storiesOf('Twitter Moment Share', module)
   .add(
