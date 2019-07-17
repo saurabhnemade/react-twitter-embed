@@ -14,7 +14,7 @@ export default class TwitterFollowButton extends Component {
          */
     options: PropTypes.object,
     /**
-         * Function to call when the button pressed
+         * Function to call when the button is pressed
          */
     onClick: PropTypes.func
   };
