@@ -595,6 +595,7 @@ storiesOf('Twitter Follow button', module)
           <TwitterFollowButton
             screenName={'saurabhnemade'}
             options={{ size: 'large' }}
+            onClick={event => console.log('clicked', event)}
           />
         </div>
       </div>
