@@ -12,8 +12,18 @@ export default class TwitterFollowButton extends Component {
     /**
          * Additional options to be added to the button
          */
-    options: PropTypes.object
+    options: PropTypes.object,
+    /**
+         * Function to call when the button is pressed
+         */
+    onClick: PropTypes.func
   };
+
+  onClick = (event) => {
+    if (this.props.onClick && !this.isMountCanceled && this.refs.embedContainer.contains(event.target)) {
+      this.props.onClick(event)
+    }
+  }
 
   componentDidMount() {
     if (ExecutionEnvironment.canUseDOM) {
@@ -30,6 +40,9 @@ export default class TwitterFollowButton extends Component {
             this.refs.embedContainer,
             this.props.options
           )
+          if (this.props.onClick) {
+            window.twttr.events.bind('click', this.onClick)
+          }
         }
       })
     }
@@ -37,6 +50,9 @@ export default class TwitterFollowButton extends Component {
 
   componentWillUnmount() {
     this.isMountCanceled = true
+    if (window.twttr) {
+      window.twttr.events.unbind('click', this.onClick)
+    }
   }
 
   render() {
