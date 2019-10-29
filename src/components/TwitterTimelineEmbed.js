@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import isRequiredIf from 'react-proptype-conditional-require'
 import ExecutionEnvironment from 'exenv'
-import twitter_widget_js from './twitter-widget-url'
+import twitterWidgetJs from './twitter-widget-url'
 
 export default class TwitterTimelineEmbed extends Component {
   static propTypes = {
@@ -83,8 +83,24 @@ export default class TwitterTimelineEmbed extends Component {
     /**
          * Custom language code. Supported codes here: https://developer.twitter.com/en/docs/twitter-for-websites/twitter-for-websites-supported-languages/overview.html
          */
-    lang: PropTypes.string
+    lang: PropTypes.string,
+
+    /**
+     * Placeholder while tweet is loading
+     */
+    placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+    /**
+     * Function to execute after load, return html element
+     */
+    onLoad: PropTypes.func
   };
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      isLoading: true
+    }
+  }
 
   buildChromeOptions(options) {
     options.chrome = ''
@@ -116,6 +132,7 @@ export default class TwitterTimelineEmbed extends Component {
   }
 
   renderWidget(options) {
+    const { onLoad } = this.props
     if (!this.isMountCanceled) {
       window.twttr.widgets.createTimeline(
         {
@@ -129,14 +146,21 @@ export default class TwitterTimelineEmbed extends Component {
         },
         this.refs.embedContainer,
         options
-      )
+      ).then((element) => {
+        this.setState({
+          isLoading: false
+        })
+        if (onLoad) {
+          onLoad(element)
+        }
+      })
     }
   }
 
   componentDidMount() {
     if (ExecutionEnvironment.canUseDOM) {
       let script = require('scriptjs')
-      script(twitter_widget_js, 'twitter-embed', () => {
+      script(twitterWidgetJs, 'twitter-embed', () => {
         if (!window.twttr) {
           console.error('Failure to load window.twttr in TwitterTimelineEmbed, aborting load.')
           return
@@ -155,8 +179,13 @@ export default class TwitterTimelineEmbed extends Component {
   }
 
   render() {
+    const { isLoading } = this.state
+    const { placeholder } = this.props
     return (
-      <div ref='embedContainer' />
+      <React.Fragment>
+        {isLoading && placeholder}
+        <div ref='embedContainer' />
+      </React.Fragment>
     )
   }
 }
