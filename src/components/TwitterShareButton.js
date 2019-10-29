@@ -12,10 +12,27 @@ export default class TwitterShareButton extends Component {
     /**
     * Additional options for overriding config. Details at : https://dev.twitter.com/web/tweet-button/parameters
     */
-    options: PropTypes.object
+    options: PropTypes.object,
+
+    /**
+     * Placeholder while tweet is loading
+     */
+    placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+    /**
+     * Function to execute after load, return html element
+     */
+    onLoad: PropTypes.func
   };
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoading: true
+    };
+  }
+
   componentDidMount() {
+    const { onLoad } = this.props;
     if (ExecutionEnvironment.canUseDOM) {
       let script = require('scriptjs')
       script(twitter_widget_js, 'twitter-embed', () => {
@@ -29,7 +46,14 @@ export default class TwitterShareButton extends Component {
             this.props.url,
             this.refs.embedContainer,
             this.props.options
-          )
+          ).then((element) => {
+            this.setState({
+              isLoading: false
+            });
+            if (onLoad) {
+              onLoad(element);
+            }
+          })
         }
       })
     }
@@ -40,8 +64,13 @@ export default class TwitterShareButton extends Component {
   }
 
   render() {
+    const { isLoading } = this.state;
+    const { placeholder } = this.props;
     return (
-      <div ref='embedContainer' />
+      <React.Fragment>
+        {isLoading && placeholder}
+        <div ref='embedContainer'/>
+      </React.Fragment>
     )
   }
 }
