@@ -1016,7 +1016,7 @@ storiesOf('Twitter Tweet Embed', module)
         <div className='selfCenter'>
           <TwitterTweetEmbed
             tweetId={'1083592734038929408'}
-            onLoaded={tweetWidgetEl => {
+            onLoad={tweetWidgetEl => {
               const tweetEl = tweetWidgetEl.shadowRoot.querySelector('.EmbeddedTweet')
               tweetEl.style.border = '5px solid red'
             }}
