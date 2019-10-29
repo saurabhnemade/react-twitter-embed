@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import ExecutionEnvironment from 'exenv'
-import twitter_widget_js from './twitter-widget-url'
+import twitterWidgetJs from './twitter-widget-url'
 
 export default class TwitterTweetEmbed extends Component {
   static propTypes = {
@@ -14,12 +14,24 @@ export default class TwitterTweetEmbed extends Component {
          */
     options: PropTypes.object,
     /**
-         * Callback to call when the widget is loaded
-         */
-    onLoaded: PropTypes.func
+     * Placeholder while tweet is loading
+     */
+    placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+    /**
+     * Function to execute after load, return html element
+     */
+    onLoad: PropTypes.func
   };
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      isLoading: true
+    }
+  }
+
   renderWidget() {
+    const { onLoad } = this.props
     if (!window.twttr) {
       console.error('Failure to load window.twttr in TwitterTweetEmbed, aborting load.')
       return
@@ -29,9 +41,12 @@ export default class TwitterTweetEmbed extends Component {
         this.props.tweetId,
         this.refs.embedContainer,
         this.props.options
-      ).then(el => {
-        if (this.props.onLoaded) {
-          this.props.onLoaded(el)
+      ).then((element) => {
+        this.setState({
+          isLoading: false
+        })
+        if (onLoad) {
+          onLoad(element)
         }
       })
     }
@@ -40,7 +55,7 @@ export default class TwitterTweetEmbed extends Component {
   componentDidMount() {
     if (ExecutionEnvironment.canUseDOM) {
       let script = require('scriptjs')
-      script(twitter_widget_js, 'twitter-embed', () => {
+      script(twitterWidgetJs, 'twitter-embed', () => {
         this.renderWidget()
       })
     }
@@ -51,8 +66,13 @@ export default class TwitterTweetEmbed extends Component {
   }
 
   render() {
+    const { isLoading } = this.state
+    const { placeholder } = this.props
     return (
-      <div ref='embedContainer' />
+      <React.Fragment>
+        {isLoading && placeholder}
+        <div ref='embedContainer' />
+      </React.Fragment>
     )
   }
 }
