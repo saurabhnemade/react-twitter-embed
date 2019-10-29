@@ -9,7 +9,7 @@ export default class TwitterTimelineEmbed extends Component {
     /**
          * This can be either of profile, likes, list, collection, URL, widget
          */
-    sourceType: PropTypes.oneOf(['profile', 'likes', 'list', 'collection', 'URL', 'widget']).isRequired,
+    sourceType: PropTypes.oneOf(['profile', 'likes', 'list', 'collection', 'url', 'widget']).isRequired,
     /**
          * username of twitter handle as String
          */
