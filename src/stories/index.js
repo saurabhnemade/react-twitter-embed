@@ -22,7 +22,7 @@ import {
 
 addParameters({
   backgrounds
-});
+})
 
 storiesOf('Twitter Timeline Embed', module)
   .add(
@@ -558,10 +558,10 @@ storiesOf('Twitter Timeline Embed', module)
     ))
   )
   .add(
-  'Timeline with text placeholder while loading',
-  withInfo({
-    text: 'Timeline with text placeholder while loading'
-  })(() => (
+    'Timeline with text placeholder while loading',
+    withInfo({
+      text: 'Timeline with text placeholder while loading'
+    })(() => (
       <div className='centerContent'>
         <div className='selfCenter spaceBetween standardWidth'>
           <TwitterTimelineEmbed
@@ -570,7 +570,7 @@ storiesOf('Twitter Timeline Embed', module)
             options={{ height: 400 }}
             theme={'dark'}
             lang={'hi'}
-            placeholder={"Loading"}
+            placeholder={'Loading'}
           />
         </div>
       </div>
@@ -657,7 +657,7 @@ storiesOf('Twitter Share button', module)
               via: 'saurabhnemade',
               size: 'large'
             }}
-            placeholder={"Loading"}
+            placeholder={'Loading'}
           />
         </div>
       </div>
@@ -701,13 +701,12 @@ storiesOf('Twitter Share button', module)
               via: 'saurabhnemade',
               size: 'large'
             }}
-            onLoad={action("Loaded successfully")}
+            onLoad={action('Loaded successfully')}
           />
         </div>
       </div>
     ))
   )
-
 
 storiesOf('Twitter Follow button', module)
   .add(
@@ -806,7 +805,7 @@ storiesOf('Twitter Hashtag button', module)
           <TwitterHashtagButton
             tag={'cybersecurity'}
             options={{ size: 'large' }}
-            placeholder={"Loading"}
+            placeholder={'Loading'}
           />
         </div>
       </div>
@@ -849,7 +848,6 @@ storiesOf('Twitter Hashtag button', module)
     ))
   )
 
-
 storiesOf('Twitter Mention button', module)
   .add(
     'Mention button',
@@ -877,7 +875,7 @@ storiesOf('Twitter Mention button', module)
           <TwitterMentionButton
             screenName={'saurabhnemade'}
             options={{ size: 'large' }}
-            placeholder={"Loading"}
+            placeholder={'Loading'}
           />
         </div>
       </div>
@@ -982,7 +980,7 @@ storiesOf('Twitter Tweet Embed', module)
         <div className='selfCenter'>
           <TwitterTweetEmbed
             tweetId={'1083592734038929408'}
-            options={{ cards: 'hidden' , width: 300, maxWidth: 800}}
+            options={{ cards: 'hidden', width: 300, maxWidth: 800 }}
             onLoad={action('Loaded successfully')}
           />
         </div>
@@ -998,11 +996,11 @@ storiesOf('Twitter Tweet Embed', module)
         <div className='selfCenter'>
           <TwitterTweetEmbed
             tweetId={'1083592734038929408'}
-            options={{ cards: 'hidden' , width: 300, maxWidth: 800}}
+            options={{ cards: 'hidden', width: 300, maxWidth: 800 }}
             onLoad={tweetWidgetEl => {
-              const tweetEl = tweetWidgetEl.shadowRoot.querySelector('.EmbeddedTweet');
-              tweetEl.style.width="800px",
-              tweetEl.style.maxWidth="800px"
+              const tweetEl = tweetWidgetEl.shadowRoot.querySelector('.EmbeddedTweet')
+              tweetEl.style.width = '800px'
+              tweetEl.style.maxWidth = '800px'
             }}
           />
         </div>
@@ -1082,7 +1080,6 @@ storiesOf('Twitter Moment Share', module)
     ))
   )
 
-
 storiesOf('Twitter DM Button', module)
   .add(
     'Direct Message Button',
@@ -1106,7 +1103,7 @@ storiesOf('Twitter DM Button', module)
     })(() => (
       <div className='centerContent'>
         <div className='selfCenter spaceBetween'>
-          <TwitterDMButton id={1364031673} options={{ size: 'large' }} placeholder={'Loading'}/>
+          <TwitterDMButton id={1364031673} options={{ size: 'large' }} placeholder={'Loading'} />
         </div>
       </div>
     ))
@@ -1138,14 +1135,12 @@ storiesOf('Twitter DM Button', module)
             <div style={{padding: 10, margin: 10, backgroundColor: 'red', color: 'white'}}>
               Hello I am custom placeholder
             </div>
-          )}
-          onLoad={action('Loaded successfully')}
+          )} onLoad={action('Loaded successfully')}
           />
         </div>
       </div>
     ))
   )
-
 
 storiesOf('Twitter Video Embed', module)
   .add(
@@ -1167,7 +1162,7 @@ storiesOf('Twitter Video Embed', module)
     })(() => (
       <div className='centerContent'>
         <div className='selfCenter spaceBetween'>
-          <TwitterVideoEmbed id={'560070183650213889'} placeholder={'Loading'}/>
+          <TwitterVideoEmbed id={'560070183650213889'} placeholder={'Loading'} />
         </div>
       </div>
     ))
@@ -1200,8 +1195,6 @@ storiesOf('Twitter Video Embed', module)
       </div>
     ))
   )
-
-
 
 storiesOf('Twitter Periscope Button', module)
   .add(

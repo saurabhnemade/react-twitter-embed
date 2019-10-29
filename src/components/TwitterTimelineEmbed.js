@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import isRequiredIf from 'react-proptype-conditional-require'
 import ExecutionEnvironment from 'exenv'
-import twitter_widget_js from './twitter-widget-url'
+import twitterWidgetJs from './twitter-widget-url'
 
 export default class TwitterTimelineEmbed extends Component {
   static propTypes = {
@@ -96,10 +96,10 @@ export default class TwitterTimelineEmbed extends Component {
   };
 
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       isLoading: true
-    };
+    }
   }
 
   buildChromeOptions(options) {
@@ -132,7 +132,7 @@ export default class TwitterTimelineEmbed extends Component {
   }
 
   renderWidget(options) {
-    const { onLoad } = this.props;
+    const { onLoad } = this.props
     if (!this.isMountCanceled) {
       window.twttr.widgets.createTimeline(
         {
@@ -149,9 +149,9 @@ export default class TwitterTimelineEmbed extends Component {
       ).then((element) => {
         this.setState({
           isLoading: false
-        });
+        })
         if (onLoad) {
-          onLoad(element);
+          onLoad(element)
         }
       })
     }
@@ -160,7 +160,7 @@ export default class TwitterTimelineEmbed extends Component {
   componentDidMount() {
     if (ExecutionEnvironment.canUseDOM) {
       let script = require('scriptjs')
-      script(twitter_widget_js, 'twitter-embed', () => {
+      script(twitterWidgetJs, 'twitter-embed', () => {
         if (!window.twttr) {
           console.error('Failure to load window.twttr in TwitterTimelineEmbed, aborting load.')
           return
@@ -179,12 +179,12 @@ export default class TwitterTimelineEmbed extends Component {
   }
 
   render() {
-    const { isLoading } = this.state;
-    const { placeholder } = this.props;
+    const { isLoading } = this.state
+    const { placeholder } = this.props
     return (
       <React.Fragment>
         {isLoading && placeholder}
-        <div ref='embedContainer'/>
+        <div ref='embedContainer' />
       </React.Fragment>
     )
   }

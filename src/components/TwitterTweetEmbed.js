@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import ExecutionEnvironment from 'exenv'
-import twitter_widget_js from './twitter-widget-url'
+import twitterWidgetJs from './twitter-widget-url'
 
 export default class TwitterTweetEmbed extends Component {
   static propTypes = {
@@ -24,14 +24,14 @@ export default class TwitterTweetEmbed extends Component {
   };
 
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       isLoading: true
-    };
+    }
   }
 
   renderWidget() {
-    const { onLoad } = this.props;
+    const { onLoad } = this.props
     if (!window.twttr) {
       console.error('Failure to load window.twttr in TwitterTweetEmbed, aborting load.')
       return
@@ -44,9 +44,9 @@ export default class TwitterTweetEmbed extends Component {
       ).then((element) => {
         this.setState({
           isLoading: false
-        });
+        })
         if (onLoad) {
-          onLoad(element);
+          onLoad(element)
         }
       })
     }
@@ -55,7 +55,7 @@ export default class TwitterTweetEmbed extends Component {
   componentDidMount() {
     if (ExecutionEnvironment.canUseDOM) {
       let script = require('scriptjs')
-      script(twitter_widget_js, 'twitter-embed', () => {
+      script(twitterWidgetJs, 'twitter-embed', () => {
         this.renderWidget()
       })
     }
@@ -66,12 +66,12 @@ export default class TwitterTweetEmbed extends Component {
   }
 
   render() {
-    const { isLoading } = this.state;
-    const { placeholder } = this.props;
+    const { isLoading } = this.state
+    const { placeholder } = this.props
     return (
       <React.Fragment>
         {isLoading && placeholder}
-        <div ref='embedContainer'/>
+        <div ref='embedContainer' />
       </React.Fragment>
     )
   }
