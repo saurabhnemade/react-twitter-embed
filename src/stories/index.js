@@ -618,6 +618,23 @@ storiesOf('Twitter Timeline Embed', module)
       </div>
     ))
   )
+  .add(
+    'Timeline with tweet limit',
+    withInfo({
+      text: 'Timeline with tweet limit'
+    })(() => (
+      <div className='centerContent'>
+        <div className='selfCenter spaceBetween standardWidth'>
+          <TwitterTimelineEmbed
+            sourceType={'timeline'}
+            id={'539487832448843776'}
+            options={{ height: 400, tweetLimit: 10 }}
+          />
+        </div>
+      </div>
+    ))
+  )
+
 
 storiesOf('Twitter Share button', module)
   .add(
