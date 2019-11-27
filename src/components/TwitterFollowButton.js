@@ -28,6 +28,8 @@ export default class TwitterFollowButton extends Component {
     this.state = {
       isLoading: true
     }
+
+    this.embedContainer = React.createRef();
   }
 
   componentDidMount() {
@@ -43,7 +45,7 @@ export default class TwitterFollowButton extends Component {
         if (!this.isMountCanceled) {
           window.twttr.widgets.createFollowButton(
             this.props.screenName,
-            this.refs.embedContainer,
+            this.embedContainer.current,
             this.props.options
           ).then((element) => {
             this.setState({
@@ -68,7 +70,7 @@ export default class TwitterFollowButton extends Component {
     return (
       <React.Fragment>
         {isLoading && placeholder}
-        <div ref='embedContainer' />
+        <div ref={this.embedContainer} />
       </React.Fragment>
     )
   }

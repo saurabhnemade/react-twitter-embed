@@ -28,6 +28,8 @@ export default class TwitterMomentShare extends Component {
     this.state = {
       isLoading: true
     }
+
+    this.shareMoment = React.createRef();
   }
 
   componentDidMount() {
@@ -43,7 +45,7 @@ export default class TwitterMomentShare extends Component {
         if (!this.isMountCanceled) {
           window.twttr.widgets.createMoment(
             this.props.momentId,
-            this.refs.shareMoment,
+            this.shareMoment.current,
             this.props.options
           ).then((element) => {
             this.setState({
@@ -68,7 +70,7 @@ export default class TwitterMomentShare extends Component {
     return (
       <React.Fragment>
         {isLoading && placeholder}
-        <div ref='shareMoment' />
+        <div ref={this.shareMoment} />
       </React.Fragment>
     )
   }

@@ -100,6 +100,8 @@ export default class TwitterTimelineEmbed extends Component {
     this.state = {
       isLoading: true
     }
+
+    this.embedContainer = React.createRef();
   }
 
   buildChromeOptions(options) {
@@ -119,7 +121,7 @@ export default class TwitterTimelineEmbed extends Component {
 
   buildOptions() {
     let options = Object.assign({}, this.props.options)
-    if (this.props.autoHeight) { options.height = this.refs.embedContainer.parentNode.offsetHeight }
+    if (this.props.autoHeight) { options.height = this.embedContainer.current.parentNode.offsetHeight }
 
     options = Object.assign({}, options, {
       theme: this.props.theme,
@@ -144,7 +146,7 @@ export default class TwitterTimelineEmbed extends Component {
           id: this.props.id || this.props.widgetId,
           url: this.props.url
         },
-        this.refs.embedContainer,
+        this.embedContainer.current,
         options
       ).then((element) => {
         this.setState({
@@ -184,7 +186,7 @@ export default class TwitterTimelineEmbed extends Component {
     return (
       <React.Fragment>
         {isLoading && placeholder}
-        <div ref='embedContainer' />
+        <div ref={this.embedContainer} />
       </React.Fragment>
     )
   }
