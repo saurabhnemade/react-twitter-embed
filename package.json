@@ -28,6 +28,7 @@
     "test:watch": "react-scripts test --env=jsdom",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
+    "lint:types": "tsc -p types --noEmit",
     "build": "rollup -c",
     "start": "rollup -c -w",
     "prepare": "npm run build",
@@ -41,7 +42,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
-    "babel-loader": "^8.0.0-beta",
     "@babel/plugin-external-helpers": "^7.2.0",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/plugin-proposal-decorators": "^7.0.0",
@@ -71,6 +71,7 @@
     "@storybook/addons": "^5.0.0",
     "@storybook/react": "^5.0.0",
     "babel-eslint": "^9.0.0",
+    "babel-loader": "^8.0.0-beta",
     "chai": "^4.2.0",
     "cross-env": "^5.1.4",
     "enzyme": "^3.9.0",
@@ -92,15 +93,18 @@
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-postcss": "^1.6.3",
-    "rollup-plugin-url": "^1.4.0"
+    "rollup-plugin-url": "^1.4.0",
+    "typescript": "^3.6.3"
   },
   "files": [
-    "dist"
+    "dist",
+    "types"
   ],
   "dependencies": {
     "enzyme-adapter-react-16": "^1.11.0",
     "exenv": "^1.2.2",
     "react-proptype-conditional-require": "^1.0.4",
     "scriptjs": "^2.5.9"
-  }
+  },
+  "typings": "types/index.d.ts"
 }
