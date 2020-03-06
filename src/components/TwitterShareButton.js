@@ -29,6 +29,8 @@ export default class TwitterShareButton extends Component {
     this.state = {
       isLoading: true
     }
+
+    this.embedContainer = React.createRef();
   }
 
   componentDidMount() {
@@ -44,7 +46,7 @@ export default class TwitterShareButton extends Component {
         if (!this.isMountCanceled) {
           window.twttr.widgets.createShareButton(
             this.props.url,
-            this.refs.embedContainer,
+            this.embedContainer.current,
             this.props.options
           ).then((element) => {
             this.setState({
@@ -69,7 +71,7 @@ export default class TwitterShareButton extends Component {
     return (
       <React.Fragment>
         {isLoading && placeholder}
-        <div ref='embedContainer' />
+        <div ref={this.embedContainer} />
       </React.Fragment>
     )
   }
