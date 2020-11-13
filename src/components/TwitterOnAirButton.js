@@ -28,6 +28,7 @@ export default class TwitterOnAirButton extends Component {
     this.state = {
       isLoading: true
     }
+    this.embedContainer = React.createRef()
   }
 
   componentDidMount() {
@@ -43,7 +44,7 @@ export default class TwitterOnAirButton extends Component {
         if (!this.isMountCanceled) {
           window.twttr.widgets.createPeriscopeOnAirButton(
             this.props.username,
-            this.refs.embedContainer,
+            this.embedContainer.current,
             this.props.options
           ).then((element) => {
             this.setState({
@@ -68,7 +69,7 @@ export default class TwitterOnAirButton extends Component {
     return (
       <React.Fragment>
         {isLoading && placeholder}
-        <div ref='embedContainer' />
+        <div ref={this.embedContainer} />
       </React.Fragment>
     )
   }

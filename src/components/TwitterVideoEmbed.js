@@ -24,6 +24,7 @@ export default class TwitterVideoEmbed extends Component {
     this.state = {
       isLoading: true
     }
+    this.embedContainer = React.createRef()
   }
 
   componentDidMount() {
@@ -38,7 +39,7 @@ export default class TwitterVideoEmbed extends Component {
         if (!this.isMountCanceled) {
           window.twttr.widgets.createVideo(
             this.props.id,
-            this.refs.embedContainer
+            this.embedContainer.current
           ).then((element) => {
             this.setState({
               isLoading: false
@@ -62,7 +63,7 @@ export default class TwitterVideoEmbed extends Component {
     return (
       <React.Fragment>
         {isLoading && placeholder}
-        <div ref='embedContainer' />
+        <div ref={this.embedContainer} />
       </React.Fragment>
     )
   }
