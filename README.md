@@ -14,8 +14,12 @@ https://saurabhnemade.github.io/react-twitter-embed/
 
 ## Install
 
-```bash
-npm install --save react-twitter-embed
+```sh
+// with npm
+npm install react-twitter-embed
+
+// with yarn
+yarn add react-twitter-embed
 ```
 
 ## Usage
