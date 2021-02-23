@@ -1,6 +1,12 @@
 
 # React Twitter Embed Component
 
+---
+
+> ⚠️ **Note**: This project is no longer under development. Issues will not be addressed and pull-requests will not be accepted. Please fork and maintain your own version or use another library if the latest version does not suit your needs. ⚠️
+
+---
+
 [![NPM](https://img.shields.io/npm/v/react-twitter-embed.svg)](https://www.npmjs.com/package/react-twitter-embed) [![Storybook](https://cdn.jsdelivr.net/gh/storybooks/brand@master/badge/badge-storybook.svg)](https://saurabhnemade.github.io/react-twitter-embed/) [![Build Status](https://travis-ci.org/saurabhnemade/react-twitter-embed.svg?branch=storybook-migration)](https://travis-ci.org/saurabhnemade/react-twitter-embed) [![Known Vulnerabilities](https://snyk.io/test/github/saurabhnemade/react-twitter-embed/badge.svg)](https://snyk.io/test/github/saurabhnemade/react-twitter-embed) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://raw.githubusercontent.com/saurabhnemade/react-twitter-embed/master/LICENSE)
 
 
