@@ -2,7 +2,7 @@ import React from 'react'
 import { configure, mount } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 import { expect } from 'chai'
-import { TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterTimelineEmbed } from './../index'
+import { TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterTimelineEmbed } from '../index'
 
 const { describe, it } = global
 
