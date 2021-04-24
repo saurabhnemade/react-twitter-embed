@@ -9,16 +9,16 @@ interface JSONObject {
   [k: string] : any
 }
 
-export interface TwitterDMButtonProps {
-  id: number;
+export interface TwitterFollowButtonProps {
+  screenName: string;
   options?: JSONObject,
   placeholder?: string | React.ReactNode;
   onLoad?: (element: any) => void;
 };
 
-const methodName = 'createDMButton';
+const methodName = 'createFollowButton';
 
-const TwitterDMButton = (props: TwitterDMButtonProps) => {
+const TwitterFollowButton = (props: TwitterFollowButtonProps) => {
   const ref = React.useRef<HTMLDivElement | null >(null);
   const [loading, setLoading] = React.useState(true);
 
@@ -39,15 +39,13 @@ const TwitterDMButton = (props: TwitterDMButtonProps) => {
         window
           .twttr
           .widgets[methodName](
-          props.id,
+          props.screenName,
           ref?.current,
           props.options
         ).then((element: any) => {
-          if (isComponentMounted) {
-            setLoading(false);
-            if (props.onLoad) {
-              props.onLoad(element)
-            }
+          setLoading(false);
+          if (props.onLoad) {
+            props.onLoad(element)
           }
         });
       }
@@ -72,4 +70,4 @@ const TwitterDMButton = (props: TwitterDMButtonProps) => {
   );
 };
 
-export default TwitterDMButton;
+export default TwitterFollowButton;
