@@ -1,82 +1,192 @@
-import React from 'react';
-import twitterWidgetJs from "./twiter-widget-url";
+import React from 'react'
+import twitterWidgetJs from './twiter-widget-url'
 
 declare global {
-  interface Window { twttr: any; }
+  interface Window {
+    twttr: any
+  }
 }
 
 interface JSONObject {
-  [k: string] : any
+  [k: string]: any
 }
 
 export interface TwitterTimelineEmbedBase {
-  options?: JSONObject;
-  autoHeight?: boolean;
-  theme?: 'dark' | 'light';
-  linkColor?: string;
-  borderColor?: string;
-  noHeader?: boolean;
-  noFooter?: boolean;
-  noBorders?: boolean;
-  noScrollbar?: boolean;
-  transparent?: boolean;
-  lang?: string;
-  ariaPolite?: 'polite' | 'assertive' | 'rude';
-  tweetLimit?: number;
-  placeholder?: string | React.ReactNode;
-  onLoad?: (element: any) => void;
+  /**
+   * Additional options to pass to twitter widget plugin
+   */
+  options?: JSONObject
+  /**
+   * Automatically fit into parent container height
+   */
+  autoHeight?: boolean
+  /**
+   * With dark or light theme
+   */
+  theme?: 'dark' | 'light'
+  /**
+   * With custom link colors. Note: Only Hex colors are supported.
+   */
+  linkColor?: string
+  /**
+   * With custom border colors. Note: Only Hex colors are supported.
+   */
+  borderColor?: string
+  /**
+   * Hide the header from timeline
+   */
+  noHeader?: boolean
+  /**
+   * Hide the footer from timeline
+   */
+  noFooter?: boolean
+  /**
+   * Hide the border from timeline
+   */
+  noBorders?: boolean
+  /**
+   * Hide the scrollbars
+   */
+  noScrollbar?: boolean
+  /**
+   * Enable Transparancy
+   */
+  transparent?: boolean
+  /**
+   * Custom language code. Supported codes here: https://developer.twitter.com/en/docs/twitter-for-websites/twitter-for-websites-supported-languages/overview.html
+   */
+  lang?: string
+  /**
+   * ariaPolite
+   */
+  ariaPolite?: 'polite' | 'assertive' | 'rude'
+  /**
+   * Limit of tweets to be shown
+   */
+  tweetLimit?: number
+  /**
+   * Placeholder while tweet is loading
+   */
+  placeholder?: string | React.ReactNode
+  /**
+   * Function to execute after load, return html element
+   */
+  onLoad?: (element: any) => void
 }
 
-export interface TwitterTimelineEmbedSourceScreenName extends TwitterTimelineEmbedBase {
-  sourceType: 'profile' | 'likes';
-  screenName: string;
+export interface TwitterTimelineEmbedSourceScreenName
+  extends TwitterTimelineEmbedBase {
+  /**
+   * This can be either of profile, likes
+   */
+  sourceType: 'profile' | 'likes'
+  /**
+   * username of twitter handle as String
+   */
+  screenName: string
 }
 
-export interface TwitterTimelineEmbedSourceUserId extends TwitterTimelineEmbedBase {
-  sourceType: 'profile' | 'likes';
-  userId: string;
+export interface TwitterTimelineEmbedSourceUserId
+  extends TwitterTimelineEmbedBase {
+  /**
+   * This can be either of profile, likes
+   */
+  sourceType: 'profile' | 'likes'
+  /**
+   * UserId of twitter handle as number
+   */
+  userId: string
 }
 
-export interface TwitterTimelineEmbedSourceTimeline extends TwitterTimelineEmbedBase {
-  sourceType: 'timeline';
-  id: string;
+export interface TwitterTimelineEmbedSourceTimeline
+  extends TwitterTimelineEmbedBase {
+  /**
+   * This can be either of timeline
+   */
+  sourceType: 'timeline'
+  /**
+   * To show list, unique list id
+   * Also used with collections, in that case its valid collection id
+   */
+  id: string
 }
 
-export interface TwitterTimelineEmbedSourceList extends TwitterTimelineEmbedBase {
-  sourceType: 'list';
-  ownerScreenName: string;
-  slug: string;
+export interface TwitterTimelineEmbedSourceList
+  extends TwitterTimelineEmbedBase {
+  /**
+   * This can be either of list
+   */
+  sourceType: 'list'
+  /**
+   * To show list, used along with slug
+   */
+  ownerScreenName: string
+  /**
+   * To show list, used along with ownerScreenName
+   */
+  slug: string
 }
 
-export interface TwitterTimelineEmbedSourceListId extends TwitterTimelineEmbedBase {
-  sourceType: 'list';
-  id: string | number;
+export interface TwitterTimelineEmbedSourceListId
+  extends TwitterTimelineEmbedBase {
+  /**
+   * This can be either of list
+   */
+  sourceType: 'list'
+  /**
+   * To show list, unique list id
+   * Also used with collections, in that case its valid collection id
+   */
+  id: string | number
 }
 
-export interface TwitterTimelineEmbedSourceCollection extends TwitterTimelineEmbedBase {
-  sourceType: 'collection';
-  id: string | number;
+export interface TwitterTimelineEmbedSourceCollection
+  extends TwitterTimelineEmbedBase {
+  /**
+   * This can be collection
+   */
+  sourceType: 'collection'
+  /**
+   * To show list, unique list id
+   * Also used with collections, in that case its valid collection id
+   */
+  id: string | number
 }
 
-export interface TwitterTimelineEmbedSourceUrl extends TwitterTimelineEmbedBase {
-  sourceType: 'url';
-  url: string;
+export interface TwitterTimelineEmbedSourceUrl
+  extends TwitterTimelineEmbedBase {
+  /**
+   * This can be url
+   */
+  sourceType: 'url'
+  /**
+   * To show twitter content with url.
+   * Supported content includes profiles, likes, lists, and collections.
+   */
+  url: string
 }
 
-export interface TwitterTimelineEmbedSourceWidget extends TwitterTimelineEmbedBase {
-  sourceType: 'widget';
-  widgetId: string;
+export interface TwitterTimelineEmbedSourceWidget
+  extends TwitterTimelineEmbedBase {
+  /**
+   * This can be widget
+   */
+  sourceType: 'widget'
+  /**
+   * To show custom widget
+   */
+  widgetId: string
 }
 
 export type TwitterTimelineEmbedPropsType =
-  TwitterTimelineEmbedSourceScreenName |
-  TwitterTimelineEmbedSourceUserId |
-  TwitterTimelineEmbedSourceTimeline |
-  TwitterTimelineEmbedSourceList |
-  TwitterTimelineEmbedSourceListId |
-  TwitterTimelineEmbedSourceCollection |
-  TwitterTimelineEmbedSourceUrl |
-  TwitterTimelineEmbedSourceWidget;
+  | TwitterTimelineEmbedSourceScreenName
+  | TwitterTimelineEmbedSourceUserId
+  | TwitterTimelineEmbedSourceTimeline
+  | TwitterTimelineEmbedSourceList
+  | TwitterTimelineEmbedSourceListId
+  | TwitterTimelineEmbedSourceCollection
+  | TwitterTimelineEmbedSourceUrl
+  | TwitterTimelineEmbedSourceWidget
 
 // export interface TwitterTimelineEmbedProps {
 //   sourceType: 'profile' | 'likes' | 'list' | 'collection' | 'URL' | 'widget'
@@ -86,11 +196,11 @@ export type TwitterTimelineEmbedPropsType =
 //   onLoad?: (element: any) => void;
 // };
 
-const methodName = 'createTimeline';
+const methodName = 'createTimeline'
 
 const TwitterTimelineEmbed = (props: TwitterTimelineEmbedPropsType) => {
-  const ref = React.useRef<HTMLDivElement | null >(null);
-  const [loading, setLoading] = React.useState(true);
+  const ref = React.useRef<HTMLDivElement | null>(null)
+  const [loading, setLoading] = React.useState(true)
 
   const buildOptions = () => {
     let options = Object.assign({}, props.options)
@@ -112,73 +222,78 @@ const TwitterTimelineEmbed = (props: TwitterTimelineEmbedPropsType) => {
 
   const buildChromeOptions = (options: JSONObject) => {
     options.chrome = ''
-    if (props.noHeader) { options.chrome = options.chrome + ' noheader'; }
-    if (props.noFooter) { options.chrome = options.chrome + ' nofooter'; }
-    if (props.noBorders) { options.chrome = options.chrome + ' noborders'; }
-    if (props.noScrollbar) { options.chrome = options.chrome + ' noscrollbar' };
-    if (props.transparent) { options.chrome = options.chrome + ' transparent' };
+    if (props.noHeader) {
+      options.chrome = options.chrome + ' noheader'
+    }
+    if (props.noFooter) {
+      options.chrome = options.chrome + ' nofooter'
+    }
+    if (props.noBorders) {
+      options.chrome = options.chrome + ' noborders'
+    }
+    if (props.noScrollbar) {
+      options.chrome = options.chrome + ' noscrollbar'
+    }
+    if (props.transparent) {
+      options.chrome = options.chrome + ' transparent'
+    }
 
     return options
   }
 
   React.useEffect(() => {
     let isComponentMounted = true
-    let script = require('scriptjs');
+    const script = require('scriptjs')
     script(twitterWidgetJs, 'twitter-embed', () => {
       if (!window.twttr) {
-        console.error('Failure to load window.twttr, aborting load');
-        return;
+        console.error('Failure to load window.twttr, aborting load')
+        return
       }
       if (isComponentMounted) {
         if (!window.twttr.widgets[methodName]) {
-          console.error(`Method ${methodName} is not present anymore in twttr.widget api`);
-          return;
+          console.error(
+            `Method ${methodName} is not present anymore in twttr.widget api`
+          )
+          return
         }
 
         let options = buildOptions()
         /** Append chrome options */
         options = buildChromeOptions(options)
 
-        window
-          .twttr
-          .widgets[methodName](
+        window.twttr.widgets[methodName](
           {
             sourceType: props.sourceType,
-            screenName: props['screenName'],
-            userId: props['userId'],
-            ownerScreenName: props['ownerScreenName'],
-            slug: props['slug'],
-            id: props['id'] || props['widgetId'],
-            url: props['url']
+            screenName: props.screenName,
+            userId: props.userId,
+            ownerScreenName: props.ownerScreenName,
+            slug: props.slug,
+            id: props.id || props.widgetId,
+            url: props.url
           },
           ref?.current,
           options
         ).then((element: any) => {
-          setLoading(false);
+          setLoading(false)
           if (props.onLoad) {
             props.onLoad(element)
           }
-        });
+        })
       }
-    });
+    })
 
     // cleaning up
     return () => {
       isComponentMounted = false
     }
-  }, []);
+  }, [])
 
   return (
     <React.Fragment>
-      {loading && (
-        <React.Fragment>
-          {props.placeholder}
-        </React.Fragment>
-
-      )}
+      {loading && <React.Fragment>{props.placeholder}</React.Fragment>}
       <div ref={ref} />
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default TwitterTimelineEmbed;
+export default TwitterTimelineEmbed
