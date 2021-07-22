@@ -263,12 +263,19 @@ const TwitterTimelineEmbed = (props: TwitterTimelineEmbedPropsType) => {
 
         window.twttr.widgets[methodName](
           {
+            // @ts-ignore
             sourceType: props.sourceType,
+            // @ts-ignore
             screenName: props.screenName,
+            // @ts-ignore
             userId: props.userId,
+            // @ts-ignore
             ownerScreenName: props.ownerScreenName,
+            // @ts-ignore
             slug: props.slug,
+            // @ts-ignore
             id: props.id || props.widgetId,
+            // @ts-ignore
             url: props.url
           },
           ref?.current,
