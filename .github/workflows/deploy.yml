@@ -30,6 +30,9 @@ jobs:
       - name: Build package
         run: npm run build
 
+      - name: Build storybook
+        run: npm run build-storybook
+
   versioning:
     name: Automated Version Bump
     runs-on: ubuntu-latest
