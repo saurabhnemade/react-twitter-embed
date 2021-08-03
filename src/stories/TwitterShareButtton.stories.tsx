@@ -1,10 +1,10 @@
-import React from 'react'
-import { Story, Meta } from '@storybook/react'
+import React from 'react';
+import { Story, Meta } from '@storybook/react';
 import TwitterShareButton, {
   TwitterShareButtonProps
-} from './../components/TwitterShareButton'
-import { action } from '@storybook/addon-actions'
-import './story.css'
+} from './../components/TwitterShareButton';
+import { action } from '@storybook/addon-actions';
+import './story.css';
 
 export default {
   title: 'Twitter Share Button',
@@ -12,7 +12,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' }
   }
-} as Meta
+} as Meta;
 
 const Template: Story<TwitterShareButtonProps> = (args) => (
   <div className='centerContent'>
@@ -20,15 +20,15 @@ const Template: Story<TwitterShareButtonProps> = (args) => (
       <TwitterShareButton {...args} />
     </div>
   </div>
-)
+);
 
-export const ShareButton = Template.bind({})
+export const ShareButton = Template.bind({});
 ShareButton.args = {
   url: 'https://facebook.com/saurabhnemade',
   options: { text: '#reactjs is awesome', via: 'saurabhnemade' }
-}
+};
 
-export const ShareButtonLarge = Template.bind({})
+export const ShareButtonLarge = Template.bind({});
 ShareButtonLarge.args = {
   url: 'https://facebook.com/saurabhnemade',
   options: {
@@ -36,9 +36,9 @@ ShareButtonLarge.args = {
     via: 'saurabhnemade',
     size: 'large'
   }
-}
+};
 
-export const ShareButtonWithTextPlaceholder = Template.bind({})
+export const ShareButtonWithTextPlaceholder = Template.bind({});
 ShareButtonWithTextPlaceholder.args = {
   url: 'https://facebook.com/saurabhnemade',
   options: {
@@ -47,9 +47,9 @@ ShareButtonWithTextPlaceholder.args = {
     size: 'large'
   },
   placeholder: 'Loading'
-}
+};
 
-export const ShareButtonWithCustomPlaceholder = Template.bind({})
+export const ShareButtonWithCustomPlaceholder = Template.bind({});
 ShareButtonWithCustomPlaceholder.args = {
   url: 'https://facebook.com/saurabhnemade',
   options: {
@@ -69,9 +69,9 @@ ShareButtonWithCustomPlaceholder.args = {
       Hello I am custom placeholder
     </div>
   )
-}
+};
 
-export const ShareButtonWithOnLoad = Template.bind({})
+export const ShareButtonWithOnLoad = Template.bind({});
 ShareButtonWithOnLoad.args = {
   url: 'https://facebook.com/saurabhnemade',
   options: {
@@ -80,4 +80,4 @@ ShareButtonWithOnLoad.args = {
     size: 'large'
   },
   onLoad: action('Loaded successfully')
-}
+};

@@ -18,10 +18,10 @@
     "prepare": "npm run build",
     "test": "run-s test:unit test:lint test:build",
     "test:build": "run-s build",
-    "test:lint": "eslint .",
-    "test:lint:fix": "eslint --fix .",
     "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
+    "lint": "eslint --ext ts,tsx .",
+    "lint:fix": "eslint --fix --ext ts,tsx .",
     "build-storybook": "build-storybook",
     "deploy": "gh-pages -d example/build"
   },

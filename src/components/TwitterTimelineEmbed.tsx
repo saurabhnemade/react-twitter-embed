@@ -1,77 +1,77 @@
-import React from 'react'
-import twitterWidgetJs from './twiter-widget-url'
+import React from 'react';
+import twitterWidgetJs from './twiter-widget-url';
 
 declare global {
   interface Window {
-    twttr: any
+    twttr: any;
   }
 }
 
 interface JSONObject {
-  [k: string]: any
+  [k: string]: any;
 }
 
 export interface TwitterTimelineEmbedBase {
   /**
    * Additional options to pass to twitter widget plugin
    */
-  options?: JSONObject
+  options?: JSONObject;
   /**
    * Automatically fit into parent container height
    */
-  autoHeight?: boolean
+  autoHeight?: boolean;
   /**
    * With dark or light theme
    */
-  theme?: 'dark' | 'light'
+  theme?: 'dark' | 'light';
   /**
    * With custom link colors. Note: Only Hex colors are supported.
    */
-  linkColor?: string
+  linkColor?: string;
   /**
    * With custom border colors. Note: Only Hex colors are supported.
    */
-  borderColor?: string
+  borderColor?: string;
   /**
    * Hide the header from timeline
    */
-  noHeader?: boolean
+  noHeader?: boolean;
   /**
    * Hide the footer from timeline
    */
-  noFooter?: boolean
+  noFooter?: boolean;
   /**
    * Hide the border from timeline
    */
-  noBorders?: boolean
+  noBorders?: boolean;
   /**
    * Hide the scrollbars
    */
-  noScrollbar?: boolean
+  noScrollbar?: boolean;
   /**
    * Enable Transparancy
    */
-  transparent?: boolean
+  transparent?: boolean;
   /**
    * Custom language code. Supported codes here: https://developer.twitter.com/en/docs/twitter-for-websites/twitter-for-websites-supported-languages/overview.html
    */
-  lang?: string
+  lang?: string;
   /**
    * ariaPolite
    */
-  ariaPolite?: 'polite' | 'assertive' | 'rude'
+  ariaPolite?: 'polite' | 'assertive' | 'rude';
   /**
    * Limit of tweets to be shown
    */
-  tweetLimit?: number
+  tweetLimit?: number;
   /**
    * Placeholder while tweet is loading
    */
-  placeholder?: string | React.ReactNode
+  placeholder?: string | React.ReactNode;
   /**
    * Function to execute after load, return html element
    */
-  onLoad?: (element: any) => void
+  onLoad?: (element: any) => void;
 }
 
 export interface TwitterTimelineEmbedSourceScreenName
@@ -79,11 +79,11 @@ export interface TwitterTimelineEmbedSourceScreenName
   /**
    * This can be either of profile, likes
    */
-  sourceType: 'profile' | 'likes'
+  sourceType: 'profile' | 'likes';
   /**
    * username of twitter handle as String
    */
-  screenName: string
+  screenName: string;
 }
 
 export interface TwitterTimelineEmbedSourceUserId
@@ -91,11 +91,11 @@ export interface TwitterTimelineEmbedSourceUserId
   /**
    * This can be either of profile, likes
    */
-  sourceType: 'profile' | 'likes'
+  sourceType: 'profile' | 'likes';
   /**
    * UserId of twitter handle as number
    */
-  userId: string
+  userId: string;
 }
 
 export interface TwitterTimelineEmbedSourceTimeline
@@ -103,12 +103,12 @@ export interface TwitterTimelineEmbedSourceTimeline
   /**
    * This can be either of timeline
    */
-  sourceType: 'timeline'
+  sourceType: 'timeline';
   /**
    * To show list, unique list id
    * Also used with collections, in that case its valid collection id
    */
-  id: string
+  id: string;
 }
 
 export interface TwitterTimelineEmbedSourceList
@@ -116,15 +116,15 @@ export interface TwitterTimelineEmbedSourceList
   /**
    * This can be either of list
    */
-  sourceType: 'list'
+  sourceType: 'list';
   /**
    * To show list, used along with slug
    */
-  ownerScreenName: string
+  ownerScreenName: string;
   /**
    * To show list, used along with ownerScreenName
    */
-  slug: string
+  slug: string;
 }
 
 export interface TwitterTimelineEmbedSourceListId
@@ -132,12 +132,12 @@ export interface TwitterTimelineEmbedSourceListId
   /**
    * This can be either of list
    */
-  sourceType: 'list'
+  sourceType: 'list';
   /**
    * To show list, unique list id
    * Also used with collections, in that case its valid collection id
    */
-  id: string | number
+  id: string | number;
 }
 
 export interface TwitterTimelineEmbedSourceCollection
@@ -145,12 +145,12 @@ export interface TwitterTimelineEmbedSourceCollection
   /**
    * This can be collection
    */
-  sourceType: 'collection'
+  sourceType: 'collection';
   /**
    * To show list, unique list id
    * Also used with collections, in that case its valid collection id
    */
-  id: string | number
+  id: string | number;
 }
 
 export interface TwitterTimelineEmbedSourceUrl
@@ -158,12 +158,12 @@ export interface TwitterTimelineEmbedSourceUrl
   /**
    * This can be url
    */
-  sourceType: 'url'
+  sourceType: 'url';
   /**
    * To show twitter content with url.
    * Supported content includes profiles, likes, lists, and collections.
    */
-  url: string
+  url: string;
 }
 
 export interface TwitterTimelineEmbedSourceWidget
@@ -171,11 +171,11 @@ export interface TwitterTimelineEmbedSourceWidget
   /**
    * This can be widget
    */
-  sourceType: 'widget'
+  sourceType: 'widget';
   /**
    * To show custom widget
    */
-  widgetId: string
+  widgetId: string;
 }
 
 export type TwitterTimelineEmbedPropsType =
@@ -186,7 +186,7 @@ export type TwitterTimelineEmbedPropsType =
   | TwitterTimelineEmbedSourceListId
   | TwitterTimelineEmbedSourceCollection
   | TwitterTimelineEmbedSourceUrl
-  | TwitterTimelineEmbedSourceWidget
+  | TwitterTimelineEmbedSourceWidget;
 
 // export interface TwitterTimelineEmbedProps {
 //   sourceType: 'profile' | 'likes' | 'list' | 'collection' | 'URL' | 'widget'
@@ -196,16 +196,16 @@ export type TwitterTimelineEmbedPropsType =
 //   onLoad?: (element: any) => void;
 // };
 
-const methodName = 'createTimeline'
+const methodName = 'createTimeline';
 
 const TwitterTimelineEmbed = (props: TwitterTimelineEmbedPropsType) => {
-  const ref = React.useRef<HTMLDivElement | null>(null)
-  const [loading, setLoading] = React.useState(true)
+  const ref = React.useRef<HTMLDivElement | null>(null);
+  const [loading, setLoading] = React.useState(true);
 
   const buildOptions = () => {
-    let options = Object.assign({}, props.options)
+    let options = Object.assign({}, props.options);
     if (props?.autoHeight) {
-      options.height = (ref.current?.parentNode as HTMLElement)?.offsetHeight
+      options.height = (ref.current?.parentNode as HTMLElement)?.offsetHeight;
     }
 
     options = Object.assign({}, options, {
@@ -215,51 +215,51 @@ const TwitterTimelineEmbed = (props: TwitterTimelineEmbedPropsType) => {
       lang: props?.lang,
       tweetLimit: props?.tweetLimit,
       ariaPolite: props?.ariaPolite
-    })
+    });
 
-    return options
-  }
+    return options;
+  };
 
   const buildChromeOptions = (options: JSONObject) => {
-    options.chrome = ''
+    options.chrome = '';
     if (props.noHeader) {
-      options.chrome = options.chrome + ' noheader'
+      options.chrome = options.chrome + ' noheader';
     }
     if (props.noFooter) {
-      options.chrome = options.chrome + ' nofooter'
+      options.chrome = options.chrome + ' nofooter';
     }
     if (props.noBorders) {
-      options.chrome = options.chrome + ' noborders'
+      options.chrome = options.chrome + ' noborders';
     }
     if (props.noScrollbar) {
-      options.chrome = options.chrome + ' noscrollbar'
+      options.chrome = options.chrome + ' noscrollbar';
     }
     if (props.transparent) {
-      options.chrome = options.chrome + ' transparent'
+      options.chrome = options.chrome + ' transparent';
     }
 
-    return options
-  }
+    return options;
+  };
 
   React.useEffect(() => {
-    let isComponentMounted = true
-    const script = require('scriptjs')
+    let isComponentMounted = true;
+    const script = require('scriptjs');
     script(twitterWidgetJs, 'twitter-embed', () => {
       if (!window.twttr) {
-        console.error('Failure to load window.twttr, aborting load')
-        return
+        console.error('Failure to load window.twttr, aborting load');
+        return;
       }
       if (isComponentMounted) {
         if (!window.twttr.widgets[methodName]) {
           console.error(
             `Method ${methodName} is not present anymore in twttr.widget api`
-          )
-          return
+          );
+          return;
         }
 
-        let options = buildOptions()
+        let options = buildOptions();
         /** Append chrome options */
-        options = buildChromeOptions(options)
+        options = buildChromeOptions(options);
 
         window.twttr.widgets[methodName](
           {
@@ -281,26 +281,26 @@ const TwitterTimelineEmbed = (props: TwitterTimelineEmbedPropsType) => {
           ref?.current,
           options
         ).then((element: any) => {
-          setLoading(false)
+          setLoading(false);
           if (props.onLoad) {
-            props.onLoad(element)
+            props.onLoad(element);
           }
-        })
+        });
       }
-    })
+    });
 
     // cleaning up
     return () => {
-      isComponentMounted = false
-    }
-  }, [])
+      isComponentMounted = false;
+    };
+  }, []);
 
   return (
     <React.Fragment>
       {loading && <React.Fragment>{props.placeholder}</React.Fragment>}
       <div ref={ref} />
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default TwitterTimelineEmbed
+export default TwitterTimelineEmbed;

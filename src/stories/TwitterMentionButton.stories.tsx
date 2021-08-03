@@ -1,10 +1,10 @@
-import React from 'react'
-import { Story, Meta } from '@storybook/react'
+import React from 'react';
+import { Story, Meta } from '@storybook/react';
 import TwitterMentionButton, {
   TwitterMentionButtonProps
-} from './../components/TwitterMentionButton'
-import { action } from '@storybook/addon-actions'
-import './story.css'
+} from './../components/TwitterMentionButton';
+import { action } from '@storybook/addon-actions';
+import './story.css';
 
 export default {
   title: 'Twitter Mention Button',
@@ -12,7 +12,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' }
   }
-} as Meta
+} as Meta;
 
 const Template: Story<TwitterMentionButtonProps> = (args) => (
   <div className='centerContent'>
@@ -20,27 +20,27 @@ const Template: Story<TwitterMentionButtonProps> = (args) => (
       <TwitterMentionButton {...args} />
     </div>
   </div>
-)
+);
 
-export const MentionButton = Template.bind({})
+export const MentionButton = Template.bind({});
 MentionButton.args = {
   screenName: 'saurabhnemade'
-}
+};
 
-export const MentionButtonLarge = Template.bind({})
+export const MentionButtonLarge = Template.bind({});
 MentionButtonLarge.args = {
   screenName: 'saurabhnemade',
   options: { size: 'large' }
-}
+};
 
-export const MentionButtonWithTextPlaceholder = Template.bind({})
+export const MentionButtonWithTextPlaceholder = Template.bind({});
 MentionButtonWithTextPlaceholder.args = {
   screenName: 'saurabhnemade',
   options: { size: 'large' },
   placeholder: 'Loading'
-}
+};
 
-export const MentionButtonWithCustomPlaceholder = Template.bind({})
+export const MentionButtonWithCustomPlaceholder = Template.bind({});
 MentionButtonWithCustomPlaceholder.args = {
   screenName: 'saurabhnemade',
   options: { size: 'large' },
@@ -56,11 +56,11 @@ MentionButtonWithCustomPlaceholder.args = {
       Hello I am custom placeholder
     </div>
   )
-}
+};
 
-export const MentionButtonWithOnLoad = Template.bind({})
+export const MentionButtonWithOnLoad = Template.bind({});
 MentionButtonWithOnLoad.args = {
   screenName: 'saurabhnemade',
   options: { size: 'large' },
   onLoad: action('Loaded successfully')
-}
+};

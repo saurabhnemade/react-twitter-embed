@@ -1,9 +1,9 @@
-import React from 'react'
-import twitterWidgetJs from './twiter-widget-url'
+import React from 'react';
+import twitterWidgetJs from './twiter-widget-url';
 
 declare global {
   interface Window {
-    twttr: any
+    twttr: any;
   }
 }
 
@@ -11,62 +11,62 @@ export interface TwitterVideoEmbedProps {
   /**
    * Id of video tweet.
    */
-  id: string
+  id: string;
   /**
    * Placeholder while tweet is loading
    */
-  placeholder?: string | React.ReactNode
+  placeholder?: string | React.ReactNode;
   /**
    * Function to execute after load, return html element
    */
-  onLoad?: (element: any) => void
+  onLoad?: (element: any) => void;
 }
 
-const methodName = 'createVideo'
+const methodName = 'createVideo';
 
 const TwitterVideoEmbed = (props: TwitterVideoEmbedProps) => {
-  const ref = React.useRef<HTMLDivElement | null>(null)
-  const [loading, setLoading] = React.useState(true)
+  const ref = React.useRef<HTMLDivElement | null>(null);
+  const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
-    let isComponentMounted = true
-    const script = require('scriptjs')
+    let isComponentMounted = true;
+    const script = require('scriptjs');
     script(twitterWidgetJs, 'twitter-embed', () => {
       if (!window.twttr) {
-        console.error('Failure to load window.twttr, aborting load')
-        return
+        console.error('Failure to load window.twttr, aborting load');
+        return;
       }
       if (isComponentMounted) {
         if (!window.twttr.widgets[methodName]) {
           console.error(
             `Method ${methodName} is not present anymore in twttr.widget api`
-          )
-          return
+          );
+          return;
         }
 
         window.twttr.widgets[methodName](props.id, ref?.current).then(
           (element: any) => {
-            setLoading(false)
+            setLoading(false);
             if (props.onLoad) {
-              props.onLoad(element)
+              props.onLoad(element);
             }
           }
-        )
+        );
       }
-    })
+    });
 
     // cleaning up
     return () => {
-      isComponentMounted = false
-    }
-  }, [])
+      isComponentMounted = false;
+    };
+  }, []);
 
   return (
     <React.Fragment>
       {loading && <React.Fragment>{props.placeholder}</React.Fragment>}
       <div ref={ref} />
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default TwitterVideoEmbed
+export default TwitterVideoEmbed;

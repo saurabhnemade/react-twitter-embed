@@ -1,10 +1,10 @@
-import React from 'react'
-import { Story, Meta } from '@storybook/react'
+import React from 'react';
+import { Story, Meta } from '@storybook/react';
 import TwitterMomentShare, {
   TwitterMomentShareProps
-} from './../components/TwitterMomentShare'
-import { action } from '@storybook/addon-actions'
-import './story.css'
+} from './../components/TwitterMomentShare';
+import { action } from '@storybook/addon-actions';
+import './story.css';
 
 export default {
   title: 'Twitter Moment Share',
@@ -12,7 +12,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' }
   }
-} as Meta
+} as Meta;
 
 const Template: Story<TwitterMomentShareProps> = (args) => (
   <div className='centerContent'>
@@ -20,20 +20,20 @@ const Template: Story<TwitterMomentShareProps> = (args) => (
       <TwitterMomentShare {...args} />
     </div>
   </div>
-)
+);
 
-export const MomentShare = Template.bind({})
+export const MomentShare = Template.bind({});
 MomentShare.args = {
   momentId: '650667182356082688'
-}
+};
 
-export const MomentShareWithTextPlaceholder = Template.bind({})
+export const MomentShareWithTextPlaceholder = Template.bind({});
 MomentShareWithTextPlaceholder.args = {
   momentId: '650667182356082688',
   placeholder: 'Loading'
-}
+};
 
-export const MomentShareWithCustomPlaceholder = Template.bind({})
+export const MomentShareWithCustomPlaceholder = Template.bind({});
 MomentShareWithCustomPlaceholder.args = {
   momentId: '650667182356082688',
   placeholder: (
@@ -48,10 +48,10 @@ MomentShareWithCustomPlaceholder.args = {
       Hello I am custom placeholder
     </div>
   )
-}
+};
 
-export const MomentShareWithOnLoad = Template.bind({})
+export const MomentShareWithOnLoad = Template.bind({});
 MomentShareWithOnLoad.args = {
   momentId: '650667182356082688',
   onLoad: action('Loaded successfully')
-}
+};

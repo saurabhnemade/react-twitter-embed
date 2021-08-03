@@ -1,10 +1,10 @@
-import React from 'react'
-import { Story, Meta } from '@storybook/react'
+import React from 'react';
+import { Story, Meta } from '@storybook/react';
 import TwitterFollowButton, {
   TwitterFollowButtonProps
-} from './../components/TwitterFollowButton'
-import { action } from '@storybook/addon-actions'
-import './story.css'
+} from './../components/TwitterFollowButton';
+import { action } from '@storybook/addon-actions';
+import './story.css';
 
 export default {
   title: 'Twitter Follow Button',
@@ -12,7 +12,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' }
   }
-} as Meta
+} as Meta;
 
 const Template: Story<TwitterFollowButtonProps> = (args) => (
   <div className='centerContent'>
@@ -20,27 +20,27 @@ const Template: Story<TwitterFollowButtonProps> = (args) => (
       <TwitterFollowButton {...args} />
     </div>
   </div>
-)
+);
 
-export const FollowButtonSimple = Template.bind({})
+export const FollowButtonSimple = Template.bind({});
 FollowButtonSimple.args = {
   screenName: 'saurabhnemade'
-}
+};
 
-export const FollowButtonLarge = Template.bind({})
+export const FollowButtonLarge = Template.bind({});
 FollowButtonLarge.args = {
   screenName: 'saurabhnemade',
   options: { size: 'large' }
-}
+};
 
-export const FollowButtonWithTextPlaceholder = Template.bind({})
+export const FollowButtonWithTextPlaceholder = Template.bind({});
 FollowButtonWithTextPlaceholder.args = {
   screenName: 'saurabhnemade',
   options: { size: 'large' },
   placeholder: 'Loading'
-}
+};
 
-export const FollowButtonWithCustomPlaceholder = Template.bind({})
+export const FollowButtonWithCustomPlaceholder = Template.bind({});
 FollowButtonWithCustomPlaceholder.args = {
   screenName: 'saurabhnemade',
   options: { size: 'large' },
@@ -56,11 +56,11 @@ FollowButtonWithCustomPlaceholder.args = {
       Hello I am custom placeholder
     </div>
   )
-}
+};
 
-export const FollowButtonWithOnLoad = Template.bind({})
+export const FollowButtonWithOnLoad = Template.bind({});
 FollowButtonWithOnLoad.args = {
   screenName: 'saurabhnemade',
   options: { size: 'large' },
   onLoad: action('Loaded successfully')
-}
+};

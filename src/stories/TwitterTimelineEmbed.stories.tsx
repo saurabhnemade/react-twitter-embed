@@ -1,10 +1,10 @@
-import React from 'react'
-import { Story, Meta } from '@storybook/react'
+import React from 'react';
+import { Story, Meta } from '@storybook/react';
 import TwitterTimelineEmbed, {
   TwitterTimelineEmbedPropsType
-} from './../components/TwitterTimelineEmbed'
-import { action } from '@storybook/addon-actions'
-import './story.css'
+} from './../components/TwitterTimelineEmbed';
+import { action } from '@storybook/addon-actions';
+import './story.css';
 
 export default {
   title: 'Twitter Timeline Embed',
@@ -12,7 +12,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' }
   }
-} as Meta
+} as Meta;
 
 const Template: Story<TwitterTimelineEmbedPropsType> = (args) => (
   <div className='centerContent'>
@@ -20,102 +20,102 @@ const Template: Story<TwitterTimelineEmbedPropsType> = (args) => (
       <TwitterTimelineEmbed {...args} />
     </div>
   </div>
-)
+);
 
-export const TimelineProfileWithScreenName = Template.bind({})
+export const TimelineProfileWithScreenName = Template.bind({});
 TimelineProfileWithScreenName.args = {
   sourceType: 'profile',
   screenName: 'saurabhnemade',
   options: { height: 400 },
   onLoad: action('sample action')
-}
+};
 
-export const TimelineProfileWithUserId = Template.bind({})
+export const TimelineProfileWithUserId = Template.bind({});
 TimelineProfileWithUserId.args = {
   sourceType: 'profile',
   userId: 1934309676,
   options: { height: 400 }
-}
+};
 
-export const TimelineLikesWithScreenName = Template.bind({})
+export const TimelineLikesWithScreenName = Template.bind({});
 TimelineLikesWithScreenName.args = {
   sourceType: 'likes',
   screenName: 'saurabhnemade',
   options: { height: 400 }
-}
+};
 
-export const TimelineLikesWithUserId = Template.bind({})
+export const TimelineLikesWithUserId = Template.bind({});
 TimelineLikesWithUserId.args = {
   sourceType: 'likes',
   userId: 1934309676,
   options: { height: 400 }
-}
+};
 
-export const TimelineListWithOwnerScreenNameSlug = Template.bind({})
+export const TimelineListWithOwnerScreenNameSlug = Template.bind({});
 TimelineListWithOwnerScreenNameSlug.args = {
   sourceType: 'list',
   ownerScreenName: 'palafo',
   slug: 'breakingnews',
   options: { height: 400 }
-}
+};
 
-export const TimelineListWithListId = Template.bind({})
+export const TimelineListWithListId = Template.bind({});
 TimelineListWithListId.args = {
   sourceType: 'list',
   id: 8044403,
   options: { height: 400 }
-}
+};
 
-export const TimelineCollection = Template.bind({})
+export const TimelineCollection = Template.bind({});
 TimelineCollection.args = {
   sourceType: 'collection',
   id: '576828964162965504',
   options: { height: 400 }
-}
+};
 
-export const TimelineCollectionWithUrl = Template.bind({})
+export const TimelineCollectionWithUrl = Template.bind({});
 TimelineCollectionWithUrl.args = {
   sourceType: 'collection',
   url: 'https://twitter.com/NYTNow/timelines/576828964162965504',
   options: { height: 400 }
-}
+};
 
-export const TimelineUrlWithProfileUrl = Template.bind({})
+export const TimelineUrlWithProfileUrl = Template.bind({});
 TimelineUrlWithProfileUrl.args = {
   sourceType: 'url',
   url: 'https://twitter.com/rahul581',
   options: { height: 400 }
-}
+};
 
-export const TimelineUrlWithListUrl = Template.bind({})
+export const TimelineUrlWithListUrl = Template.bind({});
 TimelineUrlWithListUrl.args = {
   sourceType: 'url',
   url: 'https://twitter.com/mashable/lists/social-media',
   options: { height: 400 }
-}
+};
 
-export const TimelineUrlWithLikesUrl = Template.bind({})
+export const TimelineUrlWithLikesUrl = Template.bind({});
 TimelineUrlWithLikesUrl.args = {
   sourceType: 'url',
   url: 'https://twitter.com/ladygaga/likes',
   options: { height: 400 }
-}
+};
 
-export const TimelineWidget = Template.bind({})
+export const TimelineWidget = Template.bind({});
 TimelineWidget.args = {
   sourceType: 'widget',
   widgetId: '539487832448843776',
   options: { height: 400 }
-}
+};
 
 export const TimelineAutoheight = ({
   sourceType,
   widgetId,
   autoHeight
 }: {
-  sourceType: 'widget'
-  widgetId: string
-  autoHeight: boolean
+  sourceType: 'widget';
+  widgetId: string;
+  autoHeight: boolean;
 }) => (
   <div className='centerContent'>
     <div className='selfCenter' style={{ width: 250, height: 200, margin: 20 }}>
@@ -140,28 +140,28 @@ export const TimelineAutoheight = ({
       />
     </div>
   </div>
-)
+);
 TimelineAutoheight.args = {
   sourceType: 'widget',
   widgetId: '539487832448843776',
   autoHeight: true
-}
+};
 
-export const TimelineDarkTheme = Template.bind({})
+export const TimelineDarkTheme = Template.bind({});
 TimelineDarkTheme.args = {
   sourceType: 'timeline',
   widgetId: '539487832448843776',
   theme: 'dark',
   options: { height: 400 }
-}
+};
 
-export const TimelineLightTheme = Template.bind({})
+export const TimelineLightTheme = Template.bind({});
 TimelineLightTheme.args = {
   sourceType: 'timeline',
   widgetId: '539487832448843776',
   theme: 'light',
   options: { height: 400 }
-}
+};
 
 // Twitter deprecated this
 // export const TimelineCustomLinkColor = () => (
@@ -199,7 +199,7 @@ TimelineLightTheme.args = {
 export const TimelineCustomBorderColor = ({
   borderColors
 }: {
-  borderColors: Array<string>
+  borderColors: Array<string>;
 }) => (
   <div className='centerContent'>
     <div className='selfCenter spaceBetween standardWidth'>
@@ -230,10 +230,10 @@ export const TimelineCustomBorderColor = ({
       />
     </div>
   </div>
-)
+);
 TimelineCustomBorderColor.args = {
   borderColors: ['#F44336', '#CDDC39', '#4CAF50']
-}
+};
 
 export const TimelineWithNoheader = ({ noHeader }: { noHeader: boolean }) => (
   <div className='centerContent'>
@@ -247,10 +247,10 @@ export const TimelineWithNoheader = ({ noHeader }: { noHeader: boolean }) => (
       />
     </div>
   </div>
-)
+);
 TimelineWithNoheader.args = {
   noHeader: true
-}
+};
 
 export const TimelineWithNofooter = ({ noFooter }: { noFooter: boolean }) => (
   <div className='centerContent'>
@@ -264,10 +264,10 @@ export const TimelineWithNofooter = ({ noFooter }: { noFooter: boolean }) => (
       />
     </div>
   </div>
-)
+);
 TimelineWithNofooter.args = {
   noFooter: true
-}
+};
 
 export const TimelineWithNoHeaderNoFooter = () => (
   <div className='centerContent'>
@@ -290,7 +290,7 @@ export const TimelineWithNoHeaderNoFooter = () => (
       />
     </div>
   </div>
-)
+);
 
 export const TimelineWithNoBorder = () => (
   <div className='centerContent'>
@@ -312,7 +312,7 @@ export const TimelineWithNoBorder = () => (
       />
     </div>
   </div>
-)
+);
 
 export const TimelineWithNoScrollbar = () => (
   <div className='centerContent'>
@@ -334,7 +334,7 @@ export const TimelineWithNoScrollbar = () => (
       />
     </div>
   </div>
-)
+);
 
 export const TimelineWithTransparentBackground = () => (
   <div className='centerContent'>
@@ -356,7 +356,7 @@ export const TimelineWithTransparentBackground = () => (
       />
     </div>
   </div>
-)
+);
 
 export const TimelineWithCustomLanguage = () => (
   <div className='centerContent'>
@@ -388,9 +388,9 @@ export const TimelineWithCustomLanguage = () => (
       />
     </div>
   </div>
-)
+);
 
-export const TimelineWithTextPlaceholder = Template.bind({})
+export const TimelineWithTextPlaceholder = Template.bind({});
 TimelineWithTextPlaceholder.args = {
   sourceType: 'timeline',
   widgetId: '539487832448843776',
@@ -398,9 +398,9 @@ TimelineWithTextPlaceholder.args = {
   lang: 'hi',
   placeholder: 'Loading',
   options: { height: 400 }
-}
+};
 
-export const TimelineWithCustomPlaceholder = Template.bind({})
+export const TimelineWithCustomPlaceholder = Template.bind({});
 TimelineWithCustomPlaceholder.args = {
   sourceType: 'timeline',
   widgetId: '539487832448843776',
@@ -419,9 +419,9 @@ TimelineWithCustomPlaceholder.args = {
     </div>
   ),
   options: { height: 400 }
-}
+};
 
-export const TimelineWithOnload = Template.bind({})
+export const TimelineWithOnload = Template.bind({});
 TimelineWithOnload.args = {
   sourceType: 'timeline',
   widgetId: '539487832448843776',
@@ -429,4 +429,4 @@ TimelineWithOnload.args = {
   lang: 'hi',
   onLoad: action('Timeline loaded'),
   options: { height: 400 }
-}
+};

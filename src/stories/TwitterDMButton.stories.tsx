@@ -1,10 +1,10 @@
-import React from 'react'
-import { Story, Meta } from '@storybook/react'
+import React from 'react';
+import { Story, Meta } from '@storybook/react';
 import TwitterDMButton, {
   TwitterDMButtonProps
-} from './../components/TwitterDMButton'
-import { action } from '@storybook/addon-actions'
-import './story.css'
+} from './../components/TwitterDMButton';
+import { action } from '@storybook/addon-actions';
+import './story.css';
 
 export default {
   title: 'Twitter DM Button',
@@ -12,7 +12,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' }
   }
-} as Meta
+} as Meta;
 
 const Template: Story<TwitterDMButtonProps> = (args) => (
   <div className='centerContent'>
@@ -20,27 +20,27 @@ const Template: Story<TwitterDMButtonProps> = (args) => (
       <TwitterDMButton {...args} />
     </div>
   </div>
-)
+);
 
-export const DirectMessageButton = Template.bind({})
+export const DirectMessageButton = Template.bind({});
 DirectMessageButton.args = {
   id: 1364031673
-}
+};
 
-export const DirectMessageButtonLarge = Template.bind({})
+export const DirectMessageButtonLarge = Template.bind({});
 DirectMessageButtonLarge.args = {
   id: 1364031673,
   options: { size: 'large' }
-}
+};
 
-export const DirectMessageButtonWithTextPlaceholder = Template.bind({})
+export const DirectMessageButtonWithTextPlaceholder = Template.bind({});
 DirectMessageButtonWithTextPlaceholder.args = {
   id: 1364031673,
   options: { size: 'large' },
   placeholder: 'Loading'
-}
+};
 
-export const DirectMessageButtonWithCustomPlaceholder = Template.bind({})
+export const DirectMessageButtonWithCustomPlaceholder = Template.bind({});
 DirectMessageButtonWithCustomPlaceholder.args = {
   id: 1364031673,
   options: { size: 'large' },
@@ -56,9 +56,9 @@ DirectMessageButtonWithCustomPlaceholder.args = {
       Hello I am custom placeholder
     </div>
   )
-}
+};
 
-export const DirectMessageButtonWithOnLoadAction = Template.bind({})
+export const DirectMessageButtonWithOnLoadAction = Template.bind({});
 DirectMessageButtonWithOnLoadAction.args = {
   id: 1364031673,
   options: { size: 'large' },
@@ -75,4 +75,4 @@ DirectMessageButtonWithOnLoadAction.args = {
     </div>
   ),
   onLoad: action('Loaded successfully')
-}
+};

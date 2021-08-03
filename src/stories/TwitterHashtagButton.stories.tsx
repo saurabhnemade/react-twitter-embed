@@ -1,10 +1,10 @@
-import React from 'react'
-import { Story, Meta } from '@storybook/react'
+import React from 'react';
+import { Story, Meta } from '@storybook/react';
 import TwitterHashtagButton, {
   TwitterHashtagButtonProps
-} from './../components/TwitterHashtagButton'
-import { action } from '@storybook/addon-actions'
-import './story.css'
+} from './../components/TwitterHashtagButton';
+import { action } from '@storybook/addon-actions';
+import './story.css';
 
 export default {
   title: 'Twitter Hashtag Button',
@@ -12,7 +12,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' }
   }
-} as Meta
+} as Meta;
 
 const Template: Story<TwitterHashtagButtonProps> = (args) => (
   <div className='centerContent'>
@@ -20,27 +20,27 @@ const Template: Story<TwitterHashtagButtonProps> = (args) => (
       <TwitterHashtagButton {...args} />
     </div>
   </div>
-)
+);
 
-export const HashtagButton = Template.bind({})
+export const HashtagButton = Template.bind({});
 HashtagButton.args = {
   tag: 'cybersecurity'
-}
+};
 
-export const HashtagButtonLarge = Template.bind({})
+export const HashtagButtonLarge = Template.bind({});
 HashtagButtonLarge.args = {
   tag: 'cybersecurity',
   options: { size: 'large' }
-}
+};
 
-export const HashtagButtonWithTextPlaceholder = Template.bind({})
+export const HashtagButtonWithTextPlaceholder = Template.bind({});
 HashtagButtonWithTextPlaceholder.args = {
   tag: 'cybersecurity',
   options: { size: 'large' },
   placeholder: 'Loading'
-}
+};
 
-export const HashtagButtonWithCustomPlaceholder = Template.bind({})
+export const HashtagButtonWithCustomPlaceholder = Template.bind({});
 HashtagButtonWithCustomPlaceholder.args = {
   tag: 'cybersecurity',
   options: { size: 'large' },
@@ -56,11 +56,11 @@ HashtagButtonWithCustomPlaceholder.args = {
       Hello I am custom placeholder
     </div>
   )
-}
+};
 
-export const HashtagButtonWithOnLoad = Template.bind({})
+export const HashtagButtonWithOnLoad = Template.bind({});
 HashtagButtonWithOnLoad.args = {
   tag: 'cybersecurity',
   options: { size: 'large' },
   onLoad: action('Loaded successfully')
-}
+};
