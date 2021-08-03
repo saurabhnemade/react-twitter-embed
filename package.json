@@ -2,7 +2,7 @@
   "name": "react-twitter-embed",
   "version": "4.0.0",
   "description": "React Twitter Embed Components",
-  "author": "saurabhnemade",
+  "author": "Saurabh Nemade",
   "license": "MIT",
   "repository": "saurabhnemade/react-twitter-embed",
   "main": "dist/index.js",
