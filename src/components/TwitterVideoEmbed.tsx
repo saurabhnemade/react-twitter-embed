@@ -24,7 +24,7 @@ export interface TwitterVideoEmbedProps {
 
 const methodName = 'createVideo';
 
-const TwitterVideoEmbed = (props: TwitterVideoEmbedProps) => {
+const TwitterVideoEmbed = (props: TwitterVideoEmbedProps): any => {
   const ref = React.useRef<HTMLDivElement | null>(null);
   const [loading, setLoading] = React.useState(true);
 

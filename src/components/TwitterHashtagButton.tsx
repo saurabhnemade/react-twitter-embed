@@ -32,7 +32,7 @@ export interface TwitterHashtagButtonProps {
 
 const methodName = 'createHashtagButton';
 
-const TwitterHashtagButton = (props: TwitterHashtagButtonProps) => {
+const TwitterHashtagButton = (props: TwitterHashtagButtonProps): any => {
   const ref = React.useRef<HTMLDivElement | null>(null);
   const [loading, setLoading] = React.useState(true);
 

@@ -32,7 +32,7 @@ export interface TwitterShareButtonProps {
 
 const methodName = 'createShareButton';
 
-const TwitterShareButton = (props: TwitterShareButtonProps) => {
+const TwitterShareButton = (props: TwitterShareButtonProps): any => {
   const ref = React.useRef<HTMLDivElement | null>(null);
   const [loading, setLoading] = React.useState(true);
 

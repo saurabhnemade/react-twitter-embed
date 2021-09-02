@@ -32,7 +32,7 @@ export interface TwitterOnAirButtonProps {
 
 const methodName = 'createPeriscopeOnAirButton';
 
-const TwitterOnAirButton = (props: TwitterOnAirButtonProps) => {
+const TwitterOnAirButton = (props: TwitterOnAirButtonProps): any => {
   const ref = React.useRef<HTMLDivElement | null>(null);
   const [loading, setLoading] = React.useState(true);
 

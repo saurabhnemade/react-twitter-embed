@@ -32,7 +32,7 @@ export interface TwitterMentionButtonProps {
 
 const methodName = 'createMentionButton';
 
-const TwitterMentionButton = (props: TwitterMentionButtonProps) => {
+const TwitterMentionButton = (props: TwitterMentionButtonProps): any => {
   const ref = React.useRef<HTMLDivElement | null>(null);
   const [loading, setLoading] = React.useState(true);
 

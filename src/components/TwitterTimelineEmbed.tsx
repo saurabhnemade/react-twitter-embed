@@ -111,6 +111,19 @@ export interface TwitterTimelineEmbedSourceTimeline
   id: string;
 }
 
+export interface TwitterTimelineEmbedSourceTimelineWidget
+  extends TwitterTimelineEmbedBase {
+  /**
+   * This can be either of timeline
+   */
+  sourceType: 'timeline';
+  /**
+   * To show list, unique list id
+   * Also used with collections, in that case its valid collection id
+   */
+  widgetId: string;
+}
+
 export interface TwitterTimelineEmbedSourceList
   extends TwitterTimelineEmbedBase {
   /**
@@ -140,7 +153,7 @@ export interface TwitterTimelineEmbedSourceListId
   id: string | number;
 }
 
-export interface TwitterTimelineEmbedSourceCollection
+export interface TwitterTimelineEmbedSourceCollectionId
   extends TwitterTimelineEmbedBase {
   /**
    * This can be collection
@@ -151,6 +164,19 @@ export interface TwitterTimelineEmbedSourceCollection
    * Also used with collections, in that case its valid collection id
    */
   id: string | number;
+}
+
+export interface TwitterTimelineEmbedSourceCollectionUrl
+  extends TwitterTimelineEmbedBase {
+  /**
+   * This can be collection
+   */
+  sourceType: 'collection';
+  /**
+   * To show list, unique list url
+   * Also used with collections, in that case its valid collection id
+   */
+  url: string;
 }
 
 export interface TwitterTimelineEmbedSourceUrl
@@ -182,9 +208,11 @@ export type TwitterTimelineEmbedPropsType =
   | TwitterTimelineEmbedSourceScreenName
   | TwitterTimelineEmbedSourceUserId
   | TwitterTimelineEmbedSourceTimeline
+  | TwitterTimelineEmbedSourceTimelineWidget
   | TwitterTimelineEmbedSourceList
   | TwitterTimelineEmbedSourceListId
-  | TwitterTimelineEmbedSourceCollection
+  | TwitterTimelineEmbedSourceCollectionId
+  | TwitterTimelineEmbedSourceCollectionUrl
   | TwitterTimelineEmbedSourceUrl
   | TwitterTimelineEmbedSourceWidget;
 
@@ -198,7 +226,7 @@ export type TwitterTimelineEmbedPropsType =
 
 const methodName = 'createTimeline';
 
-const TwitterTimelineEmbed = (props: TwitterTimelineEmbedPropsType) => {
+const TwitterTimelineEmbed = (props: TwitterTimelineEmbedPropsType): any => {
   const ref = React.useRef<HTMLDivElement | null>(null);
   const [loading, setLoading] = React.useState(true);
 

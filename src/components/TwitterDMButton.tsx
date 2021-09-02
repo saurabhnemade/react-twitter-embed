@@ -32,7 +32,7 @@ export interface TwitterDMButtonProps {
 
 const methodName = 'createDMButton';
 
-const TwitterDMButton = (props: TwitterDMButtonProps) => {
+const TwitterDMButton = (props: TwitterDMButtonProps): any => {
   const ref = React.useRef<HTMLDivElement | null>(null);
   const [loading, setLoading] = React.useState(true);
 

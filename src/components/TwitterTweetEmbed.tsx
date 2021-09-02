@@ -32,7 +32,7 @@ export interface TwitterTweetEmbedProps {
 
 const methodName = 'createTweet';
 
-const TwitterTweetEmbed = (props: TwitterTweetEmbedProps) => {
+const TwitterTweetEmbed = (props: TwitterTweetEmbedProps): any => {
   const ref = React.useRef<HTMLDivElement | null>(null);
   const [loading, setLoading] = React.useState(true);
 

@@ -13,6 +13,8 @@
   },
   "scripts": {
     "build": "microbundle-crl --no-compress --format modern,cjs",
+    "cypress:open": "node_modules/.bin/cypress open-ct open",
+    "cypress:ci": "node_modules/.bin/cypress run-ct",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "storybook": "start-storybook -p 9009",
     "prepare": "npm run build",
@@ -33,11 +35,14 @@
     "scriptjs": "^2.5.9"
   },
   "devDependencies": {
+    "@cypress/react": "^5.9.4",
+    "@cypress/webpack-dev-server": "^1.5.0",
     "@storybook/addon-actions": "^6.2.9",
     "@storybook/addon-essentials": "^6.2.9",
     "@storybook/addon-links": "^6.2.9",
     "@storybook/react": "^6.2.9",
     "@storybook/theming": "^6.2.9",
+    "@testing-library/cypress": "^7.0.6",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -48,6 +53,8 @@
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
     "cross-env": "^7.0.2",
+    "cypress": "^7.2.0",
+    "cypress-wait-until": "^1.7.1",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.7.0",
     "eslint-config-standard": "^14.1.1",
@@ -65,7 +72,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "^4.0.3",
-    "typescript": "^4.3.5"
+    "typescript": "^4.3.5",
+    "webpack-dev-server": "^4.1.0"
   },
   "files": [
     "dist"

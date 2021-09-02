@@ -32,7 +32,7 @@ export interface TwitterFollowButtonProps {
 
 const methodName = 'createFollowButton';
 
-const TwitterFollowButton = (props: TwitterFollowButtonProps) => {
+const TwitterFollowButton = (props: TwitterFollowButtonProps): any => {
   const ref = React.useRef<HTMLDivElement | null>(null);
   const [loading, setLoading] = React.useState(true);
 

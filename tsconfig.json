@@ -15,7 +15,8 @@
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "types": ["cypress", "cypress-wait-until"]
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist", "example"]
