@@ -30,6 +30,9 @@ jobs:
       - name: Run the lint
         run: npm run lint
 
+      - name: Run Cypress 🧪🧪🧪
+        run: npm run cypress:ci
+
       - name: Build package
         run: npm run build
 
