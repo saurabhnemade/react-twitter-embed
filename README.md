@@ -57,37 +57,37 @@ import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterH
         tag={'cybersecurity'}
       />
 
- **Adding follow button:**
+**Adding follow button:**
 
       <TwitterFollowButton
         screenName={'saurabhnemade'}
       />
 
- **Adding Moment:**
+**Adding Moment:**
 
       <TwitterMomentShare
         momentId={'650667182356082688'}
       />
 
- **Adding Direct Messaging Button:**
+**Adding Direct Messaging Button:**
 
       <TwitterDMButton
         id={1364031673}
       />
 
- **Adding Twitter Video:**
+**Adding Twitter Video:**
 
       <TwitterVideoEmbed
         id={'560070183650213889'}
       />
 
- **Adding Twitter On Air Button:**
+**Adding Twitter On Air Button:**
 
       <TwitterOnAirButton
         id={'560070183650213889'}
       />
 
- **Explore All Options by Twitter Widgets API:**
+**Explore All Options by Twitter Widgets API:**
 
       https://developer.twitter.com/en/docs/twitter-for-websites/javascript-api/overview
 
@@ -96,7 +96,7 @@ import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterH
 
 MIT © [saurabhnemade](https://github.com/saurabhnemade)
 
-Copyright (c) 2019
+Copyright (c) 2022
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

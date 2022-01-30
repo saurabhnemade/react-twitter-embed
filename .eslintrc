@@ -1,23 +1,44 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "extends": [
     "standard",
-    "standard-react"
+    "standard-react",
+    "plugin:prettier/recommended",
+    "prettier/standard",
+    "prettier/react",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
   "env": {
-    "es6": true
+    "node": true
   },
-  "plugins": [
-    "react"
-  ],
+  "globals": {
+    "cy": "readonly",
+    "Cypress": "readonly"
+  },
   "parserOptions": {
-    "sourceType": "module"
+    "ecmaVersion": 2020,
+    "ecmaFeatures": {
+      "legacyDecorators": true,
+      "jsx": true
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "16"
+    }
   },
   "rules": {
-    // don't force es6 functions to include space before paren
     "space-before-function-paren": 0,
-
-    // allow specifying true explicitly for boolean props
-    "react/jsx-boolean-value": 0
+    "react/prop-types": 0,
+    "react/jsx-handler-names": 0,
+    "react/jsx-fragments": 0,
+    "react/no-unused-prop-types": 0,
+    "import/export": 0,
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/no-var-requires": 0,
+    "@typescript-eslint/ban-ts-ignore": 0,
+    "@typescript-eslint/ban-ts-comment": 0
   }
 }

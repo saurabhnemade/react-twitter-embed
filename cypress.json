@@ -1,0 +1,7 @@
+{
+  "chromeWebSecurity": false,
+  "component": {
+    "componentFolder": "src/tests/cypress/components",
+    "testFiles": "**/*spec.{js,jsx,ts,tsx}"
+  }
+}
