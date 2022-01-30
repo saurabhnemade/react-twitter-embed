@@ -3,6 +3,19 @@ import React from 'react';
 import TwitterTimelineEmbed from '../../../components/TwitterTimelineEmbed';
 
 describe('Twitter Timeline', () => {
+  it('should render timeline with screenName', () => {
+    mount(
+      <TwitterTimelineEmbed
+        sourceType='profile'
+        screenName='saurabhnemade'
+        options={{ height: 400 }}
+      />
+    );
+    cy.wait(4000);
+    cy.getIframeBody().contains('Twitter');
+    cy.getIframeBody().contains('Tweets by ');
+  });
+
   it('should render timeline with userId', () => {
     mount(
       <TwitterTimelineEmbed
@@ -14,6 +27,19 @@ describe('Twitter Timeline', () => {
     cy.wait(4000);
     cy.getIframeBody().contains('Twitter');
     cy.getIframeBody().contains('Tweets by ');
+  });
+
+  it('should render timeline likes with screenName', () => {
+    mount(
+      <TwitterTimelineEmbed
+        sourceType='likes'
+        screenName='saurabhnemade'
+        options={{ height: 400 }}
+      />
+    );
+    cy.wait(4000);
+    cy.getIframeBody().contains('Twitter');
+    cy.getIframeBody().contains('liked by');
   });
 
   it('should render timeline likes with userId', () => {

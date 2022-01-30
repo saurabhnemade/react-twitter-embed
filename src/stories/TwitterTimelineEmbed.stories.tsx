@@ -22,13 +22,13 @@ const Template: Story<TwitterTimelineEmbedPropsType> = (args) => (
   </div>
 );
 
-// export const TimelineProfileWithScreenName = Template.bind({});
-// TimelineProfileWithScreenName.args = {
-//   sourceType: 'profile',
-//   screenName: 'saurabhnemade',
-//   options: { height: 400 },
-//   onLoad: action('sample action')
-// };
+export const TimelineProfileWithScreenName = Template.bind({});
+TimelineProfileWithScreenName.args = {
+  sourceType: 'profile',
+  screenName: 'saurabhnemade',
+  options: { height: 400 },
+  onLoad: action('sample action')
+};
 
 export const TimelineProfileWithUserId = Template.bind({});
 TimelineProfileWithUserId.args = {
@@ -37,12 +37,12 @@ TimelineProfileWithUserId.args = {
   options: { height: 400 }
 };
 
-// export const TimelineLikesWithScreenName = Template.bind({});
-// TimelineLikesWithScreenName.args = {
-//   sourceType: 'likes',
-//   screenName: 'saurabhnemade',
-//   options: { height: 400 }
-// };
+export const TimelineLikesWithScreenName = Template.bind({});
+TimelineLikesWithScreenName.args = {
+  sourceType: 'likes',
+  screenName: 'saurabhnemade',
+  options: { height: 400 }
+};
 
 export const TimelineLikesWithUserId = Template.bind({});
 TimelineLikesWithUserId.args = {
