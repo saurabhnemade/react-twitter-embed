@@ -1,6 +1,6 @@
 {
   "name": "react-twitter-embed",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "React Twitter Embed Components",
   "author": "Saurabh Nemade",
   "license": "MIT",
@@ -37,11 +37,11 @@
   "devDependencies": {
     "@cypress/react": "^5.9.4",
     "@cypress/webpack-dev-server": "^1.5.0",
-    "@storybook/addon-actions": "^6.2.9",
-    "@storybook/addon-essentials": "^6.2.9",
-    "@storybook/addon-links": "^6.2.9",
-    "@storybook/react": "^6.2.9",
-    "@storybook/theming": "^6.2.9",
+    "@storybook/addon-actions": "^6.4.16",
+    "@storybook/addon-essentials": "^6.4.16",
+    "@storybook/addon-links": "^6.4.16",
+    "@storybook/react": "^6.4.16",
+    "@storybook/theming": "^6.4.16",
     "@testing-library/cypress": "^7.0.6",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -65,7 +65,7 @@
     "eslint-plugin-promise": "^4.3.1",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-standard": "^4.0.1",
-    "gh-pages": "^2.2.0",
+    "gh-pages": "^3.2.3",
     "microbundle-crl": "^0.13.11",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.0.4",
@@ -73,7 +73,7 @@
     "react-dom": "^16.13.1",
     "react-scripts": "^4.0.3",
     "typescript": "^4.3.5",
-    "webpack-dev-server": "^4.1.0"
+    "webpack-dev-server": "^4.7.3"
   },
   "files": [
     "dist"

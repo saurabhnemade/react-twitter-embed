@@ -74,18 +74,6 @@ export interface TwitterTimelineEmbedBase {
   onLoad?: (element: any) => void;
 }
 
-export interface TwitterTimelineEmbedSourceScreenName
-  extends TwitterTimelineEmbedBase {
-  /**
-   * This can be either of profile, likes
-   */
-  sourceType: 'profile' | 'likes';
-  /**
-   * username of twitter handle as String
-   */
-  screenName: string;
-}
-
 export interface TwitterTimelineEmbedSourceUserId
   extends TwitterTimelineEmbedBase {
   /**
@@ -205,7 +193,6 @@ export interface TwitterTimelineEmbedSourceWidget
 }
 
 export type TwitterTimelineEmbedPropsType =
-  | TwitterTimelineEmbedSourceScreenName
   | TwitterTimelineEmbedSourceUserId
   | TwitterTimelineEmbedSourceTimeline
   | TwitterTimelineEmbedSourceTimelineWidget
@@ -293,8 +280,6 @@ const TwitterTimelineEmbed = (props: TwitterTimelineEmbedPropsType): any => {
           {
             // @ts-ignore
             sourceType: props.sourceType,
-            // @ts-ignore
-            screenName: props.screenName,
             // @ts-ignore
             userId: props.userId,
             // @ts-ignore
