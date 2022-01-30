@@ -86,3 +86,18 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_AUTH_TOKEN }}
         with:
           commit-message: '[Skip CI] Automate Version Bump : update version {{version}}'
+
+  publish:
+    runs-on: ubuntu-latest
+    needs: versioning
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: npm install
+      - run: npm run build
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
