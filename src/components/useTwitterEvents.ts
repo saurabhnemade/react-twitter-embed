@@ -11,7 +11,7 @@ interface UseEventsProps {
   click?: (intentEvent: any) => void;
 }
 
-const useTwitterEvents = (props: UseEventsProps) => {
+const useTwitterEvents = (props: UseEventsProps): void => {
   React.useEffect(() => {
     const script = require('scriptjs');
     script(twitterWidgetJs, 'twitter-embed', () => {
