@@ -32,7 +32,7 @@ export interface TwitterMomentShareProps {
 
 const methodName = 'createMoment';
 
-const TwitterMomentShare = (props: TwitterMomentShareProps) => {
+const TwitterMomentShare = (props: TwitterMomentShareProps): any => {
   const ref = React.useRef<HTMLDivElement | null>(null);
   const [loading, setLoading] = React.useState(true);
 
