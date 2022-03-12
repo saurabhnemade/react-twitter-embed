@@ -27,9 +27,6 @@
     "react": "^16.0.0 || ^17.0.0 || ^18.0.0",
     "react-dom": "^16.0.0 || ^17.0.0 || ^18.0.0"
   },
-  "dependencies": {
-    "scriptjs": "^2.5.9"
-  },
   "devDependencies": {
     "@cypress/react": "^5.9.4",
     "@cypress/webpack-dev-server": "^1.5.0",
