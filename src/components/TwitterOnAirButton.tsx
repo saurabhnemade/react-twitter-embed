@@ -1,4 +1,5 @@
 import React from 'react';
+import useScript from '../hooks/useScript';
 import twitterWidgetJs from './twiter-widget-url';
 
 declare global {
@@ -28,6 +29,10 @@ export interface TwitterOnAirButtonProps {
    * Function to execute after load, return html element
    */
   onLoad?: (element: any) => void;
+  /**
+   * ErrorMessage when tweet is error
+   */
+  errorMessage?: string | React.ReactNode;
 }
 
 const methodName = 'createPeriscopeOnAirButton';
@@ -35,11 +40,16 @@ const methodName = 'createPeriscopeOnAirButton';
 const TwitterOnAirButton = (props: TwitterOnAirButtonProps): any => {
   const ref = React.useRef<HTMLDivElement | null>(null);
   const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState(false);
 
   React.useEffect(() => {
     let isComponentMounted = true;
-    const script = require('scriptjs');
-    script(twitterWidgetJs, 'twitter-embed', () => {
+    const status = useScript(twitterWidgetJs);
+    if (status === 'loading') {
+      setLoading(true);
+    } else if (status === 'error') {
+      setError(true);
+    } else if (status === 'ready' || status === 'idle') {
       if (!window.twttr) {
         console.error('Failure to load window.twttr, aborting load');
         return;
@@ -63,7 +73,7 @@ const TwitterOnAirButton = (props: TwitterOnAirButtonProps): any => {
           }
         });
       }
-    });
+    }
 
     // cleaning up
     return () => {
@@ -74,6 +84,7 @@ const TwitterOnAirButton = (props: TwitterOnAirButtonProps): any => {
   return (
     <React.Fragment>
       {loading && <React.Fragment>{props.placeholder}</React.Fragment>}
+      {error && <React.Fragment>{props.errorMessage} </React.Fragment>}
       <div ref={ref} />
     </React.Fragment>
   );
