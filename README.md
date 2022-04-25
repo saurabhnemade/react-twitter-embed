@@ -87,6 +87,15 @@ import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterH
         id={'560070183650213889'}
       />
 
+**Hide previous conversation for tweet reply
+
+      <TwitterTweetEmbed
+        options:{{
+        conversation:'none'
+        }}
+        tweetId={'933354946111705097'}
+    />
+      
 **Explore All Options by Twitter Widgets API:**
 
       https://developer.twitter.com/en/docs/twitter-for-websites/javascript-api/overview
