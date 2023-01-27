@@ -21,6 +21,10 @@ export interface TwitterTimelineEmbedBase {
    */
   autoHeight?: boolean;
   /**
+   * Automatically fit into parent container width
+   */
+  autoWidth?: boolean;
+  /**
    * With dark or light theme
    */
   theme?: 'dark' | 'light';
@@ -234,6 +238,9 @@ const TwitterTimelineEmbed = (props: TwitterTimelineEmbedPropsType): any => {
     let options = Object.assign({}, props.options);
     if (props?.autoHeight) {
       options.height = (ref.current?.parentNode as HTMLElement)?.offsetHeight;
+    }
+    if (props?.autoWidth) {
+      options.width = (ref.current?.parentNode as HTMLElement)?.offsetWidth;
     }
 
     options = Object.assign({}, options, {
