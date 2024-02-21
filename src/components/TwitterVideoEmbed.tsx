@@ -63,8 +63,7 @@ const TwitterVideoEmbed = (props: TwitterVideoEmbedProps): any => {
 
   return (
     <React.Fragment>
-      {loading && <React.Fragment>{props.placeholder}</React.Fragment>}
-      <div ref={ref} />
+      {loading ? props.placeholder : <div ref={ref} />}
     </React.Fragment>
   );
 };
